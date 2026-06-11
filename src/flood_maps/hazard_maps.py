@@ -7,45 +7,78 @@ __email__ = "mmef@gmv.com"
 
 """
 CHANGE: data processing script
-========================================
+=============================================================================
 
 Script to create hazard flood maps for South Sudan.
-This script assumes binary maps are available. The output depends on selected
-option: annual vs seasonal.
+This script assumes binary maps are available (i.e, binarize_maps.py has been 
+executed). 
 
-Map type options:
-- annual_1: annual maps directly from daily binary maps (frequency and duration)
-- annual_2: annual maps from seasonal_2 hazard maps (frequency, duration, valid obs, max consecutive)
-- annual_3: annual maps directly from daily binary maps (frequency, duration, valid obs, max consecutive) - optimized version
-- seasonal_1: seasonal maps (frequency and duration)
-- seasonal_2: seasonal maps (manual, by hand, with max consecutive flooded days allowing nodata gaps)
+There are several options for the type of hazard map to generate, controlled
+by the --map_type argument:
+- seasonal: Generates one raster per season-year (e.g., dry_2020) with two bands 
+(frequency and duration).
+- annual: Generates one raster per year with two bands (frequency and duration).
+- seasonal_2: Generates seasonal maps by processing daily binary maps with a 
+custom logic that allows for some NoData gaps in the consecutive flooded days 
+calculation.
+- annual_2: Generates annual maps by aggregating the seasonal_2 hazard maps.
+- annual_3: Similar to annual_2 but optimized to process large datasets without 
+loading all daily maps into memory at once. It processes the data in blocks and 
+calculates the maximum consecutive flooded days with a tolerance for NoData gaps.
 
-Option selected for development: annual_3.
-TODO: check annual_2 logic at computing max_consecutive.
-
+Currently, the script is set to generate annual maps from daily binary maps using 
+the optimized approach (annual_3), which is the most comprehensive and robust method. 
+To generate other types of maps, simply change the --map_type argument when running 
+the script.
 """
 
-import argparse, os, re
+import argparse
 from collections import defaultdict
 from datetime import datetime
 import numpy as np
 from pathlib import Path
-import rasterio
+import re, os, rasterio
 from tqdm import tqdm
 
 
 def extract_date_from_filename(fname):
+    r"""Extracts the date from a filename in the 
+    format "_eYYYYMMDD".
+    
+    Parameters
+    ----------
+    fname: str
+        Filename containing the date in the format "_eYYYYMMDD".
+    
+    Returns
+    -------
+    datetime
+        Extracted date as a datetime object.
+    """
+    
     match = re.search(r"_e(\d{8})", fname)
     if not match:
         raise ValueError(f"No date found in {fname}")
     return datetime.strptime(match.group(1), "%Y%m%d")
 
 def get_season(year, month):
-    """
-    Returns season label and season-year.
+    r"""Returns season label and season-year.
     Dry season: Nov (11) to Apr (4)
     Wet season: May (5) to Oct (10)
+    
+    Parameters
+    ----------
+    year: int
+        Year of the date.
+    month: int
+        Month of the date.
+    
+    Returns
+    -------
+    tuple
+        Season label ("dry" or "wet") and season-year.
     """
+    
     if month >= 11:
         return "dry", year + 1   # Nov–Dec belong to next hydrological year
     elif month <= 4:
@@ -59,10 +92,24 @@ def max_consecutive_flood_with_nodata_tolerance(
     nodata=-9999,
     max_nodata_gap=3
 ):
-    """
-    ts: 1D array (time) for one pixel
-    Returns maximum consecutive flooded days (1s),
-    allowing up to max_nodata_gap nodata values to be interpolated as 1.
+    r"""Calculates the maximum consecutive flooded days in a time series, 
+    allowing for a certain number of NoData gaps to be treated as flooded.
+    
+    Parameters
+    ----------
+    ts: array-like
+        1D array (time) for one pixel.
+    nodata: int or float, optional
+        Value representing NoData in the array (default: -9999).
+    max_nodata_gap: int, optional
+        Maximum number of consecutive NoData values to be treated as flooded 
+        (default: 3).
+    
+    Returns
+    -------
+    int
+        Maximum consecutive flooded days (1s), allowing up to max_nodata_gap 
+        nodata values to be interpolated as 1.
     """
 
     max_run = 0
@@ -92,15 +139,15 @@ def max_consecutive_flood_with_nodata_tolerance(
     return max_run
 
 
-# Instantiate argument parser
+# -------------------- Instantiate argument parser --------------------
 parser = argparse.ArgumentParser(description='CHANGE - Flood hazard maps generation')
 parser.add_argument('--map_type', type=str, choices=['annual', 'annual_2', 'annual_3', 'seasonal', 'seasonal_2'], default='annual',
                     help='Type of hazard map to generate: annual or seasonal (default: annual)')
 args = parser.parse_args()
 
 
-# Get binary maps
-tif_dir = Path("/mnt/staas/CLICHE/00_DATA/bin_maps/")
+# -------------------- Get binary maps --------------------
+tif_dir = Path("../data/flood_maps/binary_maps/")
 files = sorted(tif_dir.glob("*.tif"))
 
 if args.map_type == 'annual':
@@ -114,7 +161,7 @@ if args.map_type == 'annual':
         files_by_year[date.year].append((date, f))
         
     # Annual processing
-    output_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/annual/")
+    output_dir = Path("../data/hazard_maps/annual/")
     output_dir.mkdir(exist_ok=True)
     for year, flist in sorted(files_by_year.items()):
         print("Processing year:", year)
@@ -139,7 +186,7 @@ if args.map_type == 'annual':
         stack = np.stack(arrays, axis=0)
 
         # =========================
-        # Maps: frecuency and duration
+        # Maps: frequency and duration
         # =========================
         flood_frequency = np.nanmean(stack, axis=0)                 # [0–1]
         flood_duration = np.nansum(stack, axis=0)  # días/año
@@ -187,10 +234,10 @@ if args.map_type == 'annual':
 elif args.map_type == 'annual_2':
     print("Generating ANNUAL flood hazard maps from seasonal_2 hazard maps...")
     
-    tif_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/seasonal_check/")
+    tif_dir = Path("../data/hazard_maps/seasonal_2/")
     files = sorted(tif_dir.glob("*.tif"))
     
-    output_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/annual_check/")
+    output_dir = Path("../data/hazard_maps/annual_2/")
     output_dir.mkdir(exist_ok=True)
     
     groups = defaultdict(list)
@@ -271,7 +318,7 @@ elif args.map_type == 'annual_2':
 
 elif args.map_type == 'seasonal':
     
-    output_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/seasonal/")
+    output_dir = Path("../data/hazard_maps/seasonal/")
     output_dir.mkdir(exist_ok=True)
     # Group files by (season, year)
     print("\nGenerating SEASONAL flood hazard maps...")
@@ -337,11 +384,11 @@ elif args.map_type == 'seasonal':
 elif args.map_type == "annual_3":
     print("\nGenerating ANNUAL flood hazard maps (OPTIMIZED) from daily maps...")
     
-    tif_dir = Path("/mnt/staas/CLICHE/00_DATA/bin_maps/daily_new/")
+    tif_dir = Path("../data/flood_maps/binary_maps/")
     files = sorted(tif_dir.glob("*.tif"))
     MAX_NODATA_GAP = 2
     
-    output_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/annual_daily_new/")
+    output_dir = Path("../data/hazard_maps/annual_3/")
     output_dir.mkdir(exist_ok=True)
     
     # Group by year
@@ -360,7 +407,7 @@ elif args.map_type == "annual_3":
         n_days = len(flist_sorted)
         print(f"  → {n_days} daily maps")
         
-        # Get first file dimensions
+        # Obtener dimensiones del primer archivo
         with rasterio.open(flist_sorted[0][1]) as src:
             nrows, ncols = src.height, src.width
             profile = src.profile.copy()
@@ -368,18 +415,18 @@ elif args.map_type == "annual_3":
             print(f"  → Dimensions: {nrows} x {ncols}")
             print(f"  → NoData value: {nodata_in}")
         
-        # Block configuration
+        # Configuración de bloques
         BLOCK_HEIGHT = 500
         n_blocks = (nrows + BLOCK_HEIGHT - 1) // BLOCK_HEIGHT
         print(f"  → Processing in {n_blocks} blocks of {BLOCK_HEIGHT} rows")
         
-        # Output arrays (filled by blocks)
+        # Arrays de salida completos (se llenan por bloques)
         count_flooded_full = np.zeros((nrows, ncols), dtype=np.int32)
         count_valid_full = np.zeros((nrows, ncols), dtype=np.int32)
         max_consecutive_full = np.zeros((nrows, ncols), dtype=np.int32)
         
         # =================================================================
-        # BLOCK PROCESSING
+        # PROCESAMIENTO POR BLOQUES
         # =================================================================
         
         for block_idx in tqdm(range(n_blocks), desc="Processing blocks", leave=False):
@@ -387,78 +434,78 @@ elif args.map_type == "annual_3":
             row_end = min(row_start + BLOCK_HEIGHT, nrows)
             n_rows_block = row_end - row_start
             
-            # Simple accumulators for this block
+            # Acumuladores simples para este bloque
             count_flooded = np.zeros((n_rows_block, ncols), dtype=np.int32)
             count_valid = np.zeros((n_rows_block, ncols), dtype=np.int32)
             
-            # State for consecutive calculation (4 arrays of n_rows_block x ncols)
+            # Estado para cálculo de consecutivos (4 arrays de n_rows_block x ncols)
             current_streak = np.zeros((n_rows_block, ncols), dtype=np.int32)
             max_streak = np.zeros((n_rows_block, ncols), dtype=np.int32)
             nodata_gap_count = np.zeros((n_rows_block, ncols), dtype=np.int32)
             
             # =================================================================
-            # DAILY LOOP: Only one raster open at a time, without accumulating history
+            # LOOP DIARIO: Un solo raster abierto a la vez, sin acumular historial
             # =================================================================
             
             for day_idx, (date, f) in enumerate(flist_sorted):
                 with rasterio.open(f) as src:
-                    # Read only the necessary block of rows
+                    # Leer solo el bloque de filas necesario
                     window = rasterio.windows.Window(
                         col_off=0, row_off=row_start,
                         width=ncols, height=n_rows_block
                     )
                     arr = src.read(1, window=window)
                     
-                    # Boolean masks
+                    # Máscaras booleanas
                     valid_mask = (arr != nodata_in)
                     flood_mask = (arr == 1)
                     nodata_mask = (arr == nodata_in)
                     
-                    # Accumulate simple counts
+                    # Acumular conteos simples
                     count_valid += valid_mask.astype(np.int32)
                     count_flooded += flood_mask.astype(np.int32)
                     
                     # =================================================================
-                    # VECTORIZED CONSECUTIVE LOGIC (equivalent to max_consecutive function)
+                    # LÓGICA DE CONSECUTIVOS VECTORIZADA (equivalente a tu función)
                     # =================================================================
                     
-                    # CASE 1: Flooded today (val == 1)
+                    # CASO 1: Inundado hoy (val == 1)
                     # current_streak += 1, max_streak update, reset nodata_gap
                     is_flood = flood_mask
                     current_streak = np.where(is_flood, current_streak + 1, current_streak)
                     max_streak = np.maximum(max_streak, current_streak)
                     nodata_gap_count = np.where(is_flood, 0, nodata_gap_count)
                     
-                    # CASE 2: NoData today (val == nodata)
-                    # increment gap, if exceeds MAX_NODATA_GAP reset streak
+                    # CASO 2: NoData hoy (val == nodata)
+                    # incrementar gap, si excede MAX_NODATA_GAP resetear streak
                     is_nodata = nodata_mask & ~is_flood
                     nodata_gap_count = np.where(is_nodata, nodata_gap_count + 1, nodata_gap_count)
                     gap_exceeded = nodata_gap_count > MAX_NODATA_GAP
                     current_streak = np.where(gap_exceeded, 0, current_streak)
                     nodata_gap_count = np.where(gap_exceeded, 0, nodata_gap_count)
                     
-                    # CASE 3: VValid but not flooded (other values, typically 0)
-                    # reset streak and gap
+                    # CASO 3: Válido pero no inundado (otros valores, tipicamente 0)
+                    # resetear streak y gap
                     is_clear = valid_mask & ~is_flood & ~is_nodata
                     current_streak = np.where(is_clear, 0, current_streak)
                     nodata_gap_count = np.where(is_clear, 0, nodata_gap_count)
             
             # =================================================================
-            # POST-PROCESSING OF THE BLOCK (same as original code for annual_2)
+            # POST-PROCESAMIENTO DEL BLOQUE (igual que tu código original)
             # =================================================================
             
-            # Handle nodata where there are no valid observations
+            # Manejar nodata donde no hay observaciones válidas
             max_consecutive = max_streak.copy()
             no_valid = (count_valid == 0)
             max_consecutive[no_valid] = nodata_in
             
-            # Save to full arrays
+            # Guardar en arrays completos
             count_flooded_full[row_start:row_end, :] = count_flooded
             count_valid_full[row_start:row_end, :] = count_valid
             max_consecutive_full[row_start:row_end, :] = max_consecutive
         
         # =================================================================
-        # CALCULATION OF ANNUAL METRICS 
+        # CÁLCULO DE MÉTRICAS ANUALES (igual que tu código original)
         # =================================================================
         
         flood_frequency = np.where(count_valid_full > 0, 
@@ -468,7 +515,7 @@ elif args.map_type == "annual_3":
                                   count_flooded_full, 
                                   nodata_in)
         
-        # Save 4-band raster
+        # Guardar raster de 4 bandas
         profile.update(
             dtype="float32",
             count=4,
@@ -504,9 +551,9 @@ elif args.map_type == "annual_3":
                 PROCESSING="Annual aggregation from binary maps (OPTIMIZED)"
             )
         
-        print(f"✔ Generado: {out_file}")
+        print(f"✔ Generated: {out_file}")
         
-        # Free memory before the next year
+        # Liberar memoria antes del siguiente año
         del count_flooded_full, count_valid_full, max_consecutive_full
         del flood_frequency, flood_duration
     
@@ -515,7 +562,7 @@ elif args.map_type == "annual_3":
 elif args.map_type == "seasonal_2":
     print("\nGenerating SEASONAL flood hazard maps (manual check)...")
 
-    output_dir = Path("/mnt/staas/CLICHE/00_DATA/hazard_maps/seasonal_check/")
+    output_dir = Path("../data/hazard_maps/seasonal_2/")
     output_dir.mkdir(exist_ok=True)
     MAX_NODATA_GAP = 5  # days
     # Group files by (season, year)
