@@ -213,3 +213,8 @@ This assumes prerequisite model input data already exists (especially `../data/e
 - Step 7 produces synthetic scenarios (`bayfloodgen_output.csv`).
 - Step 8 quantifies model uncertainty.
 - Steps 9→10 produce calibrated impact metrics and rankings.
+
+--
+## More information
+
+For further details on impact assessment workflow, please refer to the ```./impact_assessment```folder and its respective README file.
