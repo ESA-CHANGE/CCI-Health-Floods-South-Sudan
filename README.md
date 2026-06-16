@@ -14,6 +14,8 @@ At the facility level, the analysis evaluates how different types of healthcare 
 To improve robustness and account for data limitations, the methodology incorporates stochastic modelling approaches, allowing the exploration of extreme but plausible flood scenarios and supporting a more comprehensive assessment of risk.
 Overall, this use case connects flood behaviour with its effects on healthcare services, helping to better understand how climate-related hazards translate into health system disruptions.
 
+For more information about this project, please refer to: https://climate.esa.int/supporting-the-paris-agreement/CHANGE/
+
 ## Getting Started
 
 ### Dependencies
