@@ -28,7 +28,7 @@ import pymc as pm
 from pymc.sampling import jax as pmjax
 import pytensor.tensor as pt
 
-from model_code.baygen_config import (
+from model_code.bayflood_config import (
     INCLUDE_DISTANCE,
     N_CHAINS,
     N_DRAWS,
@@ -37,7 +37,7 @@ from model_code.baygen_config import (
     RANDOM_SEED,
     TARGET_ACCEPT,
 )
-from model_code.baygen_runtime import select_sampler
+from model_code.bayflood_runtime import select_sampler
 
 
 # ==========================================================

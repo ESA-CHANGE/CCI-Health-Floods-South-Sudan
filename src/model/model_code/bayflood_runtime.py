@@ -12,7 +12,7 @@ This script contains functions for detecting the runtime environment (e.g., GPU 
 and selecting the appropriate sampler based on user preference and available libraries.
 """
 
-from model_code.baygen_config import PREFERRED_SAMPLER
+from model_code.bayflood_config import PREFERRED_SAMPLER
 
 
 # ─────────────────────────────────────────────

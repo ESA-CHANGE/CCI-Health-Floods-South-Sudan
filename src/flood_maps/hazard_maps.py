@@ -332,7 +332,7 @@ elif args.map_type == 'seasonal':
     for (year, season), flist in tqdm(groups.items(), desc="Processing seasons"):
         arrays = []
         for fname in flist:
-            with rasterio.open(os.path.join(tif_dir, fname)) as src:
+            with rasterio.open(fname) as src:
                 arr = src.read(1).astype("float32")
                 nodata = src.nodata
                 if nodata is not None:
@@ -351,7 +351,7 @@ elif args.map_type == 'seasonal':
         # =========================
         # Save multiband raster
         # =========================
-        with rasterio.open(os.path.join(tif_dir, flist[0])) as src_ref:
+        with rasterio.open(flist[0]) as src_ref:
             profile = src_ref.profile
 
         profile.update(

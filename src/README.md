@@ -163,8 +163,20 @@ Main outputs:
 - `../data/impact_outputs/impact_plots/threshold_calibration.png`
 
 ---
+## 10) `impact_assessment/divide_csv_per_facility.py` 
+Purpose:
+- Divide the whole EO+synthethic pool in different CSV files per facilities for performance.
 
-## 10) `impact_assessment/impact_assessment_calibrated_orchestrator.py`
+Run:
+- `python impact_assessment/divide_csv_per_facilitiy.py`
+
+Input:
+- `../data/model_output/bayfloodgen_output.csv`
+
+Output:
+- `../data/model_output/by_facility/*.parquet`
+
+## 11) `impact_assessment/impact_assessment_calibrated_orchestrator.py`
 Purpose:
 - Runs full impact assessment using calibrated thresholds.
 
@@ -201,7 +213,8 @@ If the goal is only to recreate synthetic scenarios and downstream uncertainty/i
 - **Step 7** → model generation
 - **Step 8** → uncertainty analysis
 - **Step 9** → threshold calibration
-- **Step 10** → calibrated impact assessment
+- **Setp 10** → divide pool into facilities CSV
+- **Step 11** → calibrated impact assessment
 
 This assumes prerequisite model input data already exists (especially `../data/eo_pool/eo_pool_reclassified.csv`).
 
@@ -212,7 +225,7 @@ This assumes prerequisite model input data already exists (especially `../data/e
 - Steps 1→6 prepare the EO/model input.
 - Step 7 produces synthetic scenarios (`bayfloodgen_output.csv`).
 - Step 8 quantifies model uncertainty.
-- Steps 9→10 produce calibrated impact metrics and rankings.
+- Steps 9→11 produce calibrated impact metrics and rankings.
 
 --
 ## More information
