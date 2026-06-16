@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+
+# Plotting and progress
+matplotlib
+seaborn
+tqdm
+
+# Geospatial processing
+rasterio
+geopandas
+
+# Data formats and parallelism
+pyarrow
+joblib
+
+# Bayesian modeling
+pymc
+arviz
+pytensor
+
+# Notebook support
+jupyterlab
+ipykernel

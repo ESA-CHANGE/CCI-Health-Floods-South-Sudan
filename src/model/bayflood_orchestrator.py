@@ -24,15 +24,15 @@ os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"  # to avoid OOM on GPU
 import arviz as az
 import pandas as pd
 
-from model_code.baygen_config import N_JOBS_SCENARIOS
-from model_code.baygen_data import expand_series_to_df, parse_series_columns
-from model_code.baygen_model import PatchGENBayGEN
-from model_code.baygen_runtime import detect_jax_devices
-from model_code.baygen_validation import validate_scenarios
+from model_code.bayflood_config import N_JOBS_SCENARIOS
+from model_code.bayflood_data import expand_series_to_df, parse_series_columns
+from model_code.bayflood_model import PatchGENBayGEN
+from model_code.bayflood_runtime import detect_jax_devices
+from model_code.bayflood_validation import validate_scenarios
 
 
 if __name__ == "__main__":
-    print("=== BayGEN v2 paralellized (orchestrator) ===")
+    print("=== BayFloodGEN v2 paralellized (orchestrator) ===")
     has_gpu = detect_jax_devices()
 
     CSV_PATH = "../data/eo_pool/eo_pool_reclassified.csv"

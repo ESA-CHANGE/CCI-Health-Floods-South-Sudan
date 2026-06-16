@@ -1,0 +1,7 @@
+-r requirements.txt
+
+# Optional accelerated backend for BayFloodGEN
+jax
+jaxlib
+numpyro
+blackjax
