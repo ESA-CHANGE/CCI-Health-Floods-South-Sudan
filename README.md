@@ -18,52 +18,54 @@ Overall, this use case connects flood behaviour with its effects on healthcare s
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-* Python version >=3.8
+This project requires Python 3.10+ and uses scientific, geospatial, and Bayesian libraries.
+
+Main dependencies are listed in requirements.txt.
+Optional accelerated dependencies (jax/numpyro/blackjax) are listed in requirements-gpu.txt.
+
+For Linux geospatial installs, system libraries may be required (GDAL, PROJ, GEOS).
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+1) Create and activate a clean Python environment (Python 3.10+ recommended), then install dependencies:
+
+```
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+2) Install core dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+3) (Optional) Install GPU/accelearted sampling dependencies:
+
+```
+pip install -r requirements-gpu.txt
+```
+
+4) (Optional) Register kernel for notebooks
+
+```
+python -m ipykernel install --user --name cci-health-floods --display_name ""CCI Health Floods"
+```
+
+Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the official JAX installation selector for the exact wheel.
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+This project is divided in differnt modules. You will find guidence on how to execute it inside ```./src``` folder.
 
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
 Contributors names and contact info
 
-ex. Dominique Pizzie
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Macarena Mérida Floriano
+mmef@gmv.com
 
-## Version History
 
-* 0.2
-  * Various bug fixes and optimizations
-  * See [commit change]() or See [release history]()
-* 0.1
-  * Initial Release
-
-## License
-
-This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
 
