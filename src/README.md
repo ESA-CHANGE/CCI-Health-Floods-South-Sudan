@@ -9,6 +9,7 @@ This README documents the full processing pipeline in `src`, the purpose of each
 - `model/`: BayFloodGEN training + synthetic scenario generation.
 - `uncertainty/`: uncertainty diagnostics from the trained model trace/output.
 - `impact_assessment/`: threshold calibration + calibrated impact analysis.
+- `swot-analysis/`: downloading, quality-based filtering, and processing of SWOT-mission data.
 
 ---
 

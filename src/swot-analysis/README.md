@@ -1,8 +1,12 @@
-## SWOT Mission Flood Data Analysis
+# SWOT Mission Flood Data Analysis
 
 ![](assets/SWOT-frontpic.png)
 
 This folder contains the scripts developed to analyze SWOT flood data for the health facilities provided by the WHO. This analysis aims to complement the flood information derived from VIIRS.
+
+# Index
+
+[[_TOC_]]
 
 ### SWOT Mission
 
