@@ -4,9 +4,7 @@
 
 This folder contains the scripts developed to analyze SWOT flood data for the health facilities provided by the WHO. This analysis aims to complement the flood information derived from VIIRS.
 
-# Index
-
-[[_TOC_]]
+# 
 
 ### SWOT Mission
 
@@ -70,6 +68,27 @@ All individual health facility registers of SWOT-based flood descriptors were co
 :arrow_forward: **05_Results_Analysis**   Notebook for interpreting and analyzing results. It allows the creation of the final database with SWOT‑derived flood descriptors to be used in the stochastic model.
 
 :arrow_forward: **SWOT.py**   Script containing the core functions and classes used throughout the analysis.
+
+### Install
+
+This analysis has been perfomed with a different Python environment. We recommenend to create a different Python environment for SWOT analysis.
+
+To run the code, you just need to create a conda environment from the provided YAML file.
+
+````bash
+conda env create -f environment.yml
+````
+
+### Dependencies
+
+Following Python packages are necessary:
+
+- xarray
+- geopandas
+- rioxarray
+- earthaccess
+- scipy
+- scipy
 
 ### Acknowledgements
 
