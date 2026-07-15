@@ -17,7 +17,7 @@ The output can be used to calibrate `SPELL_THRESHOLDS`,
 
 import json
 import os
-from typing import Any
+from typing import Any, Optional
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -357,7 +357,7 @@ def print_suggested_thresholds(calib: dict[str, Any]) -> None:
 
 def build_config_from_calibration(
     calib: dict[str, Any],
-    base_cfg: VulnerabilityConfig | None = None,
+    base_cfg: Optional[VulnerabilityConfig] = None,
 ) -> VulnerabilityConfig:
     r"""Build a `VulnerabilityConfig` from calibration suggestions.
 

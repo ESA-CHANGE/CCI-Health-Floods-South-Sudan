@@ -5,6 +5,8 @@ __email__ = "mmef@gmv.com"
 
 import os
 import pandas as pd
+from typing import Optional
+
 
 from impact_model.analysis import (
     category_comparison,
@@ -30,7 +32,7 @@ from impact_model.engine import VulnerabilityConfig
 
 def run_all(
     parts_dir: str = "../data/model_output/by_facility",
-    cfg: VulnerabilityConfig | None = None,
+    cfg: Optional[VulnerabilityConfig] = None,
 ) -> None:
     r"""Execute complete impact assessment workflow with preserved behavior.
 
