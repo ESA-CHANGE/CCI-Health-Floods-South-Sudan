@@ -52,7 +52,7 @@ pip install -r requirements-gpu.txt
 4) (Optional) Register kernel for notebooks
 
 ```
-python -m ipykernel install --user --name cci-health-floods --display_name ""CCI Health Floods"
+python -m ipykernel install --user --name cci-health-floods --display-name "CCI Health Floods"
 ```
 
 Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the official JAX installation selector for the exact wheel.

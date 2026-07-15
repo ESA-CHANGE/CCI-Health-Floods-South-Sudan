@@ -177,7 +177,7 @@ Purpose:
 - Divide the whole EO+synthethic pool in different CSV files per facilities for performance.
 
 Run:
-- `python impact_assessment/divide_csv_per_facilitiy.py`
+- `python impact_assessment/divide_csv_per_facility.py`
 
 Input:
 - `../data/model_output/bayfloodgen_output.csv`

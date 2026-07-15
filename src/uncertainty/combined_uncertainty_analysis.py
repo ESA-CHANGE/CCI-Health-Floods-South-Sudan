@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import annotations
+
 __author__ = "Macarena Merida Floriano, mmef"
 __maintainer__ = "Macarena Merida Floriano, mmef"
 __email__ = "mmef@gmv.com"
@@ -17,8 +19,6 @@ Main components:
 4) Decision-confidence plots (exceedance-based and median-based)
 5) Sensitivity heatmap to VIIRS error-rate assumptions
 """
-
-from __future__ import annotations
 
 import os
 import warnings
