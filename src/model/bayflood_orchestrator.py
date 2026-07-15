@@ -24,9 +24,14 @@ os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"  # to avoid OOM on GPU
 import arviz as az
 import pandas as pd
 
-from model_code.bayflood_config import N_JOBS_SCENARIOS
+from model_code.bayflood_config import N_BATCH_FILES_FOR_VALIDATION, N_JOBS_SCENARIOS
 from model_code.bayflood_data import expand_series_to_df, parse_series_columns
-from model_code.bayflood_model import PatchGENBayGEN
+from model_code.bayflood_model import (
+    FINAL_OUTPUT_COLUMNS,
+    PatchGENBayGEN,
+    load_scenarios_sample,
+    stream_concat_csv,
+)
 from model_code.bayflood_runtime import detect_jax_devices
 from model_code.bayflood_validation import validate_scenarios
 
@@ -40,6 +45,7 @@ if __name__ == "__main__":
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     PLOT_DIR = os.path.join(OUTPUT_DIR, "validation_plots")
     os.makedirs(PLOT_DIR, exist_ok=True)
+    SCENARIO_DIR = os.path.join(OUTPUT_DIR, "synthetic_scenarios")
 
     # ──────── Load data ────────
     df = pd.read_csv(CSV_PATH)
@@ -80,20 +86,24 @@ if __name__ == "__main__":
 
     # ───────────── Scenario generation ─────────────
     print("\nGenerating synthetic scenarios...")
-    df_syn = model.generate_scenarios(
+    scenario_batch_paths = model.generate_scenarios(
         n_scenarios=50,
         days=365,
         start_date="2026-01-01",
         t_year_sim=1.0,
         n_jobs=N_JOBS_SCENARIOS,
+        output_dir=SCENARIO_DIR,
     )
 
-    # ───────────── Save ─────────────
-    df_final = pd.concat([df_daily, df_syn], ignore_index=True)
+    # ───────────── Save (streamed) ─────────────
     out_path = os.path.join(OUTPUT_DIR, "bayfloodgen_output.csv")
-    df_final.to_csv(out_path, index=False)
-    print(f"Output saved: {out_path}")
+    df_daily.reindex(columns=FINAL_OUTPUT_COLUMNS).to_csv(out_path, index=False)
+    stream_concat_csv(scenario_batch_paths, out_path, columns=FINAL_OUTPUT_COLUMNS)
+    print(f"Output saved (streamed): {out_path}")
 
     # ───────────── Validation ─────────────
     df_obs_post = df_daily[df_daily['year'] > 2021]
-    validate_scenarios(df_obs=df_obs_post, df_syn=df_syn, output_dir=PLOT_DIR)
+    df_syn_sample = load_scenarios_sample(
+        scenario_batch_paths, max_files=N_BATCH_FILES_FOR_VALIDATION
+    )
+    validate_scenarios(df_obs=df_obs_post, df_syn=df_syn_sample, output_dir=PLOT_DIR)

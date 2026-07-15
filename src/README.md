@@ -111,6 +111,7 @@ Main output:
 ## 7) `model/bayflood_orchestrator.py`
 Purpose:
 - Trains BayFloodGEN and generates synthetic daily flood scenarios.
+- In this branch, scenario generation is memory-safe (streamed batches to disk).
 
 Run:
 - `python model/bayflood_orchestrator.py`
@@ -120,8 +121,16 @@ Main input:
 
 Main outputs:
 - `../data/model_output/bayfloodgen_trace.nc`
-- `../data/model_output/bayfloodgen_output.csv`
+- `../data/model_output/synthetic_scenarios/scenario_batch_*.csv`
+- `../data/model_output/bayfloodgen_output.csv` (stream-concatenated observed + synthetic)
 - Validation plots in `../data/model_output/validation_plots/`
+
+Critical behavior:
+- Validation does **not** load all synthetic rows by default.
+- It uses a bounded number of batch files controlled by `N_BATCH_FILES_FOR_VALIDATION`
+  in `model/model_code/bayflood_config.py` (default: `4`).
+- To validate with all synthetic data, set `N_BATCH_FILES_FOR_VALIDATION = None`.
+- Using all synthetic data may require substantially more RAM/time.
 
 ---
 
@@ -217,6 +226,15 @@ If the goal is only to recreate synthetic scenarios and downstream uncertainty/i
 - **Step 11** → calibrated impact assessment
 
 This assumes prerequisite model input data already exists (especially `../data/eo_pool/eo_pool_reclassified.csv`).
+
+## Branch-specific model updates vs `main`
+
+For the model module (`src/model`), this branch introduces:
+
+- Optional structural breakpoint block via `INCLUDE_BREAKPOINT`.
+- Non-centered model parameterization and tighter configuration for stable inference.
+- Streamed scenario generation/output assembly to reduce memory pressure.
+- Validation-over-sample-by-default behavior with explicit control to use all synthetic data.
 
 ---
 

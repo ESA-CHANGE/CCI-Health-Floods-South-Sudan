@@ -61,6 +61,40 @@ Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the o
 
 This project is divided in differnt modules. You will find guidence on how to execute it inside ```./src``` folder.
 
+## Current branch updates vs `main` (model workflow)
+
+This branch includes an updated BayFloodGEN model/scenario workflow (aligned with v2.4 behavior) under [src/model](src/model).
+
+Main changes relative to `main`:
+
+- **Optional structural-break block**
+	- Breakpoint terms can be toggled with `INCLUDE_BREAKPOINT` in [src/model/model_code/bayflood_config.py](src/model/model_code/bayflood_config.py).
+	- When disabled, breakpoint-related parameters are not sampled and are not required during scenario generation.
+
+- **Stability-focused Bayesian parameterization**
+	- Non-centered random effects are used in the model implementation in [src/model/model_code/bayflood_model.py](src/model/model_code/bayflood_model.py).
+	- `kappa` uses a Gamma prior (`KAPPA_ALPHA`, `KAPPA_BETA`) from config.
+
+- **Memory-safe synthetic scenario generation**
+	- Synthetic scenarios are generated in parallel and written as per-worker batch CSVs in `model_output/synthetic_scenarios/`.
+	- The final combined CSV is then assembled via streaming append, reducing peak memory usage.
+
+- **Validation uses a bounded synthetic sample by default**
+	- Default behavior loads only a subset of scenario batch files for validation plots.
+	- Controlled by `N_BATCH_FILES_FOR_VALIDATION` in [src/model/model_code/bayflood_config.py](src/model/model_code/bayflood_config.py).
+	- Current default is `4` batch files.
+
+### How to validate with all synthetic data
+
+If you want validation plots based on the **entire** synthetic set:
+
+- Set `N_BATCH_FILES_FOR_VALIDATION = None` in [src/model/model_code/bayflood_config.py](src/model/model_code/bayflood_config.py).
+
+Important consideration:
+
+- Using all synthetic data can significantly increase RAM usage and validation time.
+- Keep a bounded value (for example `4`) on shared or memory-constrained machines.
+
 
 ## Authors
 

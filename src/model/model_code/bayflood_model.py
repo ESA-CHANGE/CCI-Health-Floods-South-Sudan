@@ -30,14 +30,31 @@ import pytensor.tensor as pt
 
 from model_code.bayflood_config import (
     INCLUDE_DISTANCE,
+    INCLUDE_BREAKPOINT,
+    MU_TBREAK_PRIOR_MEAN,
+    MU_TBREAK_PRIOR_SD,
+    TBREAK_FACILITY_SPREAD_SCALE,
+    KAPPA_ALPHA,
+    KAPPA_BETA,
     N_CHAINS,
     N_DRAWS,
     N_JOBS_SCENARIOS,
     N_TUNE,
     RANDOM_SEED,
     TARGET_ACCEPT,
+    MAX_SAMPLING_CORES,
 )
 from model_code.bayflood_runtime import select_sampler
+
+
+# Canonical column order for the final combined output (observed + synthetic).
+# Used to keep every batch file's columns aligned when streaming them
+# together — see stream_concat_csv.
+FINAL_OUTPUT_COLUMNS = [
+    'hf_id', 'hf_payam', 'hf_category', 'latitude', 'longitude',
+    'buffer_pixels', 'date', 'occurrence', 'pct_flooded', 'min_distance',
+    'day_of_year', 'year', 'scenario_id', 'is_synthetic',
+]
 
 
 # ==========================================================
@@ -51,6 +68,13 @@ class PatchGENBayGEN:
     captures temporal trends, seasonality, and facility-specific effects,
     allowing us to generate realistic synthetic scenarios for risk assessment
     and decision-making.
+    
+    The structural-break component (temporal trend modeled as a sigmoid
+    transition between a pre- and post-break regime) is optional, controlled
+    by the module-level INCLUDE_BREAKPOINT flag, so the same class can be
+    applied to regions with a confirmed regime change and to regions with
+    none, without forcing break parameters onto data that can't identify
+    them.
 
     Methods
     -------
@@ -89,6 +113,10 @@ class PatchGENBayGEN:
         - wet_mask, wet_idx, fac_idx_wet: Masks and indices for flooded days
         - category_ids, cat_idx: Unique category IDs and their corresponding indices
         - fac_cat_idx: Category index for each facility
+        - include_breakpoint: Whether the structural-break block is active
+          (mirrors the module-level INCLUDE_BREAKPOINT at the time the model
+          was built; used by build_model, _print_diagnostics, and
+          generate_scenarios so they all stay consistent with each other)
         """
 
         self.df_raw = df.copy()
@@ -129,11 +157,18 @@ class PatchGENBayGEN:
         self.wet_mask = (self.O == 1)
         self.wet_idx = np.where(self.wet_mask)[0]
         self.fac_idx_wet = self.facility_idx[self.wet_idx]
+        
+        # Mirrors the module-level toggle at construction time; build_model()
+        # re-confirms this and generate_scenarios()/_print_diagnostics() read
+        # it from here so everything downstream stays consistent even if the
+        # global is changed later in the same session.
+        self.include_breakpoint = INCLUDE_BREAKPOINT
 
         print(f"  Facilities : {self.n_facilities}")
         print(f"  Total obs  : {len(self.df)}")
         print(f"  Wet days   : {self.wet_mask.sum()} ({100 * self.wet_mask.mean():.1f}%)")
         print(f"  Year range : {year_min}–{year_max}")
+        print(f"  Breakpoint modeling : {'ENABLED' if self.include_breakpoint else 'DISABLED'}")
 
         # ────────────────────── Category index as a fixed covariate ──────────────────────
         cat_order = ['SAFE', 'CHRONIC', 'UNSTABLE', 'CRITICAL']
@@ -178,7 +213,9 @@ class PatchGENBayGEN:
         """
 
         out_parts = []
-        for _, group in df.groupby('hf_id', sort=False):
+        # observed=True: hf_id is categorical (see expand_series_to_df) — this
+        # avoids pandas iterating over any unused category levels.
+        for fid, group in df.groupby('hf_id', sort=False, observed=True):
             g = group.sort_values('date').copy()
             g['O_lag'] = g['occurrence'].shift(1)
             g['P_lag'] = g['pct_flooded'].shift(1)
@@ -190,13 +227,17 @@ class PatchGENBayGEN:
     def build_model(self):
         r"""This method defines the PyMC model structure.
         It includes:
-        - Facility-specific random effects to capture unobserved heterogeneity.
-        - Temporal trend modeled with a sigmoid function to capture potential
-            non-linear changes over time.
+        - Facility-specific random effects to capture unobserved heterogeneity,
+            sampled with a non-centered parameterization.
+        - An OPTIONAL temporal trend modeled with a sigmoid function to capture
+            a structural break between a pre- and post-break regime, controlled
+            by INCLUDE_BREAKPOINT. When disabled, no t_break / kappa / delta /
+            gamma_cat terms are created at all.
         - Seasonality captured with sine and cosine terms based on the day of year.
         - Lagged effects of previous day's occurrence and percentage flooded.
-        - Category effects on both the baseline occurrence and the magnitude
-            of change post-break.
+        - A category effect on the baseline occurrence (always present), and,
+            when the breakpoint block is active, a separate category effect on
+            the magnitude of the post-break change.
         The model is hierarchical and allows for partial pooling of information
         across facilities, which can improve estimates for facilities with less data.
         The distance to water is optionally included as a separate likelihood if
@@ -209,48 +250,78 @@ class PatchGENBayGEN:
         """
 
         coords = {"facility": self.facility_ids, "category": self.category_ids}
-
+        # Re-confirm at build time in case INCLUDE_BREAKPOINT was changed
+        # after __init__ ran.
+        self.include_breakpoint = INCLUDE_BREAKPOINT
+        
         with pm.Model(coords=coords) as self.model:
-            # Random effects per facility
+            # ────────────────────── Facility random effects ──────────────────────
+            # NON-CENTERED PARAMETERIZATION — WHY THIS MATTERS:
+            # The "centered" form, facility_effect ~ Normal(0, sigma_fac), creates
+            # a joint posterior between sigma_fac and facility_effect shaped like
+            # Neal's funnel: when sigma_fac is small, the sampler is forced into a
+            # very narrow region for facility_effect; when sigma_fac is large, the
+            # geometry opens back up. NUTS struggles to move efficiently through
+            # that funnel regardless of how well-identified kappa/t_break are, so
+            # this fix is independent of — and complementary to — the breakpoint
+            # changes below. It is worth keeping even when INCLUDE_BREAKPOINT is
+            # False, since the funnel comes from the facility hierarchy itself,
+            # not from the structural-break block.
+            # Non-centering reparameterizes as effect = raw * sigma, with raw ~
+            # Normal(0, 1) sampled independently of sigma, removing the funnel.
             sigma_fac = pm.HalfNormal("sigma_fac", 0.5)
-            facility_effect = pm.Normal("facility_effect", mu=0, sigma=sigma_fac,
-                                        dims="facility")
-            # Temporal trend with sigmoid (logistic) function
-            mu_tbreak = pm.Normal("mu_tbreak", mu=0.7, sigma=0.15)
-            sigma_tbreak = pm.HalfNormal("sigma_tbreak", 0.10)
-            t_break = pm.Normal("t_break", mu=mu_tbreak, sigma=sigma_tbreak,
-                                dims="facility")
-            sigma_delta = pm.HalfNormal("sigma_delta", 0.5)
-            delta = pm.Normal("delta", mu=0, sigma=sigma_delta, dims="facility")
-            kappa = pm.HalfNormal("kappa", sigma=5.0)
+            facility_effect_raw = pm.Normal("facility_effect_raw", mu=0, sigma=1, 
+                                            dims="facility")
+            facility_effect     = pm.Deterministic(
+                "facility_effect", facility_effect_raw * sigma_fac, dims="facility"
+            )
+            
+            if self.include_breakpoint:
+                # ────────────────────── Structural break (optional) ──────────────────────
+                # mu_tbreak / sigma_tbreak here come from MU_TBREAK_PRIOR_MEAN /
+                # MU_TBREAK_PRIOR_SD at the top of the script — set these from
+                # your own EDA per the comment block above CONFIGURATION.    
+                mu_tbreak = pm.Normal("mu_tbreak", mu=MU_TBREAK_PRIOR_MEAN, 
+                                      sigma=MU_TBREAK_PRIOR_SD)
+                sigma_tbreak = pm.HalfNormal("sigma_tbreak", TBREAK_FACILITY_SPREAD_SCALE)
+                # Non-centered per-facility break location (same funnel rationale
+                # as facility_effect above).
+                t_break_raw = pm.Normal("t_break_raw", mu=0, sigma=1, dims="facility")
+                t_break     = pm.Deterministic(
+                    "t_break", mu_tbreak + sigma_tbreak * t_break_raw, dims="facility"
+                )
+                sigma_delta = pm.HalfNormal("sigma_delta", 0.5)
+                delta_raw = pm.Normal("delta_raw", mu=0, sigma=1, dims="facility")
+                delta       = pm.Deterministic("delta", delta_raw * sigma_delta,
+                                               dims="facility")
+                # kappa: tight Gamma prior — see the CONFIGURATION comment block
+                # for the rationale (keeps it a genuine prior, not a fixed value,
+                # while removing the near-flat tail that drove the v2.2 SD blow-up).
+                kappa = pm.Gamma("kappa", alpha = KAPPA_ALPHA, beta=KAPPA_BETA)
 
-            transition_all = pm.math.sigmoid(
-                kappa * (self.t_year - t_break[self.facility_idx])
-            )
-            transition_wet = pm.math.sigmoid(
-                kappa * (self.t_year[self.wet_idx] - t_break[self.fac_idx_wet])
-            )
+                transition_all = pm.math.sigmoid(
+                    kappa * (self.t_year - t_break[self.facility_idx])
+                )
+                transition_wet = pm.math.sigmoid(
+                    kappa * (self.t_year[self.wet_idx] - t_break[self.fac_idx_wet])
+                )
+                # Category effect on the MAGNITUDE of the post-break change.
+                # Only meaningful if there is a post-break change to begin with,
+                # so this is defined only inside the INCLUDE_BREAKPOINT branch.
+                gamma_cat = pm.Normal("gamma_cat", mu=0, sigma=0.5, dims="category")
+                
             # Priors for fixed effects
             beta0 = pm.Normal("beta0", 0, 1)
             beta_lag = pm.Normal("beta_lag", 0, 1)
             beta_cos = pm.Normal("beta_cos", 0, 0.5)
             beta_sin = pm.Normal("beta_sin", 0, 0.5)
 
-            # Fixed effect of category on occurrence
-            # Prior centered at 0: the model learns the difference
-            # between categories without forcing direction
-            # Effect of category on the baseline intercept (pre-break)
-            beta_cat = pm.Normal(
-                "beta_cat", mu=0, sigma=1,
-                dims="category"
-            )
+            # Fixed effect of category on the baseline occurrence intercept.
+            # Prior centered at 0: the model learns the difference between
+            # categories without forcing direction. This is independent of the
+            # breakpoint and stays in the model whether or not a break is modeled.
+            beta_cat = pm.Normal("beta_cat", mu=0, sigma=1, dims="category")
 
-            # Effect of category on the MAGNITUDE of the post-break change
-            # Allows UNSTABLE to have larger deltas than CHRONIC
-            gamma_cat = pm.Normal(
-                "gamma_cat", mu=0, sigma=0.5,
-                dims="category"
-            )
             # Linear predictor for occurrence with interaction between category and transition
             logit_p = (
                 beta0
@@ -259,8 +330,13 @@ class PatchGENBayGEN:
                 + beta_lag * self.O_lag
                 + beta_cos * self.cos_t
                 + beta_sin * self.sin_t
-                + (delta[self.facility_idx] + gamma_cat[self.cat_idx]) * transition_all
             )
+            if self.include_breakpoint:
+                # Interaction between category and the post-break transition
+                logit_p = logit_p + (
+                    delta[self.facility_idx] + gamma_cat[self.cat_idx]
+                ) * transition_all
+            
             # Likelihood for occurrence
             pm.Bernoulli("O_obs", p=pm.math.sigmoid(logit_p), observed=self.O)
 
@@ -269,17 +345,22 @@ class PatchGENBayGEN:
             beta_lag_P = pm.Normal("beta_lag_P", 0, 1)
             beta_cos_P = pm.Normal("beta_cos_P", 0, 1)
             beta_sin_P = pm.Normal("beta_sin_P", 0, 1)
-            sigma_delta_P = pm.HalfNormal("sigma_delta_P", 0.5)
-            delta_P = pm.Normal("delta_P", mu=0, sigma=sigma_delta_P, dims="facility")
-
-            mu_P = pm.math.sigmoid(
+            
+            mu_P_lin = (
                 beta0_P
                 + facility_effect[self.fac_idx_wet]
                 + beta_lag_P * self.P_lag[self.wet_idx]
                 + beta_cos_P * self.cos_t[self.wet_idx]
                 + beta_sin_P * self.sin_t[self.wet_idx]
-                + delta_P[self.fac_idx_wet] * transition_wet
             )
+            if self.include_breakpoint:
+                sigma_delta_P = pm.HalfNormal("sigma_delta_P", 0.5)
+                delta_P_raw   = pm.Normal("delta_P_raw", mu=0, sigma=1, dims="facility")
+                delta_P       = pm.Deterministic("delta_P", delta_P_raw * sigma_delta_P,
+                                                 dims="facility")
+                mu_P_lin = mu_P_lin + delta_P[self.fac_idx_wet] * transition_wet
+            
+            mu_P  = pm.math.sigmoid(mu_P_lin)
             phi = pm.Gamma("phi", alpha=6, beta=1)
             alpha = pm.math.clip(mu_P * phi, 0.1, 100)
             beta_ = pm.math.clip((1 - mu_P) * phi, 0.1, 100)
@@ -290,16 +371,20 @@ class PatchGENBayGEN:
                 # Modeling distance to water on flooded days as a separate likelihood
                 beta0_D = pm.Normal("beta0_D", 2, 1)
                 beta_lag_D = pm.Normal("beta_lag_D", 0, 1)
-                sigma_delta_D = pm.HalfNormal("sigma_delta_D", 0.5)
-                delta_D = pm.Normal("delta_D", mu=0, sigma=sigma_delta_D,
-                                    dims="facility")
-                mu_D = pm.math.clip(
+                
+                mu_D_lin = (
                     beta0_D
                     + facility_effect[self.fac_idx_wet]
                     + beta_lag_D * pt.math.log1p(self.P_lag[self.wet_idx] * 100)
-                    + delta_D[self.fac_idx_wet] * transition_wet,
-                    -5, 5
                 )
+                if self.include_breakpoint:
+                    sigma_delta_D = pm.HalfNormal("sigma_delta_D", 0.5)
+                    delta_D_raw   = pm.Normal("delta_D_raw", mu=0, sigma=1, dims="facility")
+                    delta_D       = pm.Deterministic("delta_D", delta_D_raw * sigma_delta_D,
+                                                     dims="facility")
+                    mu_D_lin = mu_D_lin + delta_D[self.fac_idx_wet] * transition_wet
+                
+                mu_D = pm.math.clip(mu_D_lin, -5, 5)
                 sigma_D = pm.HalfNormal("sigma_D", 0.5)
                 # Likelihood for log distance to water on flooded days
                 pm.LogNormal("D_obs", mu=mu_D, sigma=sigma_D,
@@ -319,6 +404,20 @@ class PatchGENBayGEN:
         The sampling is performed within the context of the defined PyMC
         model, and the resulting trace is stored in the instance for later
         analysis and scenario generation.
+        
+        Note on chains: chains defaults to N_CHAINS = 4. Running at least 4
+        chains gives R-hat a much better chance of catching multimodal or
+        poorly identified posteriors — with only 2 chains, both can land in
+        the same mode by chance and look converged when they are not.
+
+        Note on memory: immediately after sampling, the non-centered "_raw"
+        variables (facility_effect_raw, t_break_raw, delta_raw, delta_P_raw,
+        delta_D_raw) are dropped from the trace, before diagnostics are
+        computed and before the trace is saved. They are sampling-time
+        machinery only — generate_scenarios() and the diagnostics summary
+        both use the transformed (non-raw) variables — so keeping both
+        copies around was pure overhead, roughly doubling the storage cost
+        of every facility-level parameter.
 
         Parameters
         ----------
@@ -340,11 +439,13 @@ class PatchGENBayGEN:
         -------
         trace : pm.backends.base.MultiTrace or pm.backends.base.JAXTrace
             The trace object containing the sampled posterior distribution
-            of the model parameters.
+            of the model parameters (with non-centered raw variables removed).
         """
 
         sampler = select_sampler()
-        cores = min(chains, os.cpu_count() or 1)
+        # Cap cores for the CPU-fallback sampler specifically — JAX backends
+        # parallelize chains within one process and aren't affected by this.
+        cores   = min(chains, MAX_SAMPLING_CORES, os.cpu_count() or 1)
 
         print(f"\nSampling: {chains} chains × {draws} draws ({tune} tune)")
         print(f"  Backend : {sampler} | Cores : {cores}")
@@ -382,16 +483,30 @@ class PatchGENBayGEN:
                     random_seed=random_seed,
                     progressbar=True,
                 )
-
+        # ── Drop non-centered "_raw" variables from the trace (memory) ──
+        raw_var_names = ["facility_effect_raw"]
+        if self.include_breakpoint:
+            raw_var_names += ["t_break_raw", "delta_raw", "delta_P_raw"]
+            if INCLUDE_DISTANCE:
+                raw_var_names += ["delta_D_raw"]
+        present = [v for v in raw_var_names if v in self.trace.posterior.data_vars]
+        if present:
+            self.trace.posterior = self.trace.posterior.drop_vars(present)
+            print(f"  Dropped {len(present)} non-centered raw variable(s) from "
+                  f"trace to reduce memory: {', '.join(present)}")
+        
         self._print_diagnostics()
         return self.trace
 
     def _print_diagnostics(self):
-        summary = az.summary(self.trace, var_names=[
+        base_vars = [
             "beta0", "beta_lag", "beta_cos", "beta_sin",
-            "beta0_P", "beta_lag_P", "phi",
-            "sigma_fac", "mu_tbreak", "sigma_tbreak", "kappa",
-        ])
+            "beta0_P", "beta_lag_P", "phi", "sigma_fac",
+        ]
+        if self.include_breakpoint:
+            base_vars += ["mu_tbreak", "sigma_tbreak", "kappa"]
+
+        summary = az.summary(self.trace, var_names=base_vars)
         print("\n── Convergence diagnostics ──")
         print(summary.to_string())
         # Check for potential convergence issues based on R-hat and ESS
@@ -417,37 +532,20 @@ class PatchGENBayGEN:
         start_date: str = "2026-01-01",
         t_year_sim: float = 1.0,
         n_jobs: int = N_JOBS_SCENARIOS,
-    ) -> pd.DataFrame:
-        r"""This method generates synthetic scenarios in parallel using joblib.
-        It divides the total number of scenarios (n_scenarios) into batches that
-        are processed by multiple workers. Each worker uses its own numpy.random.Generator
-        with a different seed to ensure reproducibility and independence of the
-        generated scenarios. The method collects the results from all workers and
-        concatenates them into a single DataFrame containing all the generated scenarios.
+        output_dir: str = None,
+    ) -> list[str]:
+        r"""Generate synthetic scenarios in parallel and stream batches to disk."""
 
-        n_jobs = -1 → uses all available CPUs.
-        n_jobs =  1 → sequential execution (for debugging).
+        if n_jobs == -1:
+            warnings.warn(
+                "generate_scenarios called with n_jobs=-1 (all visible CPU "
+                "cores). This is not recommended on a shared machine — "
+                "consider passing an explicit, smaller n_jobs instead."
+            )
 
-        Parameters
-        ----------
-        n_scenarios : int
-            Total number of synthetic scenarios to generate.
-        days : int
-            Number of days to simulate for each scenario.
-        start_date : str
-            Starting date for the simulation in "YYYY-MM-DD" format.
-        t_year_sim : float
-            Time in years for the simulation, scaled to the range of the training data.
-        n_jobs : int
-            Number of parallel jobs to run. Use -1 to utilize all available CPUs.
-
-        Returns
-        -------
-        df_synthetic : pd.DataFrame
-            DataFrame containing the generated synthetic scenarios with columns:
-            - 'hf_id', 'hf_payam', 'latitude', 'longitude', 'buffer_pixels', 'date', 'occurrence',
-              'pct_flooded', 'min_distance', 'day_of_year', 'year', 'scenario_id', 'is_synthetic'
-        """
+        if output_dir is None:
+            output_dir = os.path.join(os.getcwd(), "synthetic_scenarios_tmp")
+        os.makedirs(output_dir, exist_ok=True)
 
         posterior = self.trace.posterior
 
@@ -455,14 +553,18 @@ class PatchGENBayGEN:
         param_names_scalar = [
             "beta0", "beta_lag", "beta_cos", "beta_sin",
             "beta0_P", "beta_lag_P", "beta_cos_P", "beta_sin_P",
-            "phi", "kappa",
+            "phi",
         ]
-        param_names_fac = [
-            "facility_effect", "t_break", "delta", "delta_P", "beta_cat", "gamma_cat"
-        ]
+        param_names_fac = ["facility_effect", "beta_cat"]
+
+        if self.include_breakpoint:
+            param_names_scalar += ["kappa"]
+            param_names_fac += ["t_break", "delta", "delta_P", "gamma_cat"]
+
         if INCLUDE_DISTANCE:
             param_names_scalar += ["beta0_D", "beta_lag_D", "sigma_D"]
-            param_names_fac += ["delta_D"]
+            if self.include_breakpoint:
+                param_names_fac += ["delta_D"]
 
         posterior_dict = {}
         for name in param_names_scalar + param_names_fac:
@@ -470,7 +572,7 @@ class PatchGENBayGEN:
 
         # Facilities Metadata for scenario generation
         meta = (
-            self.df.groupby('hf_id')
+            self.df.groupby('hf_id', observed=True)
             .agg(
                 latitude=('latitude', 'first'),
                 longitude=('longitude', 'first'),
@@ -482,10 +584,11 @@ class PatchGENBayGEN:
             .loc[self.facility_ids]
             .reset_index()
         )
-        # Convert metadata to dict of numpy arrays for joblib
+
         meta_dict = {
             'hf_id': meta['hf_id'].values,
             'hf_payam': meta['hf_payam'].values,
+            'hf_category': self.category_ids[self.fac_cat_idx],
             'latitude': meta['latitude'].values,
             'longitude': meta['longitude'].values,
             'buffer_pixels': meta['buffer_pixels'].values,
@@ -517,9 +620,10 @@ class PatchGENBayGEN:
         seeds = np.random.SeedSequence(RANDOM_SEED).spawn(n_workers)
         seeds_int = [int(s.generate_state(1)[0]) for s in seeds]
 
-        print(f"Generating {n_scenarios} scenarios on {n_workers} workers (joblib)...")
+        print(f"Generating {n_scenarios} scenarios on {n_workers} worker(s) "
+              f"(joblib, streamed to {output_dir})...")
 
-        results = Parallel(n_jobs=n_jobs, backend="loky", verbose=5)(
+        batch_paths = Parallel(n_jobs=n_jobs, backend="loky", verbose=5)(
             delayed(_generate_scenario_batch)(
                 scen_ids=list(batch),
                 posterior_dict=posterior_dict,
@@ -532,24 +636,27 @@ class PatchGENBayGEN:
                 n_fac=n_fac,
                 D_max_fac=D_max_fac,
                 include_distance=INCLUDE_DISTANCE,
+                include_breakpoint=self.include_breakpoint,
+                output_dir=output_dir,
+                batch_id=i,
                 seed=seeds_int[i],
             )
             for i, batch in enumerate(scen_batches)
         )
 
-        df_synthetic = pd.concat(results, ignore_index=True)
-        print(f"\nGenerated {len(df_synthetic):,} synthetic records "
-              f"({n_scenarios} scenarios × {n_fac} facilities × {days} days)")
-        return df_synthetic
+        print(f"\nWrote {len(batch_paths)} batch file(s) "
+              f"({n_scenarios} scenarios × {n_fac} facilities × {days} days) "
+              f"to {output_dir}")
+        return batch_paths
 
 
 # ==========================================================
-# 3. SCENARIO GENERATION  — parallelized with joblib
+# 3. SCENARIO GENERATION  — parallelized with joblib, streamed to disk
 # ==========================================================
 def _generate_scenario_batch(
-    scen_ids,           # list of scenario IDs to generate in this worker
-    posterior_dict,     # dict with numpy arrays of the posterior (chain, draw, ...)
-    meta_dict,          # dict with metadata of facilities
+    scen_ids,
+    posterior_dict,
+    meta_dict,
     cos_t_sim,
     sin_t_sim,
     dates,
@@ -558,53 +665,12 @@ def _generate_scenario_batch(
     n_fac,
     D_max_fac,
     include_distance,
+    include_breakpoint,
+    output_dir,
+    batch_id,
     seed,
 ):
-    r"""This function generates a batch of scenarios independently. It
-    receives all the necessary data as serializable numpy arrays (no
-    PyMC/PyTensor objects) to allow for parallel execution with joblib.
-    Each worker will call this function with a subset of scenario IDs to
-    generate, and it will return a list of DataFrames, one for each scenario,
-    which can then be concatenated into a single DataFrame for all scenarios.
-    The function performs the following steps:
-    1. Draws parameter values from the posterior distribution for each scenario.
-    2. Simulates occurrence, percentage flooded, and distance to water for
-        each facility and day based on the drawn parameters and the model structure.
-    3. Constructs a DataFrame for each scenario with the simulated data and
-        metadata, which can be used for analysis or visualization.
-
-    Parameters
-    ----------
-    scen_ids : list
-        List of scenario IDs to generate in this worker.
-    posterior_dict : dict
-        Dictionary with numpy arrays of the posterior (chain, draw, ...).
-    meta_dict : dict
-        Dictionary with metadata of facilities.
-    cos_t_sim : numpy.ndarray
-        Cosine of time for simulation.
-    sin_t_sim : numpy.ndarray
-        Sine of time for simulation.
-    dates : numpy.ndarray
-        Array of dates for the simulation.
-    doys : numpy.ndarray
-        Array of day-of-year values for the simulation.
-    t_year_sim : numpy.ndarray
-        Array of time in years for the simulation.
-    n_fac : int
-        Number of facilities.
-    D_max_fac : int
-        Maximum distance for facilities.
-    include_distance : bool
-        Whether to include distance in the simulation.
-    seed : int
-        Random seed for reproducibility.
-
-    Returns
-    -------
-    pd.DataFrame
-        DataFrame containing the generated scenarios for the given scenario IDs.
-    """
+    r"""Generate one worker batch and stream it to one CSV file."""
 
     rng = np.random.default_rng(seed)
     days = len(dates)
@@ -613,130 +679,153 @@ def _generate_scenario_batch(
     n_post = posterior_dict['beta0'].shape[1]
 
     def draw_scalar(name):
-        r"""Draws a scalar parameter value from the posterior distribution
-        by randomly selecting a chain and a draw.
-        """
-
         c = rng.integers(n_chains)
         d = rng.integers(n_post)
         return float(posterior_dict[name][c, d])
 
     def draw_fac(name):
-        r"""Draws a facility-specific parameter value from the posterior
-        distribution by randomly selecting a chain and a draw.
-        """
-
         c = rng.integers(n_chains)
         d = rng.integers(n_post)
-        return posterior_dict[name][c, d]   # (n_fac,)
+        return posterior_dict[name][c, d]
 
-    all_records = []
+    batch_path = os.path.join(output_dir, f"scenario_batch_{batch_id:03d}.csv")
 
-    for scen in scen_ids:
-        # Draw parameters for this scenario
-        beta0 = draw_scalar("beta0")
-        beta_lag = draw_scalar("beta_lag")
-        beta_cos = draw_scalar("beta_cos")
-        beta_sin = draw_scalar("beta_sin")
-        beta0_P = draw_scalar("beta0_P")
-        beta_lag_P = draw_scalar("beta_lag_P")
-        beta_cos_P = draw_scalar("beta_cos_P")
-        beta_sin_P = draw_scalar("beta_sin_P")
-        phi = draw_scalar("phi")
+    with open(batch_path, "w", newline="") as f:
+        for j, scen in enumerate(scen_ids):
+            beta0 = draw_scalar("beta0")
+            beta_lag = draw_scalar("beta_lag")
+            beta_cos = draw_scalar("beta_cos")
+            beta_sin = draw_scalar("beta_sin")
+            beta0_P = draw_scalar("beta0_P")
+            beta_lag_P = draw_scalar("beta_lag_P")
+            beta_cos_P = draw_scalar("beta_cos_P")
+            beta_sin_P = draw_scalar("beta_sin_P")
+            phi = draw_scalar("phi")
+            beta_cat = draw_fac("beta_cat")
 
-        if include_distance:
-            beta0_D = draw_scalar("beta0_D")
-            beta_lag_D = draw_scalar("beta_lag_D")
-            sigma_D = draw_scalar("sigma_D")
-            delta_D = draw_fac("delta_D")
+            if include_distance:
+                beta0_D = draw_scalar("beta0_D")
+                beta_lag_D = draw_scalar("beta_lag_D")
+                sigma_D = draw_scalar("sigma_D")
+                if include_breakpoint:
+                    delta_D = draw_fac("delta_D")
 
-        fac_eff = draw_fac("facility_effect")
-        t_break = draw_fac("t_break")
-        delta = draw_fac("delta")
-        delta_P = draw_fac("delta_P")
-        kappa = draw_scalar("kappa")
-        beta_cat = draw_fac("beta_cat")
-        gamma_cat = draw_fac("gamma_cat")
+            fac_eff = draw_fac("facility_effect")
 
-        transition_fac = 1.0 / (1.0 + np.exp(-kappa * (t_year_sim - t_break)))
+            if include_breakpoint:
+                t_break = draw_fac("t_break")
+                delta = draw_fac("delta")
+                delta_P = draw_fac("delta_P")
+                kappa = draw_scalar("kappa")
+                gamma_cat = draw_fac("gamma_cat")
+                transition_fac = 1.0 / (1.0 + np.exp(-kappa * (t_year_sim - t_break)))
+            else:
+                transition_fac = np.zeros(n_fac, dtype=np.float32)
 
-        O_sim = np.zeros((n_fac, days), dtype=np.int8)
-        P_sim = np.zeros((n_fac, days), dtype=np.float32)
-        D_sim = np.zeros((n_fac, days), dtype=np.float32)
+            O_sim = np.zeros((n_fac, days), dtype=np.int8)
+            P_sim = np.zeros((n_fac, days), dtype=np.float32)
+            D_sim = np.zeros((n_fac, days), dtype=np.float32)
 
-        lag_O = meta_dict['last_O'].astype(np.float32)
-        lag_P = meta_dict['last_P'].astype(np.float32)
+            lag_O = meta_dict['last_O'].astype(np.float32)
+            lag_P = meta_dict['last_P'].astype(np.float32)
 
-        # Simulate day by day to capture lagged effects
-        for d in range(days):
-            cos_d = cos_t_sim[d]
-            sin_d = sin_t_sim[d]
+            for d in range(days):
+                cos_d = cos_t_sim[d]
+                sin_d = sin_t_sim[d]
 
-            logit = (
-                beta0
-                + fac_eff
-                + beta_cat[meta_dict['fac_cat_idx']]
-                + beta_lag * lag_O
-                + beta_cos * cos_d
-                + beta_sin * sin_d
-                + (delta + gamma_cat[meta_dict['fac_cat_idx']]) * transition_fac
-            )
-            p_occ = 1.0 / (1.0 + np.exp(-logit))
-            O_d = (rng.random(n_fac) < p_occ).astype(np.int8)
-
-            wet = O_d == 1
-            P_d = np.zeros(n_fac, dtype=np.float32)
-            if wet.any():
-                mu_P = 1.0 / (1.0 + np.exp(-(
-                    beta0_P
-                    + fac_eff[wet]
-                    + beta_lag_P * lag_P[wet]
-                    + beta_cos_P * cos_d
-                    + beta_sin_P * sin_d
-                    + delta_P[wet] * transition_fac[wet]
-                )))
-                a = np.clip(mu_P * phi, 0.1, 100)
-                b = np.clip((1 - mu_P) * phi, 0.1, 100)
-                P_d[wet] = rng.beta(a, b).astype(np.float32)
-
-            D_d = np.where(O_d == 0, D_max_fac, 0.0).astype(np.float32)
-
-            if include_distance and wet.any():
-                mu_D = np.clip(
-                    beta0_D
-                    + fac_eff[wet]
-                    + beta_lag_D * np.log1p(lag_P[wet] * 100)
-                    + delta_D[wet] * transition_fac[wet],
-                    -5, 5
+                logit = (
+                    beta0
+                    + fac_eff
+                    + beta_cat[meta_dict['fac_cat_idx']]
+                    + beta_lag * lag_O
+                    + beta_cos * cos_d
+                    + beta_sin * sin_d
                 )
-                D_scaled_d = rng.lognormal(mu_D, sigma_D)
-                D_d[wet] = (np.clip(D_scaled_d, 0.0, 1.0) * D_max_fac[wet]).astype(np.float32)
+                if include_breakpoint:
+                    logit = logit + (
+                        delta + gamma_cat[meta_dict['fac_cat_idx']]
+                    ) * transition_fac
+                p_occ = 1.0 / (1.0 + np.exp(-logit))
+                O_d = (rng.random(n_fac) < p_occ).astype(np.int8)
 
-            O_sim[:, d] = O_d
-            P_sim[:, d] = P_d
-            D_sim[:, d] = D_d
-            lag_O = O_d.astype(np.float32)
-            lag_P = P_d
+                wet = O_d == 1
+                P_d = np.zeros(n_fac, dtype=np.float32)
+                if wet.any():
+                    mu_P_lin = (
+                        beta0_P
+                        + fac_eff[wet]
+                        + beta_lag_P * lag_P[wet]
+                        + beta_cos_P * cos_d
+                        + beta_sin_P * sin_d
+                    )
+                    if include_breakpoint:
+                        mu_P_lin = mu_P_lin + delta_P[wet] * transition_fac[wet]
+                    mu_P = 1.0 / (1.0 + np.exp(-mu_P_lin))
+                    a = np.clip(mu_P * phi, 0.1, 100)
+                    b = np.clip((1 - mu_P) * phi, 0.1, 100)
+                    P_d[wet] = rng.beta(a, b).astype(np.float32)
 
-        fac_rep = np.repeat(np.arange(n_fac), days)
-        date_til = np.tile(dates, n_fac)
-        doy_til = np.tile(doys, n_fac)
+                D_d = np.where(O_d == 0, D_max_fac, 0.0).astype(np.float32)
 
-        df_scen = pd.DataFrame({
-            'hf_id': meta_dict['hf_id'][fac_rep],
-            'hf_payam': meta_dict['hf_payam'][fac_rep],
-            'latitude': meta_dict['latitude'][fac_rep],
-            'longitude': meta_dict['longitude'][fac_rep],
-            'buffer_pixels': meta_dict['buffer_pixels'][fac_rep],
-            'date': date_til,
-            'occurrence': O_sim.ravel(),
-            'pct_flooded': P_sim.ravel(),
-            'min_distance': D_sim.ravel(),
-            'day_of_year': doy_til,
-            'year': pd.Timestamp(dates[0]).year,
-            'scenario_id': scen,
-            'is_synthetic': 1,
-        })
-        all_records.append(df_scen)
+                if include_distance and wet.any():
+                    mu_D_lin = (
+                        beta0_D
+                        + fac_eff[wet]
+                        + beta_lag_D * np.log1p(lag_P[wet] * 100)
+                    )
+                    if include_breakpoint:
+                        mu_D_lin = mu_D_lin + delta_D[wet] * transition_fac[wet]
+                    mu_D = np.clip(mu_D_lin, -5, 5)
+                    D_scaled_d = rng.lognormal(mu_D, sigma_D)
+                    D_d[wet] = (np.clip(D_scaled_d, 0.0, 1.0) * D_max_fac[wet]).astype(np.float32)
 
-    return pd.concat(all_records, ignore_index=True)
+                O_sim[:, d] = O_d
+                P_sim[:, d] = P_d
+                D_sim[:, d] = D_d
+                lag_O = O_d.astype(np.float32)
+                lag_P = P_d
+
+            fac_rep = np.repeat(np.arange(n_fac), days)
+            date_til = np.tile(dates, n_fac)
+            doy_til = np.tile(doys, n_fac)
+
+            df_scen = pd.DataFrame({
+                'hf_id': meta_dict['hf_id'][fac_rep],
+                'hf_payam': meta_dict['hf_payam'][fac_rep],
+                'hf_category': meta_dict['hf_category'][fac_rep],
+                'latitude': meta_dict['latitude'][fac_rep],
+                'longitude': meta_dict['longitude'][fac_rep],
+                'buffer_pixels': meta_dict['buffer_pixels'][fac_rep],
+                'date': date_til,
+                'occurrence': O_sim.ravel(),
+                'pct_flooded': P_sim.ravel(),
+                'min_distance': D_sim.ravel(),
+                'day_of_year': doy_til,
+                'year': pd.Timestamp(dates[0]).year,
+                'scenario_id': scen,
+                'is_synthetic': 1,
+            })
+            for col in ('hf_id', 'hf_payam', 'hf_category'):
+                df_scen[col] = df_scen[col].astype('category')
+
+            df_scen.to_csv(f, header=(j == 0), index=False)
+            del df_scen
+
+    return batch_path
+
+
+def stream_concat_csv(input_paths, output_path, columns=None, chunksize=200_000):
+    r"""Append CSV files into one output by streaming fixed-size chunks."""
+
+    for p in input_paths:
+        for chunk in pd.read_csv(p, chunksize=chunksize):
+            if columns is not None:
+                chunk = chunk.reindex(columns=columns)
+            chunk.to_csv(output_path, mode='a', header=False, index=False)
+
+
+def load_scenarios_sample(batch_paths, max_files=None):
+    r"""Load only a bounded subset of scenario batch files into memory."""
+
+    paths = batch_paths if max_files is None else batch_paths[:max_files]
+    return pd.concat((pd.read_csv(p) for p in paths), ignore_index=True)

@@ -78,9 +78,9 @@ def validate_scenarios(df_obs: pd.DataFrame, df_syn: pd.DataFrame,
     ax.legend()
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(os.path.join(output_dir, 'val_monthly_frequency_v2_2_pa.png'), dpi=150)
+    fig.savefig(os.path.join(output_dir, 'val_monthly_frequency_v2_4.png'), dpi=150)
     plt.close(fig)
-    print("  Saved: val_monthly_frequency_v2_2_pa.png")
+    print("  Saved: val_monthly_frequency_v2_4.png")
 
     def spell_lengths(occ):
         r"""This helper function calculates the lengths of consecutive flooding
@@ -143,9 +143,9 @@ def validate_scenarios(df_obs: pd.DataFrame, df_syn: pd.DataFrame,
     axes[1].legend()
     axes[1].grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(os.path.join(output_dir, 'val_spell_lengths_v2_2_pa.png'), dpi=150)
+    fig.savefig(os.path.join(output_dir, 'val_spell_lengths_v2_4.png'), dpi=150)
     plt.close(fig)
-    print("  Saved: val_spell_lengths_v2_2_pa.png")
+    print("  Saved: val_spell_lengths_v2_4.png")
 
     # Plot distribution of percentage flooded on flooded days with confidence intervals from synthetic scenarios
     obs_pct = df_obs.loc[df_obs['occurrence'] == 1, 'pct_flooded'].values * 100
@@ -157,9 +157,9 @@ def validate_scenarios(df_obs: pd.DataFrame, df_syn: pd.DataFrame,
     ax.legend()
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(os.path.join(output_dir, 'val_pct_flooded_v2_2_pa.png'), dpi=150)
+    fig.savefig(os.path.join(output_dir, 'val_pct_flooded_v2_4.png'), dpi=150)
     plt.close(fig)
-    print("  Saved: val_pct_flooded_v2_2_pa.png")
+    print("  Saved: val_pct_flooded_v2_4.png")
 
     # ── 4. Per-facility mean flood frequency ─────────────────────────────
     obs_fac_mean = df_obs.groupby('hf_id')['occurrence'].mean()
@@ -207,7 +207,7 @@ def validate_scenarios(df_obs: pd.DataFrame, df_syn: pd.DataFrame,
     ax.legend(title='Category', framealpha=0.8)
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    fig.savefig(os.path.join(output_dir, 'val_per_facility_v2_2_pa.png'), dpi=150)
+    fig.savefig(os.path.join(output_dir, 'val_per_facility_v2_4.png'), dpi=150)
     plt.close(fig)
-    print("  Saved: val_per_facility_v2_2_pa.png")
-    print("\nValidación completa.")
+    print("  Saved: val_per_facility_v2_4.png")
+    print("\nValidation completed.")
