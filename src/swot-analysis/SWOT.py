@@ -1454,7 +1454,7 @@ class Results:
 
         return self.gdf.loc[self.gdf['ID']==_id].sort_index()
     
-    def plot(self, id, field='Median_anomaly'):
+    def plot(self, id, field='Median_anomaly', **kwargs):
         r"""Plot one SWOT descriptor time series for a selected ID.
 
         Parameters
@@ -1467,7 +1467,7 @@ class Results:
         matplotlib.axes.Axes
         """
 
-        return self.gdf.loc[self.gdf['ID']==id][field].dropna().plot(title=id, figsize=(10,4))
+        return self.gdf.loc[self.gdf['ID']==id][field].dropna().sort_index().plot(title=id, figsize=(10,4))
     
     def plotWithViirs(self, id=None, field='FloodFraction', plot=True):
         r"""Compare SWOT and VIIRS series and optionally plot trends.
