@@ -77,3 +77,5 @@ mmef@gmv.com
 Miguel González Jiménez
 mgonzalez.j@gmv.com
 
+## License
+This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
