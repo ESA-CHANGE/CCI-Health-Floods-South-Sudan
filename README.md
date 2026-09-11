@@ -79,3 +79,6 @@ mgonzalez.j@gmv.com
 
 ## License
 This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
+
+## Acknowledgments
+This work was developed within the Climate-Health Adaptation Through New Generation Earth Observations (CHANGE) project and acknowledges the contribution of the European Space Agency and collaborating institutions.
