@@ -20,7 +20,9 @@ The use of multi-sensor data for flood detection in South Sudan contributes to b
 
 This study used data from the *Level-2 KaRIn High Rate Raster Product* ([L2_HR_Raster Version D](https://podaac.jpl.nasa.gov/dataset/SWOT_L2_HR_Raster_250m_D)), provided at 100 m spatial resolution and distributed in 64 km × 64 km tiles. This product is derived from the *Level-2 High-Rate Pixel Cloud product* following several processing steps, including conversion to a continuous raster grid, quality filtering, geometric and radiometric corrections, and removal of invalid observations.
 
-A total number of **864 SWOT frames** from both ascending and descending orbits were used for the period from **July 2023 to December 2025**, with an average revisit time of approximately 10 days over the AOI. When multiple versions of the same frame were available, only the most recent PGD0 product was selected according to official recommendations.
+A total number of **898 SWOT frames** from both ascending and descending orbits were used for the period from **July 2023 to December 2025**, with an average revisit time of approximately 10 days over the AOI. When multiple versions of the same frame were available, only the most recent PGD0 product was selected according to official recommendations.
+
+A sample raw SWOT frame can be found in the '/data/inputs' folder of the parent repository.
 
 ### Workflow - steps performed :bar_chart:
 

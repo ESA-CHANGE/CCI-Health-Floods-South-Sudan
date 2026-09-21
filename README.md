@@ -63,6 +63,11 @@ python -m ipykernel install --user --name cci-health-floods --display_name ""CCI
 
 Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the official JAX installation selector for the exact wheel.
 
+### Input data
+
+* Regarding the SWOT-mission flood data analysis, this study has used data from the *Level-2 KaRIn High Rate Raster Product* ([L2\_HR\_Raster Version D](https://podaac.jpl.nasa.gov/dataset/SWOT_L2_HR_Raster_250m_D)), provided at 100 m spatial resolution and distributed in 64 km × 64 km tiles. A total number of **898 SWOT frames** inside the AOI from both ascending and descending orbits were used for the period from **July 2023 to December 2025**. A sample file can be found `/data/inputs` folder of the repository.
+
+
 ### Executing program
 
 This project is divided in differnt modules. You will find guidence on how to execute it inside ```./src``` folder.
@@ -78,7 +83,10 @@ Miguel González Jiménez
 mgonzalez.j@gmv.com
 
 ## License
+
 This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
 
 ## Acknowledgments
+
 This work was developed within the Climate-Health Adaptation Through New Generation Earth Observations (CHANGE) project and acknowledges the contribution of the European Space Agency and collaborating institutions. We would like to thank Sylvain Biancamaria--scientific researcher at CNRS (French National Centre for Scientific Research)--, for his guidance and recommendations on noise filtering of SWOT frames.
+
