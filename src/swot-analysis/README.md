@@ -22,7 +22,7 @@ This study used data from the *Level-2 KaRIn High Rate Raster Product* ([L2_HR_R
 
 A total number of **898 SWOT frames** from both ascending and descending orbits were used for the period from **July 2023 to December 2025**, with an average revisit time of approximately 10 days over the AOI. When multiple versions of the same frame were available, only the most recent PGD0 product was selected according to official recommendations.
 
-A sample raw SWOT frame can be found in the '/data/inputs' folder of the parent repository.
+A sample raw SWOT frame can be found in the `/data/inputs` folder of the parent repository.
 
 ### Workflow - steps performed :bar_chart:
 
