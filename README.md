@@ -81,4 +81,4 @@ mgonzalez.j@gmv.com
 This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
 
 ## Acknowledgments
-This work was developed within the Climate-Health Adaptation Through New Generation Earth Observations (CHANGE) project and acknowledges the contribution of the European Space Agency and collaborating institutions.
+This work was developed within the Climate-Health Adaptation Through New Generation Earth Observations (CHANGE) project and acknowledges the contribution of the European Space Agency and collaborating institutions. We would like to thank Sylvain Biancamaria--scientific researcher at CNRS (French National Centre for Scientific Research)--, for his guidance and recommendations on noise filtering of SWOT frames.
