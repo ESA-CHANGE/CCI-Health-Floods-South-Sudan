@@ -25,8 +25,8 @@ from pathlib import Path
 # CONFIGURATION
 # =========================
 
-maps_path = "../data/flood_maps/viirs_maps/"
-save_path = "../data/flood_maps/binary_maps/"
+maps_path = "../../data/flood_maps/viirs_maps/"
+save_path = "../../data/flood_maps/binary_maps/"
 os.makedirs(save_path, exist_ok=True)
 maps_files = sorted([m for m in os.listdir(maps_path) if m.endswith('.tif')])
 

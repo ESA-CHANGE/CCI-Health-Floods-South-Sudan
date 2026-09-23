@@ -31,7 +31,7 @@ from impact_model.engine import VulnerabilityConfig
 
 
 def run_all(
-    parts_dir: str = "../data/model_output/by_facility",
+    parts_dir: str = "../../data/model_output/by_facility",
     cfg: Optional[VulnerabilityConfig] = None,
 ) -> None:
     r"""Execute complete impact assessment workflow with preserved behavior.

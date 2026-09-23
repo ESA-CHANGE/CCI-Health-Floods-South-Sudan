@@ -141,13 +141,13 @@ def max_consecutive_flood_with_nodata_tolerance(
 
 # -------------------- Instantiate argument parser --------------------
 parser = argparse.ArgumentParser(description='CHANGE - Flood hazard maps generation')
-parser.add_argument('--map_type', type=str, choices=['annual', 'annual_2', 'annual_3', 'seasonal', 'seasonal_2'], default='annual',
+parser.add_argument('--map_type', type=str, choices=['annual', 'annual_2', 'annual_3', 'seasonal', 'seasonal_2'], default='annual_3',
                     help='Type of hazard map to generate: annual or seasonal (default: annual)')
 args = parser.parse_args()
 
 
 # -------------------- Get binary maps --------------------
-tif_dir = Path("../data/flood_maps/binary_maps/")
+tif_dir = Path("../../data/flood_maps/binary_maps/")
 files = sorted(tif_dir.glob("*.tif"))
 
 if args.map_type == 'annual':
@@ -161,8 +161,8 @@ if args.map_type == 'annual':
         files_by_year[date.year].append((date, f))
         
     # Annual processing
-    output_dir = Path("../data/hazard_maps/annual/")
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path("../../data/hazard_maps/annual/")
+    output_dir.mkdir(parents=True, exist_ok=True)
     for year, flist in sorted(files_by_year.items()):
         print("Processing year:", year)
         arrays = []
@@ -234,11 +234,11 @@ if args.map_type == 'annual':
 elif args.map_type == 'annual_2':
     print("Generating ANNUAL flood hazard maps from seasonal_2 hazard maps...")
     
-    tif_dir = Path("../data/hazard_maps/seasonal_2/")
+    tif_dir = Path("../../data/hazard_maps/seasonal_2/")
     files = sorted(tif_dir.glob("*.tif"))
     
-    output_dir = Path("../data/hazard_maps/annual_2/")
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path("../../data/hazard_maps/annual_2/")
+    output_dir.mkdir(parents=True, exist_ok=True)
     
     groups = defaultdict(list)
     for f in files:
@@ -318,8 +318,8 @@ elif args.map_type == 'annual_2':
 
 elif args.map_type == 'seasonal':
     
-    output_dir = Path("../data/hazard_maps/seasonal/")
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path("../../data/hazard_maps/seasonal/")
+    output_dir.mkdir(parents=True, exist_ok=True)
     # Group files by (season, year)
     print("\nGenerating SEASONAL flood hazard maps...")
     groups = defaultdict(list)
@@ -384,12 +384,12 @@ elif args.map_type == 'seasonal':
 elif args.map_type == "annual_3":
     print("\nGenerating ANNUAL flood hazard maps (OPTIMIZED) from daily maps...")
     
-    tif_dir = Path("../data/flood_maps/binary_maps/")
+    tif_dir = Path("../../data/flood_maps/binary_maps/")
     files = sorted(tif_dir.glob("*.tif"))
     MAX_NODATA_GAP = 2
     
-    output_dir = Path("../data/hazard_maps/annual_3/")
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path("../../data/hazard_maps/annual_3/")
+    output_dir.mkdir(parents=True, exist_ok=True)
     
     # Group by year
     files_by_year = defaultdict(list)
@@ -562,8 +562,8 @@ elif args.map_type == "annual_3":
 elif args.map_type == "seasonal_2":
     print("\nGenerating SEASONAL flood hazard maps (manual check)...")
 
-    output_dir = Path("../data/hazard_maps/seasonal_2/")
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path("../../data/hazard_maps/seasonal_2/")
+    output_dir.mkdir(parents=True, exist_ok=True)
     MAX_NODATA_GAP = 5  # days
     # Group files by (season, year)
     print("\nGenerating SEASONAL (by hand) flood hazard maps...")

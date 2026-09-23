@@ -26,7 +26,7 @@ import numpy as np
 import pandas as pd
 
 
-BASE_DIR = "../data/model_output"
+BASE_DIR = "../../data/model_output"
 CSV_PATH = os.path.join(BASE_DIR, "bayfloodgen_output.csv")
 TRACE_PATH = os.path.join(BASE_DIR, "bayfloodgen_trace.nc")
 

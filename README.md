@@ -60,6 +60,7 @@ Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the o
 ### Executing program
 
 This project is divided in differnt modules. You will find guidence on how to execute it inside ```./src``` folder.
+Some data is available in ```./data``` folder in order to run the whole pipeline as a test. In ```./data/flood_maps/viirs_maps/``` you will find some VIIRS maps as examples so part of the pipeline can be run. The code can be tested until ```.src/eo_pool/check_facilities_categories.ipynb``` as this notebook code needs all years available. In order to test the pipeline after this point, ```./data/eo_pool/eo_pool_reclassified.csv``` is facilitated as the original output of the notebook, considering all years and maps used to develop this project. 
 
 ## Current branch updates vs `main` (model workflow)
 
@@ -102,6 +103,12 @@ Contributors names and contact info
 
 Macarena Mérida Floriano
 mmef@gmv.com
+Miguel González Jiménez 
+mgonzalez.j@gmv.com
 
 
+## License
+This project is licensed under the MIT License of 2023 ESA Climate Change Initiative - see the LICENSE file for details.
 
+## Acknowledgments
+This work was developed within the Climate-Health Adaptation Through New Generation Earth Observations (CHANGE) project and acknowledges the contribution of the European Space Agency and collaborating institutions. We would like to thank Sylvain Biancamaria--scientific researcher at CNRS (French National Centre for Scientific Research)--, for his guidance and recommendations on noise filtering of SWOT frames.

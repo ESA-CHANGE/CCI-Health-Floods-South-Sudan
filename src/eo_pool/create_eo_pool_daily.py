@@ -602,7 +602,6 @@ class FloodSeriesExtractor:
         
         print(f"DEBUG: len(hf_list) = {len(self.hf_list)}")
         print(f"DEBUG: hf_list index = {self.hf_list.index.tolist()[:10]}...")
-        print(f"DEBUG: hf_inside_by_year[2012] shape = {hf_inside_by_year[2012].shape}")
         
         hf_subset = self.hf_list[self.hf_list['Health Facility Name'] == self.test_single_hf].reset_index(drop=True) if self.test_single_hf else self.hf_list.reset_index(drop=True)
         # For each HF
@@ -857,9 +856,9 @@ def main():
     
     # CONFIGURATION
     CONFIG = {
-        'hf_list_path': '../data/valid_facilities.csv',
-        'daily_maps_dir': '../data/flood_maps/binary_maps/',  # Single folder, not by years
-        'output_dir': '../data/eo_pool/'
+        'hf_list_path': '../../data/valid_facilities.csv',
+        'daily_maps_dir': '../../data/flood_maps/binary_maps/',  # Single folder, not by years
+        'output_dir': '../../data/eo_pool/'
     }
     
     print("="*70)

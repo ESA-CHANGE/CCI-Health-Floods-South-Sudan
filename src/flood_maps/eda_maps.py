@@ -1614,25 +1614,25 @@ class FloodMapEDA:
 
 # To use with real data, uncomment and modify the file paths and run the analysis:
 file_paths = {
-    2012: '../data/hazard_maps/annual_3/floods_annual_2012.tif',
-    2013: '../data/hazard_maps/annual_3/floods_annual_2013.tif',
-    2014: '../data/hazard_maps/annual_3/floods_annual_2014.tif',
-    2015: '../data/hazard_maps/annual_3/floods_annual_2015.tif',
-    2016: '../data/hazard_maps/annual_3/floods_annual_2016.tif',
-    2017: '../data/hazard_maps/annual_3/floods_annual_2017.tif',
-    2018: '../data/hazard_maps/annual_3/floods_annual_2018.tif',
-    2019: '../data/hazard_maps/annual_3/floods_annual_2019.tif',
-    2020: '../data/hazard_maps/annual_3/floods_annual_2020.tif',
-    2021: '../data/hazard_maps/annual_3/floods_annual_2021.tif',
-    2022: '../data/hazard_maps/annual_3/floods_annual_2022.tif',
-    2023: '../data/hazard_maps/annual_3/floods_annual_2023.tif',
-    2024: '../data/hazard_maps/annual_3/floods_annual_2024.tif',
-    2025: '../data/hazard_maps/annual_3/floods_annual_2025.tif'
+    #2012: '../../data/hazard_maps/annual_3/floods_annual_2012.tif',
+    #2013: '../../data/hazard_maps/annual_3/floods_annual_2013.tif',
+    #2014: '../../data/hazard_maps/annual_3/floods_annual_2014.tif',
+    #2015: '../../data/hazard_maps/annual_3/floods_annual_2015.tif',
+    #2016: '../../data/hazard_maps/annual_3/floods_annual_2016.tif',
+    #2017: '../../data/hazard_maps/annual_3/floods_annual_2017.tif',
+    #2018: '../../data/hazard_maps/annual_3/floods_annual_2018.tif',
+    #2019: '../../data/hazard_maps/annual_3/floods_annual_2019.tif',
+    2020: '../../data/hazard_maps/annual_3/floods_annual_2020.tif',
+    #2021: '../../data/hazard_maps/annual_3/floods_annual_2021.tif',
+    #2022: '../../data/hazard_maps/annual_3/floods_annual_2022.tif',
+    #2023: '../../data/hazard_maps/annual_3/floods_annual_2023.tif',
+    #2024: '../../data/hazard_maps/annual_3/floods_annual_2024.tif',
+    #2025: '../../data/hazard_maps/annual_3/floods_annual_2025.tif'
 }
 
-plot_dir = "../data/EDA/"
+plot_dir = "../../data/EDA/"
 os.makedirs(plot_dir, exist_ok=True)
-hf_csv_list = "../data/valid_facilities.csv"
+hf_csv_list = "../../data/valid_facilities.csv"
 eda = FloodMapEDA(file_paths, plot_dir=plot_dir)
 
 # Execute full analysis

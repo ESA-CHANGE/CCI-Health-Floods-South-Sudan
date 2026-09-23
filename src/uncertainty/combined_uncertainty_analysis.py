@@ -27,7 +27,9 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from statsmodels.tsa.stattools import acf as compute_acf
 from tqdm import tqdm
+
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -817,6 +819,49 @@ def decompose_uncertainty(unc_table: pd.DataFrame, output_dir: str = ".") -> Non
     print("  Saved: uncertainty_decomposition_v6.png")
 
 
+def compute_n_eff(df_path: str) -> float:
+    r"""Function to compute effective sample size (n_eff) from synthetic data.
+    
+    Parameters
+    ----------
+    df_path : str
+        Path to the CSV file containing synthetic data.
+    
+    Returns
+    -------
+    n_eff : float
+        Median effective sample size (n_eff) across all facilities and scenarios.
+    """
+    
+    df_total = pd.read_csv(df_path)
+    df_syn = df_total[df_total['is_synthetic'] == 1].copy()
+    
+    n_eff_per_facility = []
+
+    for (fid, scen), grp in df_syn.groupby(['hf_id', 'scenario_id']):
+        series = grp.sort_values('date')['occurrence'].values
+        if len(series) < 20:
+            continue
+        acf_vals = compute_acf(series, nlags=min(60, len(series)//2),
+                            fft=True, missing='drop')
+        # n_eff formula for AR processes: n / (1 + 2*sum(rho_k))
+        # Sum only positive ACF values to avoid noise inflation
+        positive_acf = acf_vals[1:]
+        positive_acf = positive_acf[positive_acf > 0]
+        n_eff = len(series) / (1 + 2 * positive_acf.sum())
+        n_eff_per_facility.append(n_eff)
+
+    n_eff_array  = np.array(n_eff_per_facility)
+    n_eff_median = float(np.median(n_eff_array))
+    n_eff_q10    = float(np.percentile(n_eff_array, 10))
+
+    print(f"n_eff median : {n_eff_median:.1f} days  (out of 365)")
+    print(f"n_eff 10th pct: {n_eff_q10:.1f} days")
+    print(f"Implied decorrelation time: {365 / n_eff_median:.1f} days per independent obs")
+    
+    #n_eff_annual = 365/n_eff_median
+    return n_eff_median
+
 def sensitivity_to_viirs_errors(output_dir: str = ".") -> None:
     r"""Generate heatmap sensitivity of corrected p_true to p_fd/p_om values.
 
@@ -872,10 +917,11 @@ def sensitivity_to_viirs_errors(output_dir: str = ".") -> None:
 # 8. ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    POOL_CSV = "../data/model_output/bayfloodgen_output.csv"
-    PLOT_DIR = "../data/uncertainty/combined_uncertainty_6"
+    POOL_CSV = "../../data/model_output/bayfloodgen_output.csv"
+    PLOT_DIR = "../../data/uncertainty/combined_uncertainty"
     os.makedirs(PLOT_DIR, exist_ok=True)
-
+    
+    n_eff = compute_n_eff(POOL_CSV)
     unc_table = facility_uncertainty_table(
         pool_csv=POOL_CSV,
         obs_year_cutoff=2021,
@@ -883,7 +929,7 @@ if __name__ == "__main__":
         propagate_rate_unc=True,
         n_mc=2_000,
         flood_rate_threshold=0.10,
-        n_eff_annual=106.6,
+        n_eff_annual=n_eff, #106.6,
     )
     unc_table.to_csv(os.path.join(PLOT_DIR, "facility_uncertainty_v6.csv"))
 

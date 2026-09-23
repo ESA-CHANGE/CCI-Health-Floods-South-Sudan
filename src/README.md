@@ -22,11 +22,11 @@ Run:
 - `python flood_maps/binarize_maps.py`
 
 Main inputs:
-- `../data/flood_maps/viirs_maps/*.tif`
+- `../../data/flood_maps/viirs_maps/*.tif`
 
 Main outputs:
-- `../data/flood_maps/binary_maps/*.tif`
-- `../data/flood_maps/binary_maps/maps2review.txt` (only if problematic maps are detected)
+- `../../data/flood_maps/binary_maps/*.tif`
+- `../../data/flood_maps/binary_maps/maps2review.txt` (only if problematic maps are detected)
 
 ---
 
@@ -38,7 +38,7 @@ Run:
 - Open notebook and run all cells.
 
 Main output:
-- `../data/valid_facilities.csv`
+- `../../data/valid_facilities.csv`
 
 ---
 
@@ -50,10 +50,10 @@ Run (recommended for this pipeline):
 - `python flood_maps/hazard_maps.py --map_type annual_3`
 
 Main input:
-- `../data/flood_maps/binary_maps/*.tif`
+- `../../data/flood_maps/binary_maps/*.tif`
 
 Main outputs (annual_3 mode):
-- `../data/hazard_maps/annual_3/floods_annual_<YEAR>.tif` (4 bands: frequency, duration, valid obs, max consecutive)
+- `../../data/hazard_maps/annual_3/floods_annual_<YEAR>.tif` (4 bands: frequency, duration, valid obs, max consecutive)
 
 Note:
 - Other map types exist (`annual`, `seasonal`, `seasonal_2`, `annual_2`) but the downstream EDA script in this repository is prepared for `annual_3` filenames.
@@ -68,12 +68,12 @@ Run:
 - `python flood_maps/eda_maps.py`
 
 Main inputs:
-- `../data/hazard_maps/annual_3/floods_annual_<YEAR>.tif`
-- `../data/valid_facilities.csv`
+- `../../data/hazard_maps/annual_3/floods_annual_<YEAR>.tif`
+- `../../data/valid_facilities.csv`
 
 Main outputs:
-- Plot and analysis artifacts in `../data/EDA/`
-- Facility-zone table: `../data/EDA/hf_areas_persistence_variability.csv`
+- Plot and analysis artifacts in `../../data/EDA/`
+- Facility-zone table: `../../data/EDA/hf_areas_persistence_variability.csv`
 
 ---
 
@@ -85,13 +85,13 @@ Run:
 - `python eo_pool/create_eo_pool_daily.py`
 
 Main inputs:
-- `../data/valid_facilities.csv`
-- `../data/flood_maps/binary_maps/*.tif`
+- `../../data/valid_facilities.csv`
+- `../../data/flood_maps/binary_maps/*.tif`
 
 Main outputs:
-- `../data/eo_pool/eo_pool.parquet`
-- `../data/eo_pool/summary_hf_years.csv`
-- `../data/eo_pool/metadata.json`
+- `../../data/eo_pool/eo_pool.parquet`
+- `../../data/eo_pool/summary_hf_years.csv`
+- `../../data/eo_pool/metadata.json`
 - Optional NPZ per HF-year (if NPZ saving mode is used)
 
 ---
@@ -104,7 +104,7 @@ Run:
 - Open notebook and run all cells.
 
 Main output:
-- `../data/eo_pool/eo_pool_reclassified.csv`
+- `../../data/eo_pool/eo_pool_reclassified.csv`
 
 ---
 
@@ -117,12 +117,12 @@ Run:
 - `python model/bayflood_orchestrator.py`
 
 Main input:
-- `../data/eo_pool/eo_pool_reclassified.csv`
+- `../../data/eo_pool/eo_pool_reclassified.csv`
 
 Main outputs:
-- `../data/model_output/bayfloodgen_trace.nc`
-- `../data/model_output/synthetic_scenarios/scenario_batch_*.csv`
-- `../data/model_output/bayfloodgen_output.csv` (stream-concatenated observed + synthetic)
+- `../../data/model_output/bayfloodgen_trace.nc`
+- `../../data/model_output/synthetic_scenarios/scenario_batch_*.csv`
+- `../../data/model_output/bayfloodgen_output.csv` (stream-concatenated observed + synthetic)
 - Validation plots in `../data/model_output/validation_plots/`
 
 Critical behavior:
@@ -142,18 +142,18 @@ Run:
 - `python uncertainty/trace_analysis.py`
 
 Main inputs:
-- `../data/model_output/bayfloodgen_output.csv`
-- `../data/model_output/bayfloodgen_trace.nc`
+- `../../data/model_output/bayfloodgen_output.csv`
+- `../../data/model_output/bayfloodgen_trace.nc`
 
 Main outputs:
-- `../data/uncertainty/trace_uncertainty/A_scenario_stability.png`
-- `../data/uncertainty/trace_uncertainty/B_facility_credible_intervals.png`
-- `../data/uncertainty/trace_uncertainty/C_t_year_sensitivity.png`
-- `../data/uncertainty/trace_uncertainty/D1_global_parameter_posteriors.png`
-- `../data/uncertainty/trace_uncertainty/D2_delta_per_facility.png`
-- `../data/uncertainty/trace_uncertainty/D3_convergence_diagnostics.png`
-- `../data/uncertainty/trace_uncertainty/F_monthly_fan_chart.png`
-- `../data/uncertainty/trace_uncertainty/trace_uncertainty_summary_table.csv`
+- `../../data/uncertainty/trace_uncertainty/A_scenario_stability.png`
+- `../../data/uncertainty/trace_uncertainty/B_facility_credible_intervals.png`
+- `../../data/uncertainty/trace_uncertainty/C_t_year_sensitivity.png`
+- `../../data/uncertainty/trace_uncertainty/D1_global_parameter_posteriors.png`
+- `../../data/uncertainty/trace_uncertainty/D2_delta_per_facility.png`
+- `../../data/uncertainty/trace_uncertainty/D3_convergence_diagnostics.png`
+- `../../data/uncertainty/trace_uncertainty/F_monthly_fan_chart.png`
+- `../../data/uncertainty/trace_uncertainty/trace_uncertainty_summary_table.csv`
 
 ---
 
@@ -165,11 +165,11 @@ Run:
 - `python impact_assessment/impact_threshold_calibration.py`
 
 Main input:
-- `../data/model_output/bayfloodgen_output.csv`
+- `../../data/model_output/bayfloodgen_output.csv`
 
 Main outputs:
-- `../data/impact_outputs/threshold_calibration_report.json`
-- `../data/impact_outputs/impact_plots/threshold_calibration.png`
+- `../../data/impact_outputs/threshold_calibration_report.json`
+- `../../data/impact_outputs/impact_plots/threshold_calibration.png`
 
 ---
 ## 10) `impact_assessment/divide_csv_per_facility.py` 
@@ -180,10 +180,10 @@ Run:
 - `python impact_assessment/divide_csv_per_facility.py`
 
 Input:
-- `../data/model_output/bayfloodgen_output.csv`
+- `../../data/model_output/bayfloodgen_output.csv`
 
 Output:
-- `../data/model_output/by_facility/*.parquet`
+- `../../data/model_output/by_facility/*.parquet`
 
 ## 11) `impact_assessment/impact_assessment_calibrated_orchestrator.py`
 Purpose:
@@ -193,19 +193,19 @@ Run:
 - `python impact_assessment/impact_assessment_calibrated_orchestrator.py`
 
 Main input:
-- `../data/model_output/by_facility/` (facility partitions)
-- `../data/model_output/bayfloodgen_output.csv` (for sensitivity and calibration base)
+- `../../data/model_output/by_facility/` (facility partitions)
+- `../../data/model_output/bayfloodgen_output.csv` (for sensitivity and calibration base)
 
 Main outputs:
-- `../data/impact_outputs/scen_stats.parquet`
-- `../data/impact_outputs/obs_stats.parquet`
-- `../data/impact_outputs/facility_ranking.csv`
-- `../data/impact_outputs/exceedance_table.csv`
-- `../data/impact_outputs/category_stats.csv`
-- `../data/impact_outputs/category_dunn.csv`
-- `../data/impact_outputs/seasonal_risk.csv`
-- `../data/impact_outputs/temporal_trend.csv` (if trend data exists)
-- Plots in `../data/impact_outputs/impact_plots/`:
+- `../../data/impact_outputs/scen_stats.parquet`
+- `../../data/impact_outputs/obs_stats.parquet`
+- `../../data/impact_outputs/facility_ranking.csv`
+- `../../data/impact_outputs/exceedance_table.csv`
+- `../../data/impact_outputs/category_stats.csv`
+- `../../data/impact_outputs/category_dunn.csv`
+- `../../data/impact_outputs/seasonal_risk.csv`
+- `../../data/impact_outputs/temporal_trend.csv` (if trend data exists)
+- Plots in `../../data/impact_outputs/impact_plots/`:
   - `facility_ranking.png`
   - `exceedance_heatmap.png`
   - `category_comparison.png`

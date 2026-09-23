@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 
-POOL_CSV = "../data/model_output/bayfloodgen_output.csv"
+POOL_CSV = "../../data/model_output/bayfloodgen_output.csv"
 
 
 def _print_category_stats(fac_df: pd.DataFrame, label: str) -> None:

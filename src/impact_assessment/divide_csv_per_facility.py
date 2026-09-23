@@ -15,8 +15,8 @@ assessment. Each output file corresponds to one facility and contains all its da
 import pandas as pd
 import os
 
-CSV_PATH   = "../data/model_output/bayfloodgen_output.csv"
-PARTS_DIR  = "../data/model_output/by_facility"
+CSV_PATH   = "../../data/model_output/bayfloodgen_output.csv"
+PARTS_DIR  = "../../data/model_output/by_facility"
 os.makedirs(PARTS_DIR, exist_ok=True)
 
 print("Reading complete CSV...")

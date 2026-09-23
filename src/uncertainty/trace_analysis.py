@@ -38,9 +38,9 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 # ─────────────────────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────
-CSV_PATH   = "../data/model_output/bayfloodgen_output.csv"
-TRACE_PATH = "../data/model_output/bayfloodgen_trace.nc"
-OUTPUT_DIR = "../data/uncertainty/trace_uncertainty"
+CSV_PATH   = "../../data/model_output/bayfloodgen_output.csv"
+TRACE_PATH = "../../data/model_output/bayfloodgen_trace.nc"
+OUTPUT_DIR = "../../data/uncertainty/trace_uncertainty"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

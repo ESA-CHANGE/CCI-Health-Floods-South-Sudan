@@ -1,0 +1,1478 @@
+County_code,Payam_code,Health Facility Name,longitude,latitude,Functional Status
+SS0601,SS060101,abiemnom phcc,28.823400,9.398740,Moderately Functional
+SS0601,SS060101,awarpiny phcu,28.888280,9.473620,Moderately Functional
+SS0601,SS060101,manajoga phcu,28.811239,9.392128,Moderately Functional
+SS0601,SS060101,panyang phcu,28.912590,9.409190,Moderately Functional
+SS0001,SS000101,abyei civil hospital,28.436265,9.592052,Moderately Functional
+SS0001,SS000101,abyei phcc,28.432163,9.605027,Moderately Functional
+SS0001,SS000101,amenth bek hospital,28.459247,9.584825,Moderately Functional
+SS0001,SS000101,awal phcu,28.619653,9.435215,Moderately Functional
+SS0001,SS000101,awalnhom phcu,28.484742,9.526484,Moderately Functional
+SS0001,SS000101,ganga phcu,28.552416,9.484796,Moderately Functional
+SS0001,SS000101,mading achueng phcu,28.460147,9.523819,Moderately Functional
+SS0001,SS000101,mijak phcu,28.530119,9.533582,Highly Functional
+SS0001,SS000101,rumamer phcc,28.662875,9.439610,Moderately Functional
+SS0301,SS030103,akobo hospital,33.010140,7.799030,Moderately Functional
+SS0301,SS030104,buong phcc,32.380520,8.161690,Moderately Functional
+SS0301,SS030107,burmath phcu,33.160490,7.639630,Highly Functional
+SS0301,SS030106,diror phcu,32.332270,8.116230,Moderately Functional
+SS0301,SS030108,kaikuiny phcc,32.385697,8.092675,Highly Functional
+SS0301,SS030105,nukta thoklial phcc,32.998422,7.878078,Moderately Functional
+SS0301,SS030106,tangnyang phcu,32.290560,8.107970,Moderately Functional
+SS0301,SS030105,thokliel phcu,32.998340,7.877760,Highly Functional
+SS0301,SS030105,thokwath phcu,32.996730,7.941870,Highly Functional
+SS0301,SS030108,walgak phcc,32.238600,8.160530,Moderately Functional
+SS0301,SS030102,yidit phcu,32.266590,8.217990,Moderately Functional
+SS0501,SS050106,akuangkar phcu,26.851223,8.808217,Limitedly Functional
+SS0501,SS050105,alok phcu,27.527050,8.440260,Moderately Functional
+SS0501,SS050103,aroyo dtc phcc,26.512590,8.403320,Moderately Functional
+SS0501,SS050101,awada phcc,26.839100,8.068610,Highly Functional
+SS0505,SS050502,aweil civil hospital,27.398381,8.768444,Moderately Functional
+SS0501,SS050105,bar mayen phcc,27.364560,8.214940,Moderately Functional
+SS0501,SS050105,bau phcu,27.759157,8.439250,Limitedly Functional
+SS0501,SS050107,gabat phcc,27.385069,8.759489,Moderately Functional
+SS0501,SS050107,kuom phcu,27.245770,8.431890,Moderately Functional
+SS0501,SS050102,lulic phcu,26.581951,9.056519,Limitedly Functional
+SS0501,SS050106,mabok akot phcu,26.894972,8.894972,Moderately Functional
+SS0501,SS050105,maluil akot phcu,27.771699,8.527864,Limitedly Functional
+SS0501,SS050107,nyalath phcu,27.423788,8.838404,Moderately Functional
+SS0501,SS050106,nyien alel phcu,26.904390,8.948138,Limitedly Functional
+SS0501,SS050105,panjap phcu,27.485997,8.600051,Limitedly Functional
+SS0501,SS050102,umora phcu,26.736845,8.598709,Limitedly Functional
+SS0502,SS050203,adoor phcu,27.749860,9.446560,Moderately Functional
+SS0502,SS050207,akuem phcc,27.500690,8.962100,Moderately Functional
+SS0502,SS050202,ameth akok phcu,27.769170,9.128640,Moderately Functional
+SS0502,SS050203,amethgolduang phcu,27.897150,9.085580,Moderately Functional
+SS0502,SS050203,atuet phcu,27.756402,8.993886,Moderately Functional
+SS0502,SS050201,baach phcu,27.942222,9.335083,Moderately Functional
+SS0502,SS050201,bakou phcu,27.625034,9.265449,Moderately Functional
+SS0502,SS050201,cuomator phcu,27.667611,8.826627,Moderately Functional
+SS0502,SS050201,goldhim tb phcc,27.666890,9.232050,Moderately Functional
+SS0502,SS050203,lieth phcc,27.779545,9.247720,Moderately Functional
+SS0502,SS050201,mabil phcc,27.579960,9.002610,Moderately Functional
+SS0502,SS050205,mabiorwundiing phcu,27.385316,9.129761,Limitedly Functional
+SS0502,SS050202,mabok tong phcu,27.771067,9.479680,Moderately Functional
+SS0502,SS050202,madhol phcu,27.702980,9.038720,Moderately Functional
+SS0502,SS050203,majok yith thiou phcu,27.787212,9.695489,Highly Functional
+SS0502,SS050201,majok-akeen phcu,27.476472,9.432960,Moderately Functional
+SS0502,SS050201,malek bol phcu,27.528450,9.332583,Moderately Functional
+SS0502,SS050202,malith alekyai phcu,27.710572,9.443855,Limitedly Functional
+SS0502,SS050203,malual baai phcc,27.759880,9.059250,Moderately Functional
+SS0502,SS050206,malual-kuel phcu,27.301810,9.428450,Moderately Functional
+SS0502,SS050201,malualkon phcc,27.625281,9.014230,Moderately Functional
+SS0502,SS050204,mangar tong phcu,27.548580,9.074190,Moderately Functional
+SS0502,SS050205,mangok phcu,27.385960,9.042560,Moderately Functional
+SS0502,SS050206,manyiel phcu,27.528610,8.973780,Moderately Functional
+SS0502,SS050204,marolajuong phcu,27.457024,9.262340,Limitedly Functional
+SS0502,SS050201,mayenadhot phcu,27.610333,8.878108,Limitedly Functional
+SS0502,SS050204,mayom wel phcu,27.449617,8.748334,Moderately Functional
+SS0502,SS050201,omdurman phcc,27.511990,9.234350,Moderately Functional
+SS0502,SS050203,peth phcu,27.797250,8.964470,Moderately Functional
+SS0502,SS050205,raingmal phcu,27.430312,8.907229,Limitedly Functional
+SS0502,SS050204,rial diit phcc,27.510980,9.136740,Moderately Functional
+SS0502,SS050201,rum aker phcu,27.590000,9.150000,Moderately Functional
+SS0502,SS050202,rumrol phcu,27.706111,9.216712,Moderately Functional
+SS0502,SS050203,rumwel phcu,27.850880,9.073500,Moderately Functional
+SS0502,SS050204,rumwet kor phcu,27.585340,9.281400,Moderately Functional
+SS0502,SS050204,tit chok phcc,27.539770,8.858620,Moderately Functional
+SS0502,SS050201,warawar phcu,27.626780,9.016810,Moderately Functional
+SS0502,SS050206,wardong phcu,27.402893,9.243381,Limitedly Functional
+SS0502,SS050207,warlang phcu,27.236138,9.435623,Moderately Functional
+SS0502,SS050204,wonyjok phcc,27.732000,9.230833,Moderately Functional
+SS0502,SS050206,wunlang phcu,27.435505,9.153108,Moderately Functional
+SS0502,SS050207,yargot phcu,27.459180,9.008130,Moderately Functional
+SS0503,SS050303,abyei chok phcu,27.258140,9.135790,Moderately Functional
+SS0503,SS050302,ajak wol phcu,27.061470,9.194510,Moderately Functional
+SS0503,SS050305,akuak malual phcu,26.626855,9.113036,Moderately Functional
+SS0503,SS050301,arieth phcu,27.222400,9.105000,Moderately Functional
+SS0503,SS050304,gok machar phcc,26.515850,9.125620,Moderately Functional
+SS0503,SS050304,gor ayen phcu,26.934462,9.143813,Moderately Functional
+SS0503,SS050305,jaac ppf phcu,27.136100,9.474610,Moderately Functional
+SS0503,SS050305,jurbeech phcu,26.390285,8.973520,Moderately Functional
+SS0503,SS050301,kajik phcu,27.136800,9.166860,Moderately Functional
+SS0503,SS050304,kiir adem phcu,26.819230,9.686379,Moderately Functional
+SS0503,SS050301,lueth lual phcu,27.103786,9.192708,Moderately Functional
+SS0503,SS050301,lueth ngor phcu,27.160926,9.205584,Moderately Functional
+SS0503,SS050305,mabior nyang phcu,26.690508,9.133545,Limitedly Functional
+SS0503,SS050305,majak bai phcc,26.795620,9.118758,Moderately Functional
+SS0503,SS050304,majak bol phcu,26.858434,9.303638,Limitedly Functional
+SS0503,SS050302,majak kar phcc,27.021672,9.223714,Moderately Functional
+SS0503,SS050303,makuac akech phcu,27.300900,9.143920,Moderately Functional
+SS0503,SS050303,malual deng aruom phcu,27.114430,9.211590,Moderately Functional
+SS0503,SS050305,manyiel akok phcu,26.513860,9.084650,Moderately Functional
+SS0503,SS050301,maper ngok phcu,27.121984,9.201598,Limitedly Functional
+SS0503,SS050302,mareng akok phcu,27.100203,9.281299,Moderately Functional
+SS0503,SS050302,marol deng geng phcu,27.063100,9.246670,Moderately Functional
+SS0503,SS050302,matuic phcu,27.046383,9.170063,Limitedly Functional
+SS0503,SS050303,mayen ulem phcu,27.285400,9.037140,Moderately Functional
+SS0503,SS050304,mayom adhal phcu,26.572820,9.115630,Moderately Functional
+SS0503,SS050305,mony phcu,26.545268,9.097429,Limitedly Functional
+SS0503,SS050302,pamat phcu,27.000700,9.214167,Moderately Functional
+SS0503,SS050304,peth phcu,26.905022,9.162918,Limitedly Functional
+SS0503,SS050304,roingut phcu,26.552450,9.120100,Moderately Functional
+SS0503,SS050303,rumading phcu,27.294319,9.224650,Moderately Functional
+SS0503,SS050303,warapei phcc,27.084670,9.242620,Moderately Functional
+SS0503,SS050305,warchuei phcu,26.442530,9.103360,Moderately Functional
+SS0503,SS050303,wargeng phcu,27.365244,9.022247,Moderately Functional
+SS0503,SS050302,warkot phcu,26.997336,9.266212,Limitedly Functional
+SS0503,SS050303,wathok phcu,27.229800,9.030830,Moderately Functional
+SS0504,SS050402,akac phcc,27.727182,8.573162,Highly Functional
+SS0504,SS050408,aluel phcu,27.926263,8.860087,Highly Functional
+SS0504,SS050406,alueth phcu,27.860630,8.712083,Moderately Functional
+SS0504,SS050401,ayai phcu,27.673548,8.776635,Moderately Functional
+SS0504,SS050401,machar phcu,27.650395,8.746297,Moderately Functional
+SS0504,SS050407,makuei alel phcu,27.852981,8.638910,Moderately Functional
+SS0504,SS050404,malekalel phcu,27.594480,8.589007,Highly Functional
+SS0504,SS050403,nyieth phcu,27.809108,8.789187,Moderately Functional
+SS0504,SS050409,panadhot phcu,27.436988,8.687698,Limitedly Functional
+SS0504,SS050406,panthou dtc phcc,27.749662,8.708383,Moderately Functional
+SS0504,SS050408,tiar-aleit phcu,27.889247,8.776047,Highly Functional
+SS0504,SS050409,wathmouk phcu,27.681300,8.696930,Highly Functional
+SS0504,SS050402,wuncum phcu,27.677168,8.661639,Moderately Functional
+SS0505,SS050507,aguat phcu,27.091020,9.074240,Moderately Functional
+SS0505,SS050505,akuang koc phcu,26.449513,9.033028,Moderately Functional
+SS0505,SS050506,aluel achot phcu,27.042839,9.098617,Moderately Functional
+SS0505,SS050507,amatnyang phcu,27.144556,9.074361,Moderately Functional
+SS0505,SS050510,amothic phcu,27.166290,8.898080,Moderately Functional
+SS0505,SS050506,angol phcu,27.055180,9.150550,Moderately Functional
+SS0505,SS050503,angon lek phcu,26.668406,9.077742,Moderately Functional
+SS0505,SS050508,anyuopjang phcu,26.899096,9.029218,Moderately Functional
+SS0505,SS050509,awulic phcu,27.423845,8.838422,Moderately Functional
+SS0505,SS050509,chelcou phcc,26.848958,8.957907,Moderately Functional
+SS0505,SS050508,guangnou phcu,26.915150,8.922950,Moderately Functional
+SS0505,SS050504,mabior phcu,26.887304,9.132309,Limitedly Functional
+SS0505,SS050509,magar phcu,27.368037,8.905590,Moderately Functional
+SS0505,SS050506,majook dengdit phcu,27.061207,9.102761,Moderately Functional
+SS0505,SS050510,maker phcu,27.333000,8.913560,Moderately Functional
+SS0505,SS050503,makuoc phcu,26.629710,9.087500,Moderately Functional
+SS0505,SS050504,malek phcu,26.784160,9.064900,Moderately Functional
+SS0505,SS050504,marial bai dtc phcc,26.844860,9.103127,Moderately Functional
+SS0505,SS050501,marol madhan phcu,26.183411,8.840282,Limitedly Functional
+SS0505,SS050503,mayom akuang rel phcc,26.714929,9.091670,Moderately Functional
+SS0505,SS050506,nyamlel phcc,26.982222,9.137818,Moderately Functional
+SS0505,SS050506,nyamlel tb hospital,26.982456,9.137846,Moderately Functional
+SS0505,SS050505,nyinbouli phcc,26.507000,9.021630,Moderately Functional
+SS0505,SS050508,pantit phcu,26.917017,9.083618,Moderately Functional
+SS0505,SS050506,riangangon phcu,27.071860,9.120520,Moderately Functional
+SS0505,SS050509,rualngol phcu,27.375023,8.873498,Highly Functional
+SS0505,SS050509,rumtiit phcu,27.260240,8.761014,Moderately Functional
+SS0505,SS050510,udhum dtc phcc,27.253477,8.887706,Moderately Functional
+SS0505,SS050507,wedweil phcc,27.191600,9.004981,Highly Functional
+SS0505,SS050503,wungiir phcu,26.755970,9.119820,Moderately Functional
+SS0401,SS040101,abuyung phcu,31.127890,6.354580,Moderately Functional
+SS0401,SS040103,aguorkuoth phcu,31.137595,6.139355,Moderately Functional
+SS0401,SS040104,awerial phcu,31.170486,6.128161,Moderately Functional
+SS0401,SS040103,bunagok phcc,30.995410,6.213470,Moderately Functional
+SS0401,SS040104,dor phcu,31.286180,6.050650,Moderately Functional
+SS0401,SS040107,kalthok phcu,31.520667,5.880311,Moderately Functional
+SS0401,SS040107,minkaman phcc,31.512286,6.056303,Moderately Functional
+SS0401,SS040107,rhc,31.507147,6.048835,Moderately Functional
+SS0302,SS030206,ayod phcc,31.413760,8.121990,Moderately Functional
+SS0302,SS030206,gorwai phcc,31.191900,8.138400,Moderately Functional
+SS0302,SS030202,haat phcu,30.633360,8.516480,Moderately Functional
+SS0302,SS030207,jiech / wau phcc,31.136150,8.372390,Moderately Functional
+SS0302,SS030204,kandak phcu,31.346670,8.432260,Moderately Functional
+SS0302,SS030207,kharmun phcu,31.362640,8.264430,Highly Functional
+SS0302,SS030203,kuachdeng phcu,31.440620,7.964600,Highly Functional
+SS0302,SS030206,maar phcu,30.681000,8.489970,Moderately Functional
+SS0302,SS030205,manime phcc,30.718970,8.611220,Moderately Functional
+SS0302,SS030204,mogok phcc,31.334910,8.402980,Moderately Functional
+SS0302,SS030202,nyawit phcu,30.640070,7.714880,Moderately Functional
+SS0302,SS030207,padek phcc,31.139080,8.164300,Moderately Functional
+SS0302,SS030205,pagil phcc,31.266110,8.708050,Moderately Functional
+SS0302,SS030205,wechding phcu,31.054431,8.767561,Moderately Functional
+SS0701,SS070102,adong phcc,32.156360,9.243290,Moderately Functional
+SS0701,SS070103,akoka phcc,32.172110,9.740010,Moderately Functional
+SS0701,SS070104,bai-chan phcu,32.173620,9.920010,Moderately Functional
+SS0701,SS070106,baliet phcc,32.057800,9.296000,Moderately Functional
+SS0701,SS070103,bienythiang phcu,32.037710,9.832910,Moderately Functional
+SS0701,SS070105,gellachol phcu,32.369370,9.100670,Moderately Functional
+SS0701,SS070109,riang phcu,32.104980,9.843510,Moderately Functional
+SS0701,SS070107,riangnum phcu,32.020870,9.330280,Moderately Functional
+SS0701,SS070108,rom phcu,32.153790,9.882000,Moderately Functional
+SS0701,SS070101,wunbut phcu,32.208290,9.156840,Highly Functional
+SS0303,SS030304,akuai deng phcu,31.530100,6.563930,Moderately Functional
+SS0303,SS030301,anyidi phcc,31.564730,6.193800,Moderately Functional
+SS0303,SS030303,bor state hospital,31.555880,6.206450,Highly Functional
+SS0303,SS030306,gakyuom phcu,31.570960,6.235240,Highly Functional
+SS0303,SS030304,jalle phcc,31.484210,6.671890,Highly Functional
+SS0303,SS030304,kolmerak phcu,31.517210,6.619470,Highly Functional
+SS0303,SS030305,kolnyang phcc,31.580810,6.125380,Highly Functional
+SS0303,SS030306,lualdit phcu,31.610480,6.236410,Moderately Functional
+SS0303,SS030302,makol-cuei phcu,31.649276,6.378693,Moderately Functional
+SS0303,SS030305,malek phcu,31.605400,6.067750,Highly Functional
+SS0303,SS030303,malou phcu,31.558610,6.228800,Moderately Functional
+SS0303,SS030301,mareng phcu,31.713950,6.202570,Moderately Functional
+SS0303,SS030302,mathiang phcu,31.535320,6.495460,Moderately Functional
+SS0303,SS030306,palabach phcu,31.566830,6.282500,Moderately Functional
+SS0303,SS030305,pariak phcc,31.660480,5.971250,Highly Functional
+SS0303,SS030302,tong phcu,31.568700,6.400550,Moderately Functional
+SS0201,SS020108,chawa phcu,33.244010,4.733380,Moderately Functional
+SS0201,SS020102,chukudum hospital,33.486060,4.227970,Moderately Functional
+SS0201,SS020104,frak-sika phcu,33.348680,4.382660,Moderately Functional
+SS0201,SS020103,haliba phcu,33.444800,4.451610,Moderately Functional
+SS0201,SS020107,kadumakuc phcu,33.599910,4.216640,Moderately Functional
+SS0201,SS020106,kapeta phcu,33.642480,4.309200,Moderately Functional
+SS0201,SS020103,kathac phcu,33.549500,4.352050,Moderately Functional
+SS0201,SS020103,kibongorok phcu,33.521780,4.402110,Moderately Functional
+SS0201,SS020105,kikilai phcc,33.602200,4.133180,Moderately Functional
+SS0201,SS020101,kimotong phcc,33.263970,4.684900,Moderately Functional
+SS0201,SS020102,komiri phcc,33.492839,4.227561,Moderately Functional
+SS0201,SS020102,lojiong phcu,33.431990,4.286730,Moderately Functional
+SS0201,SS020102,lokidele phcu,33.552910,4.224550,Moderately Functional
+SS0201,SS020105,lorema phcc,33.660690,4.160630,Moderately Functional
+SS0201,SS020104,loriyok phcu,33.323090,4.519210,Highly Functional
+SS0201,SS020107,nagishot phcc,33.566330,4.267340,Moderately Functional
+SS0201,SS020106,nathilani phcu,33.679093,4.334458,Moderately Functional
+SS0201,SS020106,ngatuba phcu,33.699160,4.256730,Moderately Functional
+SS0201,SS020103,ngauro phcc,33.684760,4.446480,Moderately Functional
+SS0201,SS020105,piobokoi phcu,33.758890,4.084980,Moderately Functional
+SS0201,SS020103,tulugi phcu,33.625210,4.350170,Moderately Functional
+SS0304,SS030406,canal phcc,31.549540,9.362840,Moderately Functional
+SS0304,SS030402,diel phcu,31.302780,9.374180,Moderately Functional
+SS0304,SS030402,khorfulus phcc,31.579980,9.314760,Moderately Functional
+SS0304,SS030405,khorwac phcc,31.159340,9.233500,Moderately Functional
+SS0304,SS030405,kolanyang phcu,31.107250,9.337310,Moderately Functional
+SS0304,SS030405,patai phcu,31.131240,9.225170,Moderately Functional
+SS0402,SS040201,abiriu phcc,29.423910,6.939310,Moderately Functional
+SS0402,SS040205,agangrial phcu,29.225490,6.852300,Moderately Functional
+SS0402,SS040201,ameth duol phcu,29.521910,6.892180,Moderately Functional
+SS0402,SS040204,bahrgel phcu,29.155026,7.018962,Moderately Functional
+SS0402,SS040202,chitchok phcc,29.222009,7.194868,Moderately Functional
+SS0402,SS040204,cueibet county hospital,29.241811,7.013111,Moderately Functional
+SS0402,SS040203,duony phcu,29.371740,6.968160,Moderately Functional
+SS0402,SS040201,kubri william phcu,29.475670,6.910650,Moderately Functional
+SS0402,SS040204,langdit phcu,29.090000,7.059000,Moderately Functional
+SS0402,SS040204,malou pec phcc,29.029535,7.110418,Moderately Functional
+SS0402,SS040203,mayath phcu,29.328760,6.990320,Moderately Functional
+SS0402,SS040205,mayen thon phcu,29.221830,6.971540,Moderately Functional
+SS0402,SS040204,pagor phcu,29.034544,7.209278,Moderately Functional
+SS0402,SS040206,tiap tiap phcu,29.324202,7.325156,Moderately Functional
+SS0305,SS030502,amiel phcu,31.278880,7.697500,Moderately Functional
+SS0305,SS030503,ayueldit phcu,31.330550,7.724320,Moderately Functional
+SS0305,SS030503,dorok phcu,31.299720,7.758050,Moderately Functional
+SS0305,SS030504,duk lost boy hospital,31.501797,7.469322,Moderately Functional
+SS0305,SS030503,koyom island phcu,30.791667,7.441111,Moderately Functional
+SS0305,SS030503,padiet phcc,31.395550,7.749160,Moderately Functional
+SS0305,SS030506,pajut kurgai phcc,31.679620,7.743310,Highly Functional
+SS0305,SS030501,patuenoi phcu,31.478790,7.518510,Moderately Functional
+SS0305,SS030506,patuet phcu,31.695550,7.849160,Moderately Functional
+SS0305,SS030501,poktap phcc,31.409120,7.455820,Moderately Functional
+SS1001,SS100101,andari phcu,27.725400,4.947280,Highly Functional
+SS1001,SS100101,bafuka phcu,27.780400,4.978220,Moderately Functional
+SS1001,SS100102,bagidi phcu,27.669910,5.182610,Moderately Functional
+SS1001,SS100104,baikpa phcu,27.474640,5.095350,Moderately Functional
+SS1001,SS100103,bambaraze phcu,27.393533,5.174159,Moderately Functional
+SS1001,SS100102,bandala phcu (ezo),27.526344,5.144414,Moderately Functional
+SS1001,SS100103,banduguyo phcu,27.442238,5.177404,Moderately Functional
+SS1001,SS100101,bangangai phcu,27.716547,4.918405,Moderately Functional
+SS1001,SS100101,baragu phcu,27.688099,4.982557,Moderately Functional
+SS1001,SS100103,bariabande phcu,27.688003,4.982395,Moderately Functional
+SS1001,SS100103,bariguna phcu,27.273820,5.318322,Moderately Functional
+SS1001,SS100104,degere phcu,27.435258,5.103171,Moderately Functional
+SS1001,SS100105,diabio phcu,28.025140,4.971670,Highly Functional
+SS1001,SS100104,ecs masumbu phcu,27.468590,5.068900,Moderately Functional
+SS1001,SS100104,ezo hospital,27.465810,5.077110,Moderately Functional
+SS1001,SS100104,madoro phcc,27.534900,5.070490,Moderately Functional
+SS1001,SS100106,mafuyu phcu,27.867815,4.814246,Moderately Functional
+SS1001,SS100104,mangbangau phcu,27.498645,5.053770,Moderately Functional
+SS1001,SS100104,manzinzi phcu,27.465641,5.076846,Moderately Functional
+SS1001,SS100104,mariagba phcu,27.614779,5.030691,Moderately Functional
+SS1001,SS100102,moso phcu,27.926925,5.201241,Moderately Functional
+SS1001,SS100105,naandi phcc,27.911891,5.972244,Moderately Functional
+SS1001,SS100105,nagasi phcu,27.901414,4.815416,Moderately Functional
+SS1001,SS100102,nangbabe1 phcu,27.911732,4.972764,Moderately Functional
+SS1001,SS100104,nanzinga phcu,28.032132,4.923133,Moderately Functional
+SS1001,SS100104,napere phcu,27.476180,5.073230,Moderately Functional
+SS1001,SS100105,nazizi phcc,27.911741,4.972371,Moderately Functional
+SS1001,SS100105,nyasi phcu,27.875450,4.858983,Moderately Functional
+SS1001,SS100106,yangiri phcc,27.956068,5.181500,Moderately Functional
+SS1001,SS100106,yangura phcu,27.976455,5.145087,Moderately Functional
+SS0306,SS030601,juaibor phcc,30.670210,9.401320,Moderately Functional
+SS0306,SS030605,keew phcc,30.634980,9.262980,Moderately Functional
+SS0306,SS030604,koat nyakong phcu,31.053950,9.438600,Moderately Functional
+SS0306,SS030601,kuemduok phcu,30.944830,9.210020,Moderately Functional
+SS0306,SS030601,kuernyang phcc,30.885260,9.319800,Moderately Functional
+SS0306,SS030604,kuerphon phcu,30.411720,9.107064,Moderately Functional
+SS0306,SS030601,mandeng phcu,30.837750,9.386750,Moderately Functional
+SS0306,SS030602,new fangak lele phcc,31.161453,9.408688,Moderately Functional
+SS0306,SS030602,nyadin phcc,30.667790,8.798680,Moderately Functional
+SS0306,SS030604,paguir phcu,30.758830,9.106770,Highly Functional
+SS0306,SS030605,pakaan phcc,31.109430,9.386060,Moderately Functional
+SS0306,SS030604,pulita phcu,30.393630,9.132516,Highly Functional
+SS0702,SS070201,aburoc phcu,32.084680,10.105390,Highly Functional
+SS0702,SS070204,bol phcu,31.841594,9.721505,Moderately Functional
+SS0702,SS070201,detwok phcu,32.182040,10.007990,Highly Functional
+SS0702,SS070202,gollo phcu,32.153220,9.960100,Highly Functional
+SS0702,SS070203,kodok hospital,32.116300,9.890700,Moderately Functional
+SS0702,SS070204,lul west phcu,31.858980,9.728430,Moderately Functional
+SS0702,SS070201,mallo phcu,32.208800,10.049080,Highly Functional
+SS0702,SS070204,orinyi phcc,31.889851,9.867909,Moderately Functional
+SS0702,SS070202,otego phcu,31.992560,9.894000,Moderately Functional
+SS0801,SS080105,ajogo phcu,28.425200,8.707150,Moderately Functional
+SS0801,SS080102,angernger phcu,28.426283,8.371206,Highly Functional
+SS0801,SS080101,awut-wut phcu,28.614320,8.593850,Moderately Functional
+SS0801,SS080104,lietnhom dtc phcc,28.472600,8.597590,Moderately Functional
+SS0801,SS080103,luonyaker phcc,28.389750,8.229630,Moderately Functional
+SS0801,SS080105,majak-nyuom phcu,28.530700,8.725790,Moderately Functional
+SS0801,SS080104,maliai phcu,28.540960,8.393220,Moderately Functional
+SS0801,SS080103,matiel phcu,28.228590,8.145110,Moderately Functional
+SS0801,SS080105,mayom chol phcu,28.405090,8.410540,Moderately Functional
+SS0801,SS080102,mayom-bioung phcu,28.594030,8.234180,Moderately Functional
+SS0801,SS080106,panacier phcu,28.361063,8.615566,Moderately Functional
+SS0801,SS080106,pinydit phcu,28.344490,8.415570,Moderately Functional
+SS0801,SS080104,ruot phcu,28.463140,8.407580,Moderately Functional
+SS0801,SS080102,yiik adoor phcu,28.463530,8.247210,Moderately Functional
+SS0802,SS080207,agei phcu,27.981335,8.246271,Moderately Functional
+SS0802,SS080207,ajiep phcu,28.089420,8.265550,Highly Functional
+SS0802,SS080201,akon phcc,27.956950,8.887348,Moderately Functional
+SS0802,SS080204,alek phcc,28.148560,8.663940,Moderately Functional
+SS0802,SS080209,anguoth phcu,28.200440,8.776750,Moderately Functional
+SS0802,SS080201,ariang phcu,27.866189,8.937863,Moderately Functional
+SS0802,SS080204,atuk kuel phcu,27.995940,8.644060,Moderately Functional
+SS0802,SS080206,gogrial phcc,28.100140,8.526830,Moderately Functional
+SS0802,SS080205,keet phcu,28.070930,8.818480,Moderately Functional
+SS0802,SS080207,kuajok state hospital,27.982360,8.296580,Moderately Functional
+SS0802,SS080208,magai phcu,28.008180,8.104390,Moderately Functional
+SS0802,SS080202,majakbol phcu,27.918540,9.148268,Moderately Functional
+SS0802,SS080209,majok thany phcu,28.184462,8.946649,Limitedly Functional
+SS0802,SS080207,malek phcu,28.022400,8.370800,Moderately Functional
+SS0802,SS080206,maluil ajak phcu,27.976120,8.528840,Moderately Functional
+SS0802,SS080206,mandeng phcu,27.966613,8.574599,Limitedly Functional
+SS0802,SS080207,mangar phcu,27.998219,8.377165,Moderately Functional
+SS0802,SS080207,mayen gumel phcc,27.943978,8.309746,Moderately Functional
+SS0802,SS080202,mayen phcu,27.923040,9.016530,Moderately Functional
+SS0802,SS080203,mayom phcu,28.273060,8.682773,Moderately Functional
+SS0802,SS080205,nyokthiang phcu,28.121267,8.594160,Moderately Functional
+SS0802,SS080204,pajokbeek phcu,28.225860,8.569632,Moderately Functional
+SS0802,SS080209,pakor phcu,28.117810,8.934770,Moderately Functional
+SS0802,SS080209,panliet phcu,28.255390,8.842370,Moderately Functional
+SS0802,SS080201,peeth phcu,28.011340,8.967180,Moderately Functional
+SS0802,SS080207,police phcc,27.982658,8.296489,Highly Functional
+SS0802,SS080206,riangagany phcu,27.821178,8.499504,Moderately Functional
+SS0802,SS080208,thurnyior phcu,28.131950,8.144920,Moderately Functional
+SS0602,SS060201,chuoke phcu,29.987039,9.144742,Highly Functional
+SS0602,SS060202,kedat phcu,30.061294,9.031339,Highly Functional
+SS0602,SS060203,kuach phcc,30.029470,8.902070,Highly Functional
+SS0602,SS060205,niemni phcc,30.026222,9.306375,Moderately Functional
+SS0602,SS060204,wathnyotni phcu,29.908456,9.353603,Highly Functional
+SS1002,SS100205,bamani phcu,29.171744,4.540436,Highly Functional
+SS1002,SS100202,bambu phcu,28.994741,4.833979,Moderately Functional
+SS1002,SS100201,duatuka phcu,29.123234,4.790881,Moderately Functional
+SS1002,SS100201,ibba phcc,29.134171,4.791005,Moderately Functional
+SS1002,SS100202,madebe phcc,28.997322,4.798473,Moderately Functional
+SS1002,SS100203,manikakare phcu,29.254827,4.848550,Highly Functional
+SS1002,SS100202,marko phcu,29.053450,4.798300,Highly Functional
+SS1002,SS100204,maruko phcu,29.162040,5.184820,Highly Functional
+SS1002,SS100205,nabanga phcc,29.092217,4.486200,Moderately Functional
+SS1002,SS100203,rubu phcu,29.346578,4.906670,Highly Functional
+SS1002,SS100204,tanamuko phcu,28.777478,5.139959,Highly Functional
+SS1002,SS100202,yosia phcu,28.985190,4.901430,Highly Functional
+SS0202,SS020206,ateda phcu,33.435861,3.826560,Moderately Functional
+SS0202,SS020206,biira phcc,33.582090,3.833130,Moderately Functional
+SS0202,SS020204,chahare phcu,33.144473,4.289592,Highly Functional
+SS0202,SS020205,chorokol phcu,33.194720,4.223547,Limitedly Functional
+SS0202,SS020201,gilo phcu,32.833867,4.046413,Moderately Functional
+SS0202,SS020201,hatire phcc,32.801349,4.033971,Moderately Functional
+SS0202,SS020202,huma phcu,33.016035,4.173561,Limitedly Functional
+SS0202,SS020202,ikwoto phcc,33.098573,4.079699,Moderately Functional
+SS0202,SS020201,imila phcu,32.667299,4.145630,Highly Functional
+SS0202,SS020203,imotong phcc,32.841742,4.171006,Moderately Functional
+SS0202,SS020204,lobira phcu,33.060722,4.396349,Limitedly Functional
+SS0202,SS020203,lobwaye phcu,32.973808,4.054850,Moderately Functional
+SS0202,SS020205,lodurumo phcu,33.172789,4.237024,Moderately Functional
+SS0202,SS020205,lodwara phcu,33.206109,4.194217,Moderately Functional
+SS0202,SS020203,lofulung phcu,32.889723,4.121096,Moderately Functional
+SS0202,SS020206,lofus phcu,33.434736,3.803467,Moderately Functional
+SS0202,SS020203,logire hutuk-hinyang phcu,32.784996,4.246282,Moderately Functional
+SS0202,SS020203,lomwoo phcu,32.936659,4.086266,Moderately Functional
+SS0202,SS020202,lorima phcu,33.157000,4.064730,Moderately Functional
+SS0202,SS020206,lotome phcu,33.449990,3.974910,Moderately Functional
+SS0202,SS020204,mangalla phcu,33.186534,4.262834,Moderately Functional
+SS0202,SS020202,momoria phcu,33.079488,4.114408,Moderately Functional
+SS0202,SS020206,nakoringole phcu,33.476280,3.862980,Moderately Functional
+SS0202,SS020203,ngaluma phcu,33.066936,3.979876,Moderately Functional
+SS0202,SS020205,okorohore phcu,33.169640,4.157180,Moderately Functional
+SS0202,SS020204,st theresa isohe mission hospital,33.075457,4.240332,Moderately Functional
+SS0202,SS020202,tseretenya phcu,33.219972,3.831682,Moderately Functional
+SS0101,SS010105,african inland church phcc,31.598849,4.847248,Moderately Functional
+SS0101,SS010108,aru junction phcu,31.984600,4.363540,Highly Functional
+SS0101,SS010101,belle boma phcu,31.388144,4.649723,Limitedly Functional
+SS0101,SS010101,bungu phcu,31.396121,4.664400,Moderately Functional
+SS0101,SS010105,el-sabah children hospital,31.606819,4.844289,Moderately Functional
+SS0101,SS010111,festo maternity hospital,31.576671,4.856033,Moderately Functional
+SS0101,SS010105,friendship medical hospital,31.600391,4.861953,Limitedly Functional
+SS0101,SS010114,gimora phcu,31.141760,5.166040,Moderately Functional
+SS0101,SS010104,gondokoro phcu,31.662795,4.908000,Moderately Functional
+SS0101,SS010113,gorom phcc,31.443664,4.756704,Moderately Functional
+SS0101,SS010111,gudele block 4 phcu,31.567650,4.863260,Moderately Functional
+SS0101,SS010111,gudele surgical home private hospital,31.551699,4.867860,Moderately Functional
+SS0101,SS010113,gumbo phcc,31.622670,4.814900,Moderately Functional
+SS0101,SS010112,gurei phcc,31.518510,4.866670,Moderately Functional
+SS0101,SS010111,hai jebel phcu,31.580160,4.848152,Moderately Functional
+SS0101,SS010107,ilyangiri phcu,32.035560,4.770500,Moderately Functional
+SS0101,SS010113,imc un house clinic 1,31.537704,4.819406,Highly Functional
+SS0101,SS010105,juba central prison phcc,31.613116,4.848549,Limitedly Functional
+SS0101,SS010111,juba military hospital,31.585079,4.831534,Limitedly Functional
+SS0101,SS010105,juba police phcc,31.591859,4.848848,Moderately Functional
+SS0101,SS010105,juba teaching hospital,31.609140,4.850740,Moderately Functional
+SS0101,SS010106,kator phcc,31.596620,4.831080,Moderately Functional
+SS0101,SS010113,khor romula/jenduru phcu,31.591965,4.793725,Moderately Functional
+SS0101,SS010113,khorwalliang phcc,31.580734,4.816569,Moderately Functional
+SS0101,SS010108,kubi phcu,31.922670,4.390240,Highly Functional
+SS0101,SS010102,kuda phcc,31.585310,4.851120,Moderately Functional
+SS0101,SS010112,kworijik phcu,31.585500,4.851410,Moderately Functional
+SS0101,SS010107,lirya phcc,32.046420,4.385630,Moderately Functional
+SS0101,SS010109,lobonok phcc,31.372490,4.177060,Moderately Functional
+SS0101,SS010108,lokiliri phcc,31.936910,4.573630,Moderately Functional
+SS0101,SS010106,lologo phcc,31.595640,4.817290,Moderately Functional
+SS0101,SS010112,luri rokwe phcu,31.595590,4.898220,Moderately Functional
+SS0101,SS010112,luri-somba phcu,31.403170,4.887280,Highly Functional
+SS0101,SS010111,lutheran phcc,31.563631,4.888249,Moderately Functional
+SS0101,SS010105,mahad phcu,31.596630,4.822250,Moderately Functional
+SS0101,SS010106,malakia phcc,31.603610,4.837630,Moderately Functional
+SS0101,SS010117,mangalla phcc,31.768720,5.196570,Moderately Functional
+SS0101,SS010112,mangateen 2 clinic,31.579475,4.887438,Moderately Functional
+SS0101,SS010112,mangaten phcu,31.569620,4.887423,Moderately Functional
+SS0101,SS010111,medicare hospital,31.554614,4.865511,Moderately Functional
+SS0101,SS010114,mirikio phcc,31.580170,4.845460,Moderately Functional
+SS0101,SS010110,mogiri/jobur phcc,31.855320,4.888390,Highly Functional
+SS0101,SS010111,munuki phcc,31.579330,4.863480,Moderately Functional
+SS0101,SS010108,nesitu phcu,31.704850,4.691030,Highly Functional
+SS0101,SS010107,ngangalla phcu,31.919630,4.706460,Moderately Functional
+SS0101,SS010111,nyakuron phcc,31.579080,4.846020,Moderately Functional
+SS0101,SS010108,nyerjebi phcu,31.825540,4.539480,Moderately Functional
+SS0101,SS010112,nyuwa phcu,31.651052,5.025875,Moderately Functional
+SS0101,SS010109,pager phcc,31.634420,4.201970,Moderately Functional
+SS0101,SS010112,peiti phcc,31.669660,5.057312,Highly Functional
+SS0101,SS010114,pirisa phcu,31.033380,5.176800,Moderately Functional
+SS0101,SS010113,rajaf east phcc,31.293960,4.698510,Moderately Functional
+SS0101,SS010113,rejaf west phcc,31.592018,4.728757,Moderately Functional
+SS0101,SS010114,rokon phcc,31.586599,4.858821,Moderately Functional
+SS0101,SS010106,sacred heart phcc,31.601755,4.827861,Moderately Functional
+SS0101,SS010114,sereng phcu,31.585330,4.851100,Moderately Functional
+SS0101,SS010102,sirimon phcu,31.113195,5.015850,Moderately Functional
+SS0101,SS010111,st.kizito phcc,31.571750,4.860080,Moderately Functional
+SS0101,SS010102,sure phcu,31.584900,4.844090,Moderately Functional
+SS0101,SS010114,toko-ko-tulu phcu,30.914018,4.948493,Moderately Functional
+SS0101,SS010105,usratuna phcc,31.605023,4.846821,Moderately Functional
+SS0101,SS010112,walawalang phcu,31.622560,4.882180,Moderately Functional
+SS0101,SS010113,way station phcu,31.560089,4.815574,Moderately Functional
+SS0101,SS010116,wonduruba phcc,33.003300,4.545720,Moderately Functional
+SS0901,SS090106,abou phcu,27.799900,7.995634,Limitedly Functional
+SS0901,SS090104,achong chong phcc,28.174470,7.929340,Moderately Functional
+SS0901,SS090105,achot phcu,28.154460,7.708260,Moderately Functional
+SS0901,SS090107,adet phcu,28.169049,8.105285,Moderately Functional
+SS0901,SS090101,ajugo phcu,27.622084,8.073856,Limitedly Functional
+SS0901,SS090107,akonbet phcu,27.956688,8.000998,Moderately Functional
+SS0901,SS090105,akrok phcu,28.119314,7.871889,Limitedly Functional
+SS0901,SS090104,alelchok phcu,27.978082,7.778135,Limitedly Functional
+SS0901,SS090101,alelthony phcu,27.859262,8.278588,Highly Functional
+SS0901,SS090106,atido phcu,27.899653,7.852172,Moderately Functional
+SS0901,SS090107,awany phcu,28.123791,8.045406,Moderately Functional
+SS0901,SS090106,barakol phcu,27.756955,7.818542,Limitedly Functional
+SS0901,SS090101,bartio phcu,27.551439,8.022339,Limitedly Functional
+SS0901,SS090106,barurud phcu,27.526134,7.957084,Moderately Functional
+SS0901,SS090106,baryar phcu,27.965172,7.756379,Limitedly Functional
+SS0901,SS090101,berber phcu,27.883425,8.332467,Moderately Functional
+SS0901,SS090103,chono phcu,28.178265,7.647951,Moderately Functional
+SS0901,SS090101,dhekou phcu,27.625350,8.266311,Limitedly Functional
+SS0901,SS090105,east bank phcc,28.025150,7.707520,Moderately Functional
+SS0901,SS090106,gette phcu,27.846688,7.946148,Limitedly Functional
+SS0901,SS090101,gumel phcu,27.812973,8.355252,Moderately Functional
+SS0901,SS090101,kangi phcc,27.662524,8.143023,Moderately Functional
+SS0901,SS090106,kanyango phcu,27.673403,7.953559,Moderately Functional
+SS0901,SS090103,kuajena phcc,28.266978,7.510610,Moderately Functional
+SS0901,SS090104,kuom phcu,28.026390,7.789781,Moderately Functional
+SS0901,SS090107,mabior abiem phcu,28.044766,7.999132,Moderately Functional
+SS0901,SS090104,mabor abun phcu,28.163384,8.038781,Limitedly Functional
+SS0901,SS090104,maluil phcu,27.966872,7.823821,Limitedly Functional
+SS0901,SS090104,manyang phcu,28.189250,8.044662,Moderately Functional
+SS0901,SS090103,mapel phcc,28.439210,7.296000,Moderately Functional
+SS0901,SS090103,maranya phcu,28.409170,7.381670,Moderately Functional
+SS0901,SS090104,marial ajieth phcu,27.997070,7.772185,Limitedly Functional
+SS0901,SS090104,marial bai phcc,27.978410,7.890630,Moderately Functional
+SS0901,SS090104,mary help hospital,27.988989,7.761143,Moderately Functional
+SS0901,SS090103,mbili phcu,28.196230,7.518990,Highly Functional
+SS0901,SS090103,medil phcu,28.263423,7.308296,Moderately Functional
+SS0901,SS090105,mmm healing phcc,28.028283,7.697670,Moderately Functional
+SS0901,SS090107,nyinakok phcu,28.033790,7.923250,Highly Functional
+SS0901,SS090105,rocroc dong phcu,28.112940,7.782180,Highly Functional
+SS0901,SS090107,tharkueng phcc,27.998720,8.011160,Moderately Functional
+SS0901,SS090106,udici phcc,27.722190,8.069780,Moderately Functional
+SS0901,SS090104,warachok phcu,27.915196,7.945412,Limitedly Functional
+SS0901,SS090101,warrieth phcu,27.733860,8.313440,Moderately Functional
+SS0102,SS010202,abaya phcu,31.616558,3.646787,Limitedly Functional
+SS0102,SS010202,bori phcc,31.510205,3.774005,Moderately Functional
+SS0102,SS010202,jalimo phcc,31.599049,3.759675,Moderately Functional
+SS0102,SS010202,kajo keji civil hospital,31.656506,3.853614,Limitedly Functional
+SS0102,SS010201,kangai phcc,31.656924,3.768902,Moderately Functional
+SS0102,SS010205,kansuk phcc,31.535313,4.010956,Moderately Functional
+SS0102,SS010204,kerwa phcu,31.306851,3.801440,Limitedly Functional
+SS0102,SS010201,kinyiba phcu,31.581326,3.821660,Moderately Functional
+SS0102,SS010201,kiri phcu,31.636806,3.772855,Moderately Functional
+SS0102,SS010201,leikor phcu,31.665896,3.807849,Moderately Functional
+SS0102,SS010201,lijo healing kadi phcc,31.667395,3.780101,Moderately Functional
+SS0102,SS010201,limi phcu,31.715121,3.802814,Limitedly Functional
+SS0102,SS010203,lire phcc,31.620238,3.896593,Moderately Functional
+SS0102,SS010201,litoba phcu,31.683778,3.738447,Highly Functional
+SS0102,SS010202,logu phcu,31.618869,3.835604,Limitedly Functional
+SS0102,SS010202,lomin phcc,31.659361,3.824791,Moderately Functional
+SS0102,SS010203,longira phcu,31.601672,3.878474,Moderately Functional
+SS0102,SS010203,mere phcu,31.672490,3.889520,Highly Functional
+SS0102,SS010203,merewa phcc,31.627416,3.907055,Limitedly Functional
+SS0102,SS010203,mogiri phcu,31.595430,3.950685,Limitedly Functional
+SS0102,SS010203,romogi phcu,31.649702,3.908362,Moderately Functional
+SS0102,SS010201,saregoro phcu,31.679009,3.844215,Limitedly Functional
+SS0102,SS010201,sera jale phcu,31.634715,3.734429,Limitedly Functional
+SS0102,SS010204,sokare phcu,31.429886,3.794968,Moderately Functional
+SS0203,SS020303,good shephard phcc,34.772160,5.498670,Highly Functional
+SS0203,SS020306,kaludo phcu,34.106500,4.682200,Moderately Functional
+SS0203,SS020302,kalupe phcu,33.804370,4.776300,Moderately Functional
+SS0203,SS020303,kuron phcc,34.565040,5.704880,Moderately Functional
+SS0203,SS020306,loolim phcu,34.044960,4.587880,Moderately Functional
+SS0203,SS020304,lotimor phcu,35.074905,5.310038,Moderately Functional
+SS0203,SS020302,lowoyakali phcu,33.815870,4.678190,Moderately Functional
+SS0203,SS020305,mogos phcc,33.790600,5.124770,Highly Functional
+SS0203,SS020306,nadapal phcu,34.184503,4.448731,Moderately Functional
+SS0203,SS020306,naliel phcu,34.220060,4.823300,Moderately Functional
+SS0203,SS020303,namorupus phcu,34.647010,5.470830,Moderately Functional
+SS0203,SS020302,napotpot (loburi) phcu,33.899110,4.626650,Moderately Functional
+SS0203,SS020306,narus cdot phcc,34.170140,4.504780,Moderately Functional
+SS0203,SS020306,narus phcc,34.161790,4.503380,Moderately Functional
+SS0203,SS020305,nasigigriate phcu,33.699080,4.975250,Moderately Functional
+SS0203,SS020307,new site wodran phcc,34.001540,4.250420,Moderately Functional
+SS0204,SS020406,choroi phcu,33.600920,4.887190,Moderately Functional
+SS0204,SS020401,chumakori phcu,33.558490,4.913330,Moderately Functional
+SS0204,SS020402,kibak phcu,33.579274,4.995578,Moderately Functional
+SS0204,SS020402,lokoges phcu,33.304900,5.049000,Moderately Functional
+SS0204,SS020403,lomeyen phcu,33.451010,4.907650,Moderately Functional
+SS0204,SS020402,lopetet phcu,33.514405,5.011983,Moderately Functional
+SS0204,SS020404,mossingo phcu,33.771244,5.267482,Moderately Functional
+SS0204,SS020402,naakwa phcc,33.553460,5.067150,Highly Functional
+SS0204,SS020403,naminitoit phcu,33.514152,5.201201,Moderately Functional
+SS0204,SS020404,namonicheck phcu,33.392360,5.279500,Moderately Functional
+SS0204,SS020405,nangoletirae phcu,33.495770,4.895880,Moderately Functional
+SS0204,SS020401,nawoyamuria phcu,33.459080,5.304530,Moderately Functional
+SS0204,SS020406,paringa phcu,33.563270,4.847840,Moderately Functional
+SS0204,SS020405,riwoto phcc,33.505840,4.882170,Moderately Functional
+SS0204,SS020402,wokobu phcu,33.515970,5.139700,Moderately Functional
+SS0205,SS020501,kapoeta civil hospital,33.591560,4.772390,Moderately Functional
+SS0205,SS020502,longeleya phcu,33.633778,4.701444,Moderately Functional
+SS0205,SS020503,nachilagur phcu,33.605800,4.753600,Moderately Functional
+SS0205,SS020505,nak nak phcu,33.662867,4.753361,Moderately Functional
+SS0205,SS020504,nakware phcu,33.500417,4.774000,Moderately Functional
+SS0205,SS020505,napetait phcc,33.656833,4.625861,Moderately Functional
+SS0603,SS060301,boaw phcc,29.729600,8.843790,Moderately Functional
+SS0603,SS060304,koch phcc,29.989890,8.599840,Moderately Functional
+SS0603,SS060305,mirmir phcc,30.102250,8.464600,Moderately Functional
+SS0603,SS060303,rier phcu,30.100230,8.782960,Highly Functional
+SS0206,SS020604,adeba phcu,32.395470,5.009590,Moderately Functional
+SS0206,SS020605,aic lohutok phcc,32.856220,4.642398,Moderately Functional
+SS0206,SS020606,bule phcu,32.618125,4.901303,Moderately Functional
+SS0206,SS020606,haba phcu,32.622030,4.837810,Moderately Functional
+SS0206,SS020605,ibonni phcu,32.796646,4.661957,Moderately Functional
+SS0206,SS020606,idali phcu,32.683260,4.703950,Moderately Functional
+SS0206,SS020601,imedu phcu,32.677192,4.913181,Moderately Functional
+SS0206,SS020603,imehejek phcc,32.761490,4.781750,Moderately Functional
+SS0206,SS020604,kujikor phcu,32.428870,4.956790,Moderately Functional
+SS0206,SS020601,lacharok phcu,32.701850,4.866970,Moderately Functional
+SS0206,SS020602,lafon phcc,32.476115,5.030390,Moderately Functional
+SS0206,SS020605,lalanga phcu,32.903350,4.590910,Moderately Functional
+SS0206,SS020601,logonowati phcu,32.690880,4.841370,Moderately Functional
+SS0206,SS020605,loming phcu,32.929910,4.522790,Moderately Functional
+SS0206,SS020606,longiro phcu,32.627800,4.788930,Highly Functional
+SS0206,SS020608,pachidi/lwala phcu,32.476570,4.805680,Moderately Functional
+SS0206,SS020602,taar phcu,32.460542,5.102244,Moderately Functional
+SS0206,SS020607,ukwanya phcu,32.480869,5.094514,Moderately Functional
+SS0206,SS020608,upuo phcu,32.432230,4.786060,Moderately Functional
+SS0103,SS010303,bereka phcu,31.041840,4.398460,Moderately Functional
+SS0103,SS010302,ginyabio phcu,30.969442,3.979935,Moderately Functional
+SS0103,SS010302,jamara phcc,30.982370,4.047340,Moderately Functional
+SS0103,SS010301,kenyi phcu,30.912980,4.206510,Highly Functional
+SS0103,SS010302,kupera phcu,30.953781,4.133344,Limitedly Functional
+SS0103,SS010303,lainya phcc,31.074420,4.340590,Moderately Functional
+SS0103,SS010301,limbe phcc,30.860920,4.161060,Moderately Functional
+SS0103,SS010305,limuro phcu,31.058030,4.058270,Highly Functional
+SS0103,SS010303,logwili phcu,31.121160,4.370080,Highly Functional
+SS0103,SS010303,loka round phcu,31.019600,4.273170,Moderately Functional
+SS0103,SS010303,st luke phcc,31.069034,4.339307,Moderately Functional
+SS0103,SS010305,wuji phcu,31.076760,3.840540,Moderately Functional
+SS0103,SS010304,yondoru phcu,30.766130,4.220230,Highly Functional
+SS0604,SS060402,adok phcc,30.302510,8.192326,Moderately Functional
+SS0604,SS060403,bou phcu,30.199227,8.332318,Highly Functional
+SS0604,SS060401,dindin phcu,30.230581,8.303374,Moderately Functional
+SS0604,SS060401,gandor phcu,30.199874,8.356500,Highly Functional
+SS0604,SS060404,guat phcu,30.144600,8.383390,Highly Functional
+SS0604,SS060406,juong phcu,30.146580,8.311526,Moderately Functional
+SS0604,SS060402,leer phcu,30.142504,8.305064,Moderately Functional
+SS0604,SS060401,lual phcu,30.074460,8.240830,Highly Functional
+SS0604,SS060401,padeah phcu,30.186569,8.405481,Moderately Functional
+SS0604,SS060407,pilieny phcu,30.200945,8.265375,Highly Functional
+SS0604,SS060404,rupchay phcu,30.138416,8.301856,Highly Functional
+SS0604,SS060408,thonyor phcc,30.221316,8.222847,Moderately Functional
+SS0703,SS070305,belwang phcu,33.387320,9.092590,Highly Functional
+SS0703,SS070302,chot lual phcu,33.777090,9.248985,Highly Functional
+SS0703,SS070302,chutbora phcc,33.753070,9.206120,Moderately Functional
+SS0703,SS070301,dajok phcc,33.958140,9.205190,Highly Functional
+SS0703,SS070302,guelguk phcc,32.979870,9.755600,Highly Functional
+SS0703,SS070303,jongok phcu,33.427500,9.054670,Highly Functional
+SS0703,SS070304,majiok phcu,33.506135,8.942154,Highly Functional
+SS0703,SS070304,malow phcu,33.571540,8.935400,Highly Functional
+SS0703,SS070304,malual phcu,33.571390,8.935452,Highly Functional
+SS0703,SS070303,mathiang phcc,33.499083,9.026475,Moderately Functional
+SS0703,SS070305,pamac phcu,33.743100,8.921060,Highly Functional
+SS0703,SS070306,ugier phcu,33.695290,9.310580,Highly Functional
+SS0703,SS070303,warweng phcu,33.469218,9.034005,Highly Functional
+SS0703,SS070304,watber phcc,33.562087,8.941188,Highly Functional
+SS0703,SS070301,wichlita phcu,33.842700,9.254340,Moderately Functional
+SS0703,SS070306,wudier phcu,33.684928,9.311397,Highly Functional
+SS0704,SS070403,dhekdhek phcu,33.135630,8.675350,Highly Functional
+SS0704,SS070401,dingkar phcu,33.031150,8.754280,Highly Functional
+SS0704,SS070408,gaireng phcu,33.028600,8.898660,Highly Functional
+SS0704,SS070406,gurnyang phcu,33.394570,8.696350,Moderately Functional
+SS0704,SS070408,homkor phcu,33.085930,8.715080,Highly Functional
+SS0704,SS070402,jikmir phcc,33.189260,8.453270,Moderately Functional
+SS0704,SS070403,kierwan phcu,33.040300,8.782240,Highly Functional
+SS0704,SS070404,kierwanding phcu,33.040910,8.784160,Highly Functional
+SS0704,SS070401,lual yak phcu,32.976850,8.770100,Moderately Functional
+SS0704,SS070405,mading phcc,33.321920,8.773290,Highly Functional
+SS0704,SS070404,malek phcu,33.047550,8.816340,Moderately Functional
+SS0704,SS070404,mandeng phcu,33.321540,8.772910,Highly Functional
+SS0704,SS070407,nasir hospital,33.074120,8.616950,Moderately Functional
+SS0704,SS070404,wanding phcu,33.104050,8.077260,Highly Functional
+SS0705,SS070505,benamayo phcc,33.758680,9.983658,Moderately Functional
+SS0705,SS070501,bougaya phcu,33.692460,9.955660,Moderately Functional
+SS0705,SS070502,bunj ri phcc,33.725010,9.959570,Moderately Functional
+SS0705,SS070501,dangaji phcu,33.654860,9.926920,Limitedly Functional
+SS0705,SS070505,doro extension phcu,33.769400,10.010210,Moderately Functional
+SS0705,SS070505,doro phcc,33.591667,9.993056,Moderately Functional
+SS0705,SS070503,gandrassa phcc,33.613010,9.985240,Highly Functional
+SS0705,SS070502,gasm allah phcu,33.806480,9.967150,Moderately Functional
+SS0705,SS070503,gentil phcc,33.588942,9.988117,Moderately Functional
+SS0705,SS070504,jamam phcu,33.228260,10.143910,Moderately Functional
+SS0705,SS070503,kaya phcc,33.574630,10.102890,Highly Functional
+SS0705,SS070503,kaya phcu,33.744341,9.982933,Moderately Functional
+SS0705,SS070505,mayak phcu,33.744170,9.983300,Moderately Functional
+SS0705,SS070505,nilla phcu,33.825232,10.107527,Moderately Functional
+SS0705,SS070503,poumki phcu,33.562191,10.254694,Moderately Functional
+SS0705,SS070502,shatta phcu,33.554628,9.573043,Highly Functional
+SS0705,SS070502,thougji phcu,33.712360,9.983760,Moderately Functional
+SS0705,SS070503,yusuf batil phcc,33.588470,9.988190,Highly Functional
+SS0705,SS070503,yusuf batil phcu,33.579140,9.976290,Moderately Functional
+SS0207,SS020702,abara phcc,32.178871,4.082361,Moderately Functional
+SS0207,SS020702,agoro phcu,32.187588,4.282485,Moderately Functional
+SS0207,SS020702,amee phcu,32.034728,4.072037,Moderately Functional
+SS0207,SS020702,ayii phcu,31.994669,4.213069,Moderately Functional
+SS0207,SS020703,ganzi phcu,32.163330,3.614190,Moderately Functional
+SS0207,SS020701,kicenga phcc,32.626849,3.877638,Moderately Functional
+SS0207,SS020706,lerwa phcu,32.539873,3.951808,Highly Functional
+SS0207,SS020701,lobone phcc,32.761340,3.797890,Moderately Functional
+SS0207,SS020704,longu phcu,32.132487,3.566418,Moderately Functional
+SS0207,SS020702,magwi cdot phcc,32.304324,4.122935,Moderately Functional
+SS0207,SS020702,magwi phcc,32.301044,4.136073,Moderately Functional
+SS0207,SS020705,moli tokuro phcc,32.066653,3.923311,Highly Functional
+SS0207,SS020703,mugali phcc,32.197147,3.566517,Moderately Functional
+SS0207,SS020704,nimule cdot phcc,32.069634,3.586866,Moderately Functional
+SS0207,SS020704,nimule hospital,32.056729,3.600361,Moderately Functional
+SS0207,SS020705,nyaciga phcc,32.252485,3.839626,Limitedly Functional
+SS0207,SS020702,obbo phcc,32.424213,4.044593,Moderately Functional
+SS0207,SS020702,ofiriha magwi phcu,32.299684,4.314202,Moderately Functional
+SS0207,SS020704,olikwi phcu,32.079060,3.570930,Moderately Functional
+SS0207,SS020702,omeo phcu,32.247793,4.209967,Moderately Functional
+SS0207,SS020705,opari phcc,32.067498,3.923320,Moderately Functional
+SS0207,SS020702,owinykibul phcu,32.265690,3.841110,Highly Functional
+SS0207,SS020705,pageri phcc,31.956826,3.867249,Moderately Functional
+SS0207,SS020706,pajok phcc,32.483670,3.859947,Moderately Functional
+SS0207,SS020702,palotaka phcu,32.470145,4.023170,Moderately Functional
+SS0207,SS020702,paluonganyi phcu,32.326860,4.133403,Moderately Functional
+SS0207,SS020701,palwar phcu,32.598057,3.917537,Moderately Functional
+SS0207,SS020706,pogee phcu,32.518800,3.766720,Moderately Functional
+SS0706,SS070601,jekow phcu,33.766750,8.369890,Highly Functional
+SS0706,SS070602,jotome phcu,33.833400,8.639580,Highly Functional
+SS0706,SS070603,kigile phcu,34.026041,8.681330,Moderately Functional
+SS0706,SS070604,maiwut phcc,33.924060,8.606220,Moderately Functional
+SS0706,SS070605,malek phcu,33.745910,8.648110,Moderately Functional
+SS0706,SS070603,nyetok phcu,33.825800,8.543660,Moderately Functional
+SS0706,SS070604,pagak phcc,33.020480,8.473280,Highly Functional
+SS0706,SS070604,pinythor phcu,33.853320,8.724480,Highly Functional
+SS0706,SS070601,turuw phcu,33.441380,8.499890,Moderately Functional
+SS0706,SS070605,uleng phcu,33.727480,8.712200,Highly Functional
+SS0706,SS070602,wunkir phcu,33.843340,8.643650,Moderately Functional
+SS0707,SS070705,assossa phcu,31.667500,9.515500,Highly Functional
+SS0707,SS070705,bam phcu,31.659230,9.503360,Moderately Functional
+SS0707,SS070702,malakal teaching hospital,31.651830,9.529050,Moderately Functional
+SS0707,SS070706,wau shilluk phcu,31.745930,9.661450,Moderately Functional
+SS0708,SS070801,athidwoi phcu,32.242060,10.250530,Highly Functional
+SS0708,SS070801,aweth phcc,32.223130,10.341080,Highly Functional
+SS0708,SS070802,kaka phcc,32.157220,10.579200,Highly Functional
+SS0708,SS070803,kitgwang phcu,32.119770,11.941268,Highly Functional
+SS0708,SS070801,ogon phcu,32.270050,10.131340,Highly Functional
+SS0708,SS070802,thorgwang phcu,32.642020,11.001020,Highly Functional
+SS0708,SS070804,wadakona phcc,32.728220,11.608230,Highly Functional
+SS1003,SS100303,affa phcu,29.642649,4.972900,Moderately Functional
+SS1003,SS100301,amaki phcu,29.477940,5.138090,Moderately Functional
+SS1003,SS100304,betha saida ecs phcc,29.451623,4.911308,Moderately Functional
+SS1003,SS100301,chochoro phcu,29.455990,4.999780,Highly Functional
+SS1003,SS100304,don bosco clinic phcc,29.432784,4.917460,Moderately Functional
+SS1003,SS100302,dorrolilli phcu,29.867770,4.656680,Moderately Functional
+SS1003,SS100302,dukudu-olo phcc,29.863647,4.590831,Moderately Functional
+SS1003,SS100303,eyira phcu,29.640828,4.973469,Moderately Functional
+SS1003,SS100301,kozi phcu,29.711640,5.507823,Highly Functional
+SS1003,SS100305,kwanga phcu,29.473080,4.860510,Moderately Functional
+SS1003,SS100303,langua phcu,29.980260,5.106550,Moderately Functional
+SS1003,SS100303,longbua phcu,29.715070,5.026150,Highly Functional
+SS1003,SS100304,mabilindi phcu,29.512905,4.931523,Moderately Functional
+SS1003,SS100303,mambe 1 phcu,29.824240,4.868180,Moderately Functional
+SS1003,SS100304,maridi hospital,29.464443,4.916190,Moderately Functional
+SS1003,SS100304,mboroko phcu,29.433783,4.859241,Moderately Functional
+SS1003,SS100305,meke 2 phcu,29.495330,4.886050,Moderately Functional
+SS1003,SS100304,moku phcu,29.497090,4.907180,Moderately Functional
+SS1003,SS100304,mudubai phcu,29.504700,4.992720,Moderately Functional
+SS1003,SS100304,nagbaka phcu,29.436743,4.954046,Moderately Functional
+SS1003,SS100305,ngburusai phcu,29.510880,4.818870,Moderately Functional
+SS1003,SS100303,olo phcc,29.829300,5.081960,Moderately Functional
+SS1003,SS100304,ras-tigi phcu,29.394211,4.925028,Moderately Functional
+SS1003,SS100301,woko phcc,29.618890,5.363080,Moderately Functional
+SS0605,SS060503,dablual phcu,30.007810,8.318750,Moderately Functional
+SS0605,SS060508,jaguar phcu,30.023630,8.359090,Moderately Functional
+SS0605,SS060507,kuok phcu,30.053230,8.394450,Moderately Functional
+SS0605,SS060504,leah phcu,30.115375,8.263189,Moderately Functional
+SS0605,SS060504,luom phcu,30.129560,8.397800,Moderately Functional
+SS0605,SS060501,madol phcu,29.842110,7.903380,Moderately Functional
+SS0605,SS060505,malkuer phcu,29.942980,8.163220,Moderately Functional
+SS0605,SS060502,mayendit phcc,30.016590,8.131790,Moderately Functional
+SS0605,SS060501,pabuong phcu,30.005800,8.123880,Moderately Functional
+SS0605,SS060503,rubkuay phcc,30.078580,8.391780,Moderately Functional
+SS0605,SS060506,thakker phcu,30.049370,8.393140,Moderately Functional
+SS0605,SS060509,tutnyang phcu,30.100450,8.359710,Moderately Functional
+SS0606,SS060601,bieh phcu,28.797190,9.102030,Moderately Functional
+SS0606,SS060603,kueryiek phcu,28.847746,9.042227,Highly Functional
+SS0606,SS060604,mankien phcc,29.090010,9.052120,Highly Functional
+SS0606,SS060602,mayom phcc,29.175670,9.222170,Highly Functional
+SS0606,SS060605,ngop phcu,28.951350,9.122610,Highly Functional
+SS0606,SS060606,pub phcu,29.001200,9.013087,Highly Functional
+SS0606,SS060607,riah phcu,29.276470,8.913130,Highly Functional
+SS0606,SS060608,ruadhnyibol phcu,28.921970,9.036990,Highly Functional
+SS0709,SS070902,galdora phcc,32.463440,10.271680,Moderately Functional
+SS0709,SS070903,melut civil hospital,32.200680,10.444450,Highly Functional
+SS0709,SS070905,paloch phcc,32.548160,10.465590,Moderately Functional
+SS0709,SS070904,panomdit phcu,32.267690,10.032190,Moderately Functional
+SS0709,SS070901,pariak phcu,32.785540,12.169460,Moderately Functional
+SS0709,SS070906,wanamum phcu,32.548100,10.465639,Moderately Functional
+SS0104,SS010402,kaya phcc,30.881630,3.541580,Moderately Functional
+SS0104,SS010401,kendila phcu,30.860778,3.745030,Highly Functional
+SS0104,SS010401,morobo phcc,30.775210,3.687840,Moderately Functional
+SS0104,SS010404,panyume phcu,30.950900,3.781040,Moderately Functional
+SS0104,SS010401,rodoba phcu,30.807230,3.600100,Highly Functional
+SS1004,SS100404,agyi phcu,30.860310,5.404250,Highly Functional
+SS1004,SS100401,bekenye phcu,30.782260,5.530940,Highly Functional
+SS1004,SS100403,buagyi phcu,30.628960,5.147960,Highly Functional
+SS1004,SS100401,dosho phcu,30.465200,5.464930,Highly Functional
+SS1004,SS100403,gabat phcu,30.325400,5.350550,Highly Functional
+SS1004,SS100402,kasiko phcu,30.600798,5.721440,Highly Functional
+SS1004,SS100401,kediba phcc,30.725500,5.512620,Moderately Functional
+SS1004,SS100405,kporoloo phcu,30.682279,5.091139,Highly Functional
+SS1004,SS100402,lakamadi phcc,30.488360,5.667810,Moderately Functional
+SS1004,SS100403,lanyi phcc,30.508730,5.248090,Moderately Functional
+SS1004,SS100403,lozoh phcu,30.446740,5.157190,Highly Functional
+SS1004,SS100403,lui hospital,30.448670,5.342810,Moderately Functional
+SS1004,SS100401,magyirii phcu,30.857550,5.531980,Highly Functional
+SS1004,SS100405,mideh phcc,30.736880,5.063370,Highly Functional
+SS1004,SS100404,minga phcc,30.865850,5.301020,Highly Functional
+SS1004,SS100405,miriba phcu,30.732010,5.064955,Highly Functional
+SS1004,SS100401,movo phcu,30.635700,5.388120,Highly Functional
+SS1004,SS100403,singiriwo phcu,30.512470,5.159640,Highly Functional
+SS1004,SS100401,wandi phcu,30.643550,5.496080,Highly Functional
+SS1004,SS100403,wiroh phcu,30.560160,5.309050,Highly Functional
+SS1005,SS100501,amadi phcu,30.335300,5.518970,Highly Functional
+SS1005,SS100503,bari phcu,30.395180,5.228140,Highly Functional
+SS1005,SS100501,bitti phcu,30.437430,5.569920,Highly Functional
+SS1005,SS100502,bongolo phcc,30.300920,4.827790,Highly Functional
+SS1005,SS100502,diko phcu,30.480504,4.769791,Moderately Functional
+SS1005,SS100503,garia phcu,30.327960,5.033480,Highly Functional
+SS1005,SS100503,goribalau phcu,30.197410,5.185131,Highly Functional
+SS1005,SS100504,gulu phcu,30.159270,5.366820,Highly Functional
+SS1005,SS100503,karika phcu,30.038310,5.129960,Highly Functional
+SS1005,SS100503,kotobi phcc,30.200990,5.242750,Moderately Functional
+SS1005,SS100502,ledingwa phcu,30.334210,4.949110,Highly Functional
+SS1005,SS100503,mandi phcu,30.107603,5.160450,Moderately Functional
+SS1005,SS100504,mbara phcu,30.262640,5.386700,Highly Functional
+SS1005,SS100504,mundri phcc,30.320864,5.346534,Moderately Functional
+SS1005,SS100502,tore wandi phcu,30.438628,4.638145,Moderately Functional
+SS1006,SS100601,bahr grindi phcu,30.177760,6.140730,Highly Functional
+SS1006,SS100602,bogori phcu,29.847510,5.740540,Highly Functional
+SS1006,SS100603,dari phcu,30.356650,5.821140,Highly Functional
+SS1006,SS100606,domeri phcu,30.356650,5.965770,Highly Functional
+SS1006,SS100602,gira phcu,29.895340,5.896880,Highly Functional
+SS1006,SS100604,kombi phcu,29.938218,6.290300,Highly Functional
+SS1006,SS100604,kulu phcu,29.936650,6.229820,Highly Functional
+SS1006,SS100601,lali phcu,30.081670,6.211540,Highly Functional
+SS1006,SS100605,lesi phcu,30.300930,5.882330,Highly Functional
+SS1006,SS100606,mvolo phcc,29.960530,6.059650,Moderately Functional
+SS1006,SS100607,yeri phcc,30.104300,5.784670,Moderately Functional
+SS1007,SS100701,bandala phcu,27.722670,6.116881,Moderately Functional
+SS1007,SS100702,dangu phcu,27.734560,6.473300,Moderately Functional
+SS1007,SS100701,kuro phcu,27.734034,6.242303,Moderately Functional
+SS1007,SS100701,maringindo phcu,27.443532,6.182791,Moderately Functional
+SS1007,SS100701,nagero phcc,27.764980,6.387600,Moderately Functional
+SS0307,SS030705,bariak phcu,32.150928,8.197830,Moderately Functional
+SS0307,SS030701,chuil phcc,32.076660,8.571660,Moderately Functional
+SS0307,SS030703,pading phcu,31.802391,8.443310,Moderately Functional
+SS0307,SS030705,pokbor phcu,32.700000,8.066670,Highly Functional
+SS0307,SS030705,pultruk phcc,31.948660,8.594660,Moderately Functional
+SS0307,SS030702,riang phcu,31.833494,8.488860,Highly Functional
+SS0307,SS030705,tut majok phcu,32.058560,8.475650,Moderately Functional
+SS0307,SS030706,waat phcc,32.150000,8.197250,Moderately Functional
+SS0307,SS030703,wenyal phcu,31.575410,8.174291,Moderately Functional
+SS1008,SS100801,basukangbi phcc,28.054143,4.683463,Moderately Functional
+SS1008,SS100802,ecs good samaritan phcc,28.254950,4.637072,Moderately Functional
+SS1008,SS100804,nabubu phcu,28.216408,4.571175,Moderately Functional
+SS1008,SS100802,namaiku phcu,28.226778,4.686352,Moderately Functional
+SS1008,SS100804,nangirimo phcu,28.206380,4.469800,Highly Functional
+SS1008,SS100803,ngbambia phcu,28.066803,4.921978,Moderately Functional
+SS1008,SS100802,nzara hospital,28.248169,4.642152,Limitedly Functional
+SS1008,SS100802,nzara phcc,28.248158,4.642116,Moderately Functional
+SS1008,SS100803,ringasi phcc,28.178801,4.928962,Moderately Functional
+SS1008,SS100804,sakure phcc,28.211664,4.396540,Moderately Functional
+SS1008,SS100805,sangua one phcu,28.126078,4.629689,Highly Functional
+SS1008,SS100805,sangua two phcu,28.212980,4.620340,Highly Functional
+SS1008,SS100802,st.tereza hospital,28.249005,4.641908,Moderately Functional
+SS1008,SS100802,yabongo phcu,28.305420,4.679862,Moderately Functional
+SS1008,SS100802,yabuwa phcu,28.283930,4.617331,Highly Functional
+SS0607,SS060710,chuk phcu,30.281270,7.452210,Moderately Functional
+SS0607,SS060701,ganyiel phcc,30.472370,7.404970,Moderately Functional
+SS0607,SS060704,janglou phcu,30.234190,7.687260,Moderately Functional
+SS0607,SS060702,kol phcu,30.352470,7.593056,Highly Functional
+SS0607,SS060710,laidit phcu,30.401110,7.457660,Moderately Functional
+SS0607,SS060703,maluak phcu,30.161089,7.742111,Moderately Functional
+SS0607,SS060702,maluok phcu,30.275614,7.745322,Moderately Functional
+SS0607,SS060704,merlsland phcu,30.306240,7.361478,Moderately Functional
+SS0607,SS060706,morgok phcu,30.333510,7.261680,Moderately Functional
+SS0607,SS060704,nyadong phcu,30.203390,7.704070,Moderately Functional
+SS0607,SS060704,nyal phcc,30.248580,7.723750,Moderately Functional
+SS0607,SS060706,pachak phcu,30.446360,7.292920,Moderately Functional
+SS0607,SS060706,pachar phcu,30.247661,7.655025,Moderately Functional
+SS0607,SS060710,tiap phcu,30.424030,7.414780,Moderately Functional
+SS0710,SS071001,oweci phcc,31.575750,9.433580,Moderately Functional
+SS0710,SS071006,tonga phcc,31.049600,9.469730,Moderately Functional
+SS0608,SS060802,biu phcc,30.297490,9.645710,Moderately Functional
+SS0608,SS060801,bongki phcu,29.790600,10.015000,Highly Functional
+SS0608,SS060803,gumriak phcu,30.197250,10.027539,Moderately Functional
+SS0608,SS060803,jamjang phcc,30.291130,9.927930,Moderately Functional
+SS0608,SS060804,kong phcu,30.027536,9.836122,Moderately Functional
+SS0608,SS060805,panyang phcc,29.925870,10.042220,Moderately Functional
+SS0608,SS060805,pariang hospital,29.982140,9.911340,Highly Functional
+SS0608,SS060806,yida center a phcc,30.092860,10.106330,Highly Functional
+SS0308,SS030802,boma phcc,34.388660,6.178760,Highly Functional
+SS0308,SS030803,khoradep phcu,34.393890,6.150830,Moderately Functional
+SS0308,SS030805,labarab phcu,33.969700,6.661120,Highly Functional
+SS0308,SS030804,meiwun phcu,33.572716,6.395365,Moderately Functional
+SS0308,SS030807,pibor phcc,33.624660,6.793330,Moderately Functional
+SS0308,SS030808,vertheth phcu,33.115660,7.223980,Moderately Functional
+SS0309,SS030901,ajwara phcu,33.967080,7.139130,Moderately Functional
+SS0309,SS030901,nyium phcu,34.035970,7.205410,Moderately Functional
+SS0309,SS030905,obuodi phcu,34.017730,7.080000,Moderately Functional
+SS0309,SS030905,ojangbai phcu,34.135650,7.153960,Moderately Functional
+SS0309,SS030902,okadi phcu,34.270590,6.997420,Moderately Functional
+SS0309,SS030901,otallo phcu,33.086620,7.015230,Highly Functional
+SS0309,SS030905,pochalla phcc,34.087758,7.174304,Moderately Functional
+SS0902,SS090204,abul phcu,26.415540,7.431833,Moderately Functional
+SS0902,SS090203,boro medina phcc,24.815830,8.464070,Moderately Functional
+SS0902,SS090204,deim zubeir phcc,26.195930,7.714580,Moderately Functional
+SS0902,SS090202,deleba phcu,26.048380,8.789980,Moderately Functional
+SS0902,SS090203,katta phcu,25.003206,8.440571,Moderately Functional
+SS0902,SS090204,kuru phcc,26.497020,7.718580,Moderately Functional
+SS0902,SS090204,mangayat phcu,25.860010,8.223190,Moderately Functional
+SS0902,SS090203,menamba phcu,25.197230,8.484130,Moderately Functional
+SS0902,SS090202,raja hospital,25.676620,8.469250,Moderately Functional
+SS0902,SS090204,sopo phcu,26.044280,8.025440,Moderately Functional
+SS0902,SS090201,timsah phcc,25.480840,9.549470,Moderately Functional
+SS0711,SS071103,abukadhra phcu,32.799890,11.831030,Highly Functional
+SS0711,SS071101,alaka phcu,32.785220,12.167650,Moderately Functional
+SS0711,SS071104,chemmedi phcc,32.970810,11.516260,Moderately Functional
+SS0711,SS071103,ecs phcc,32.820867,11.743736,Highly Functional
+SS0711,SS071101,gerger phcc,32.758770,11.990250,Moderately Functional
+SS0711,SS071102,jalhak phcc,32.694020,11.042310,Highly Functional
+SS0711,SS071101,jerbana phcc,33.028850,12.038270,Moderately Functional
+SS0711,SS071102,molbuk phcu,32.679560,11.156510,Moderately Functional
+SS0711,SS071103,renk hospital,32.799890,11.749120,Moderately Functional
+SS0711,SS071101,romale phcu,32.781960,12.076050,Moderately Functional
+SS0711,SS071101,wonthou phcc,32.780980,11.980040,Highly Functional
+SS0609,SS060901,bentiu state hospital,29.802990,9.253500,Highly Functional
+SS0609,SS060904,kaljak phcc,29.537212,9.251474,Highly Functional
+SS0609,SS060906,nhialdiu phcc,29.486120,9.352300,Moderately Functional
+SS0609,SS060908,rubkona care phcc,29.789550,9.290230,Moderately Functional
+SS0403,SS040302,abarkou phcu,29.718211,6.830452,Moderately Functional
+SS0403,SS040304,abeer phcu,29.575240,6.872390,Moderately Functional
+SS0403,SS040301,adir-dir phcu,29.750506,6.678153,Moderately Functional
+SS0403,SS040302,akoljal phcu,29.827431,6.798819,Moderately Functional
+SS0403,SS040301,amongpiny phcc,30.073722,7.035389,Moderately Functional
+SS0403,SS040303,ayai phcu,29.626420,6.881760,Moderately Functional
+SS0403,SS040305,bal-wau phcu,29.503210,6.741952,Moderately Functional
+SS0403,SS040305,bar-chol phcu,29.542050,6.884280,Moderately Functional
+SS0403,SS040304,coloc-cok phcu,29.542060,6.760470,Moderately Functional
+SS0403,SS040301,cuei-adukan phcu,29.713330,6.771758,Limitedly Functional
+SS0403,SS040304,deng nhial phcu,29.677610,6.824020,Moderately Functional
+SS0403,SS040304,diocese of rumbek phcc,29.665992,6.817328,Limitedly Functional
+SS0403,SS040302,kiir mayardit woman hospital,29.690627,6.800640,Limitedly Functional
+SS0403,SS040304,mabui phcu,29.659200,6.840337,Moderately Functional
+SS0403,SS040303,malek phcu,29.719940,7.205870,Moderately Functional
+SS0403,SS040302,malual bab phcc,29.675454,6.800248,Moderately Functional
+SS0403,SS040304,matangai phcc,29.616775,6.847740,Moderately Functional
+SS0403,SS040304,mathiangdhiei phcu,29.643856,6.777697,Moderately Functional
+SS0403,SS040304,nyang koot phcu,29.671450,6.870410,Moderately Functional
+SS0403,SS040304,police phcc,29.665433,6.812774,Limitedly Functional
+SS0403,SS040304,rumbek central prison phcc,29.674816,6.807673,Moderately Functional
+SS0403,SS040302,rumbek state hospital,29.680838,6.809527,Moderately Functional
+SS0404,SS040403,adol phcc,29.919473,6.627119,Moderately Functional
+SS0404,SS040401,aduel phcc,29.897931,6.629494,Moderately Functional
+SS0404,SS040402,akot phcc,30.037817,6.553600,Moderately Functional
+SS0404,SS040406,amer phcu,29.769672,6.631736,Moderately Functional
+SS0404,SS040403,atiaba phcu,29.962680,6.573940,Moderately Functional
+SS0404,SS040401,awac phcu,29.808660,6.520500,Moderately Functional
+SS0404,SS040401,bar-aliap phcu,29.879750,6.595460,Moderately Functional
+SS0404,SS040404,cueicok phcc,29.745460,6.725450,Moderately Functional
+SS0404,SS040401,dhiau-kuei phcu,29.838606,6.560308,Moderately Functional
+SS0404,SS040405,kuelkuec phcu,29.652975,6.672382,Moderately Functional
+SS0404,SS040401,mabor duang phcc,29.839195,6.517885,Moderately Functional
+SS0404,SS040403,maboric phcu,29.874850,6.504820,Moderately Functional
+SS0404,SS040401,majak-jier phcu,29.849910,6.560290,Moderately Functional
+SS0404,SS040406,makembele phcu,29.765564,6.649472,Moderately Functional
+SS0404,SS040405,malengok phcu,29.765564,6.706444,Moderately Functional
+SS0404,SS040406,malou phcu,29.744347,6.624911,Moderately Functional
+SS0404,SS040401,manai phcu,29.835431,6.491953,Moderately Functional
+SS0404,SS040406,mathiang kok phcu,29.769900,6.631520,Moderately Functional
+SS0404,SS040406,pacong phcc,29.789234,6.693041,Moderately Functional
+SS0404,SS040407,paloc phcc,30.102660,6.767230,Moderately Functional
+SS0404,SS040406,panawac phcu,29.813967,6.675302,Moderately Functional
+SS0404,SS040402,war-liet phcu,29.967984,6.551697,Limitedly Functional
+SS0405,SS040505,amok phcu,29.689400,7.564997,Moderately Functional
+SS0405,SS040503,malueth phcu,29.648806,7.656811,Moderately Functional
+SS0405,SS040504,maper phcc,29.720686,7.693225,Moderately Functional
+SS0405,SS040505,mayen phcu,29.663972,7.487550,Moderately Functional
+SS0405,SS040506,wun-rieng phcu,29.715900,7.664719,Moderately Functional
+SS1009,SS100904,akpa phcu,27.340872,5.568864,Moderately Functional
+SS1009,SS100904,bakiringba phcu,27.410853,5.651261,Moderately Functional
+SS1009,SS100903,bambu phcu,27.346360,5.452480,Moderately Functional
+SS1009,SS100904,basanabaru phcu,27.373472,5.654863,Limitedly Functional
+SS1009,SS100904,dingimo phcu,27.348189,5.606425,Moderately Functional
+SS1009,SS100904,gamunakpe phcu,27.496853,5.572917,Moderately Functional
+SS1009,SS100904,mabaiku phcu,27.432620,5.565840,Moderately Functional
+SS1009,SS100903,mabenge phcu,27.297333,5.496564,Moderately Functional
+SS1009,SS100901,mabia phcu,27.524160,5.562030,Moderately Functional
+SS1009,SS100904,mangburu phcu,27.504680,5.659990,Moderately Functional
+SS1009,SS100904,matakurungu phcu,27.457069,5.579233,Moderately Functional
+SS1009,SS100904,matato phcu,27.406210,5.626100,Moderately Functional
+SS1009,SS100901,mupoi phcc,27.524122,5.562197,Moderately Functional
+SS1009,SS100904,nabaria phcu,27.447814,5.634566,Moderately Functional
+SS1009,SS100901,nangongo phcu,27.475111,5.625969,Moderately Functional
+SS1009,SS100903,ngboko phcu,27.299140,5.391050,Moderately Functional
+SS1009,SS100904,nzama phcu,27.525090,5.619890,Moderately Functional
+SS1009,SS100904,prison phcu,27.472375,5.603678,Limitedly Functional
+SS1009,SS100904,sinakpuro phcu,27.405381,5.590556,Moderately Functional
+SS1009,SS100904,sinawiri phcu,27.385785,5.516985,Limitedly Functional
+SS1009,SS100903,source yubu phcc,27.251230,5.388500,Moderately Functional
+SS1009,SS100904,tambura county hospital,27.474960,5.600330,Moderately Functional
+SS1009,SS100904,tambura phcc,27.475440,5.599780,Moderately Functional
+SS0105,SS010506,atiit phcu,30.771650,5.895660,Moderately Functional
+SS0105,SS010506,dari phcu,30.755630,6.005880,Moderately Functional
+SS0105,SS010501,gemeiza phcu,31.797797,5.680195,Moderately Functional
+SS0105,SS010505,jonkok phcu,31.024930,5.291630,Moderately Functional
+SS0105,SS010506,kirot nyumbo phcu,31.033016,5.609374,Moderately Functional
+SS0105,SS010506,kiu/kiyu phcu,30.600620,6.204790,Moderately Functional
+SS0105,SS010505,kowori phcu,31.109200,5.394070,Moderately Functional
+SS0105,SS010503,kuda phcu,31.712619,5.142949,Moderately Functional
+SS0105,SS010504,kutuk na woko phcu,31.350000,5.314400,Moderately Functional
+SS0105,SS010504,kwornyang phcu,31.543020,5.543220,Moderately Functional
+SS0105,SS010504,lengi phcu,31.437492,5.479680,Moderately Functional
+SS0105,SS010504,lojora phcu,31.680101,5.382148,Moderately Functional
+SS0105,SS010504,lowirja phcu,31.520549,5.536725,Moderately Functional
+SS0105,SS010506,mading phcu,30.792350,5.852090,Moderately Functional
+SS0105,SS010504,makamagor phcu,31.618157,5.490376,Moderately Functional
+SS0105,SS010506,makido phcu,30.741170,5.962830,Moderately Functional
+SS0105,SS010503,moridi phcu,31.686601,5.338189,Moderately Functional
+SS0105,SS010508,mundari bura phcc,30.974580,5.672650,Moderately Functional
+SS0105,SS010502,muni phcc,31.720205,5.644014,Moderately Functional
+SS0105,SS010507,nyikabur phcu,31.710782,5.553266,Moderately Functional
+SS0105,SS010503,nyori phcu,31.760590,5.317646,Moderately Functional
+SS0105,SS010506,pagara phcu,30.665550,6.012790,Moderately Functional
+SS0105,SS010508,peri phcu,31.827940,5.603760,Moderately Functional
+SS0105,SS010505,rijong phcc,31.328169,5.514482,Moderately Functional
+SS0105,SS010506,tali phcc,30.771690,5.897540,Moderately Functional
+SS0105,SS010507,terekeka phcc,31.754778,5.455870,Moderately Functional
+SS0105,SS010509,tombek phcc,31.684969,5.811205,Moderately Functional
+SS0105,SS010502,tukoro phcu,31.716918,5.584870,Moderately Functional
+SS0105,SS010501,wanyang phcu,31.805735,5.395522,Moderately Functional
+SS0105,SS010509,wudu bori phcu,31.700759,5.742347,Limitedly Functional
+SS0803,SS080301,ananatak phcu,29.025414,7.732197,Highly Functional
+SS0803,SS080303,kacuat phcu,29.179350,7.946780,Highly Functional
+SS0803,SS080310,kuelcuk phcu,29.307990,8.049480,Moderately Functional
+SS0803,SS080302,makuac phcu,29.476800,7.987470,Highly Functional
+SS0803,SS080305,mayen ador phcu,29.272500,7.838167,Highly Functional
+SS0803,SS080301,ngapagok phcc,29.094910,7.845950,Moderately Functional
+SS0803,SS080307,palal phcu,28.940120,7.716860,Highly Functional
+SS0803,SS080308,paliang phcu,29.315420,7.977570,Highly Functional
+SS0803,SS080310,paweng phcc,29.422667,8.059667,Moderately Functional
+SS0803,SS080308,rumabuth phcc,29.285000,7.971667,Moderately Functional
+SS0803,SS080308,wuncuai phcu,29.447620,8.016390,Moderately Functional
+SS0803,SS080311,wunlit phcu,29.231520,7.842170,Highly Functional
+SS0804,SS080401,akop phcc,29.164670,8.358470,Moderately Functional
+SS0804,SS080402,alabek phcc,28.927010,8.534580,Moderately Functional
+SS0804,SS080403,aliek phcc,28.687300,8.395270,Moderately Functional
+SS0804,SS080404,aporlang phcu,28.540360,8.145270,Moderately Functional
+SS0804,SS080401,athieng-pool phcu,29.072813,8.347352,Highly Functional
+SS0804,SS080404,awul phcc,28.735990,8.188810,Moderately Functional
+SS0804,SS080406,fareksika phcu,28.442147,7.900386,Moderately Functional
+SS0804,SS080405,kirrik phcu,28.816180,7.885460,Moderately Functional
+SS0804,SS080408,lurchuk phcu,28.447260,7.831180,Moderately Functional
+SS0804,SS080407,marial lou hospital,29.189478,8.043411,Moderately Functional
+SS0804,SS080404,pagakdit phcu,28.497900,7.992540,Moderately Functional
+SS0804,SS080408,pagol phcu,28.580200,7.699880,Moderately Functional
+SS0804,SS080406,pankot phcu,28.393121,8.122323,Moderately Functional
+SS0804,SS080409,rualbet phcu,28.941490,8.117060,Moderately Functional
+SS0804,SS080410,warrap phcc,28.638080,8.089530,Moderately Functional
+SS0805,SS080504,aguka phcu,28.716260,6.979930,Highly Functional
+SS0805,SS080504,indeed truth phcc,28.683829,7.278252,Limitedly Functional
+SS0805,SS080501,jak phcu,28.701490,7.666490,Moderately Functional
+SS0805,SS080505,mabior yar phcu,28.784370,7.481790,Highly Functional
+SS0805,SS080504,malual muok phcu,28.741020,7.399400,Moderately Functional
+SS0805,SS080502,manyiel-thonny phcu,28.978010,7.388180,Highly Functional
+SS0805,SS080503,panakdit phcu,28.770100,7.698090,Highly Functional
+SS0805,SS080505,pawel phcu,28.724350,7.563070,Moderately Functional
+SS0805,SS080503,thiet phcc,28.810460,7.608180,Moderately Functional
+SS0805,SS080504,tonj don bosco tb unit,28.678695,7.272277,Limitedly Functional
+SS0805,SS080504,tonj hospital,28.679840,7.276700,Moderately Functional
+SS0805,SS080505,wanh alel phcu,28.848590,7.484150,Highly Functional
+SS0208,SS020801,bur mutaram phcu,32.493514,4.522389,Highly Functional
+SS0208,SS020802,chalamini phcu,32.908069,4.498954,Moderately Functional
+SS0208,SS020802,haforiere phcu,32.812526,4.452683,Limitedly Functional
+SS0208,SS020802,hidonge ifura phcu,32.796880,4.586130,Limitedly Functional
+SS0208,SS020803,hilieu phcc,32.646257,4.322011,Moderately Functional
+SS0208,SS020802,hiyala phcc,32.865069,4.464356,Moderately Functional
+SS0208,SS020807,ibalany phcu,32.532010,4.424184,Moderately Functional
+SS0208,SS020802,ilieu phcu,32.974703,4.500780,Moderately Functional
+SS0208,SS020802,iloli phcu,32.914302,4.436978,Moderately Functional
+SS0208,SS020803,imilai phcu,32.667283,4.145631,Moderately Functional
+SS0208,SS020804,imokoru phcu,32.550337,4.203494,Moderately Functional
+SS0208,SS020805,imurok phcu,32.432264,4.315333,Highly Functional
+SS0208,SS020804,kalisoni phcu,32.497674,4.047257,Moderately Functional
+SS0208,SS020805,khormush phcu,32.377204,4.215730,Moderately Functional
+SS0208,SS020806,kudo phcc,32.227596,4.548753,Moderately Functional
+SS0208,SS020804,longwere phcc,32.477111,4.109946,Limitedly Functional
+SS0208,SS020806,lowoi phcc,32.167640,4.489924,Moderately Functional
+SS0208,SS020804,moti phcu,32.547038,4.335555,Moderately Functional
+SS0208,SS020802,mura hatiha phcu,32.784354,4.510207,Highly Functional
+SS0208,SS020807,national health insurance phcc,32.580648,4.407796,Moderately Functional
+SS0208,SS020804,nyara phcu,32.468435,4.040756,Limitedly Functional
+SS0208,SS020807,nyong phcc,32.570725,4.412890,Moderately Functional
+SS0208,SS020802,offi phcu,32.583807,4.502189,Moderately Functional
+SS0208,SS020806,ofiriha phcu,32.644107,4.421696,Moderately Functional
+SS0208,SS020802,oguruny phcu,32.903190,4.395870,Highly Functional
+SS0208,SS020801,ohila phcu,32.481350,4.654650,Moderately Functional
+SS0208,SS020805,olere phcu,32.480839,4.436867,Moderately Functional
+SS0208,SS020801,oronyo phcc,32.644279,4.648925,Moderately Functional
+SS0208,SS020802,tirangore phcu,32.818549,4.473267,Moderately Functional
+SS0208,SS020807,torit prison phcu,32.574574,4.407053,Moderately Functional
+SS0208,SS020807,torit state hospital,32.576175,4.406391,Moderately Functional
+SS0806,SS080601,ajak kuach phcc,28.709910,9.290880,Moderately Functional
+SS0806,SS080606,ajong phcu,28.343336,9.079053,Moderately Functional
+SS0806,SS080604,akak phcc,28.114430,9.068700,Moderately Functional
+SS0806,SS080602,akoc phcc,28.021440,9.143660,Highly Functional
+SS0806,SS080605,anyiel kuac phcc,28.538500,9.259940,Highly Functional
+SS0806,SS080603,aweng phcc,28.559473,9.098544,Moderately Functional
+SS0806,SS080605,ayien amuol phcu,28.399665,8.894503,Moderately Functional
+SS0806,SS080603,bulyom phcu,28.608510,9.109150,Moderately Functional
+SS0806,SS080602,dhiau agal phcu,27.975772,9.164258,Moderately Functional
+SS0806,SS080606,gor ayak phcu,28.261662,9.204264,Moderately Functional
+SS0806,SS080605,kacbek phcu,28.445827,9.186230,Moderately Functional
+SS0806,SS080605,magak phcc,28.347310,8.896660,Highly Functional
+SS0806,SS080604,majak pagai phcc,28.226640,9.170190,Moderately Functional
+SS0806,SS080603,majook noon phcc,28.589503,9.203413,Highly Functional
+SS0806,SS080606,malou-hol phcu,28.269070,9.134450,Moderately Functional
+SS0806,SS080603,maper centre phcc,28.497953,9.105331,Moderately Functional
+SS0806,SS080603,marial maper phcc,28.512940,9.169030,Moderately Functional
+SS0806,SS080606,mayen abun phcc,28.362432,9.162650,Moderately Functional
+SS0806,SS080604,mayom chol luk phcu,28.183191,9.302004,Moderately Functional
+SS0806,SS080601,molbang phcu,28.682950,9.252900,Moderately Functional
+SS0806,SS080605,mother theresa general hospital,28.424010,9.094914,Moderately Functional
+SS0806,SS080604,pan-nyok phcc,28.206810,9.084830,Moderately Functional
+SS0806,SS080605,pandit phcu,28.370775,9.001967,Moderately Functional
+SS0806,SS080602,tiit noon phcu,27.979588,9.115557,Moderately Functional
+SS0806,SS080606,titchok phcu,28.286906,8.944626,Moderately Functional
+SS0806,SS080602,toch noon phcc,27.984560,9.088580,Highly Functional
+SS0806,SS080604,tuele phcc,28.211872,8.997184,Moderately Functional
+SS0806,SS080605,turalei phcc,28.436557,9.085953,Moderately Functional
+SS0806,SS080602,wuncuei cuar phcc,28.014168,9.198069,Moderately Functional
+SS0806,SS080606,wunrok phcc,28.291458,8.992495,Moderately Functional
+SS0806,SS080602,yiik thon phcc,28.053950,9.235830,Moderately Functional
+SS0310,SS031003,khiir phcu,31.411390,7.341670,Moderately Functional
+SS0310,SS031002,kongor phcc,31.355350,7.156250,Moderately Functional
+SS0310,SS031005,maar phcc,31.375140,6.888240,Moderately Functional
+SS0310,SS031001,palieu phcc,31.378470,6.960010,Moderately Functional
+SS0310,SS031002,panyagor county hospital,31.407630,7.166440,Highly Functional
+SS0310,SS031005,patiou phcc,31.408060,6.775550,Moderately Functional
+SS0310,SS031004,wangulei phcu,31.375120,7.888240,Moderately Functional
+SS0712,SS071204,bimbim phcu,32.849200,8.781450,Moderately Functional
+SS0712,SS071201,doma phcu,32.572860,8.881500,Moderately Functional
+SS0712,SS071203,dura phcu,32.699810,8.796010,Highly Functional
+SS0712,SS071202,kuich phcc,32.905870,8.602900,Highly Functional
+SS0712,SS071204,rup board phcc,32.791260,8.669270,Highly Functional
+SS0712,SS071203,ulang phcc,32.721710,8.655390,Moderately Functional
+SS0712,SS071201,ying phcu,33.596090,8.794920,Highly Functional
+SS0712,SS071204,yomding phcc,32.838520,8.635620,Moderately Functional
+SS0311,SS031101,karam phcc,31.824260,8.213630,Moderately Functional
+SS0311,SS031103,modit phcu,31.878360,7.989670,Highly Functional
+SS0311,SS031102,pathai phcu,31.834960,8.072230,Highly Functional
+SS0311,SS031103,payai phcu,31.959530,7.985400,Highly Functional
+SS0311,SS031108,pulchol phcc,31.961650,8.112360,Moderately Functional
+SS0311,SS031104,yuai phcc,31.890010,7.904360,Moderately Functional
+SS0903,SS090305,agok phcc,28.023897,7.627767,Moderately Functional
+SS0903,SS090305,aljazeira phcc,27.977754,7.686390,Moderately Functional
+SS0903,SS090305,bazia jedid phcc,27.994170,7.678690,Moderately Functional
+SS0903,SS090301,bringi phcu,27.901956,7.627784,Moderately Functional
+SS0903,SS090301,bussere phcc,27.964301,7.564791,Moderately Functional
+SS0903,SS090305,canning factory phcu,28.026933,7.657081,Moderately Functional
+SS0903,SS090305,daniel comboni hospital,27.995832,7.699088,Moderately Functional
+SS0903,SS090301,farajala phcu,27.770408,7.525143,Highly Functional
+SS0903,SS090303,giatan phcu,27.939547,7.270619,Moderately Functional
+SS0903,SS090304,hai bafra phcu,27.978155,7.703061,Moderately Functional
+SS0903,SS090304,hai dinka phcc,27.998882,7.714621,Moderately Functional
+SS0903,SS090304,imc poc-aa phcu,27.959796,7.716686,Highly Functional
+SS0903,SS090305,jebel kheir phcc,27.985440,7.681317,Highly Functional
+SS0903,SS090303,kpaila/bazia phcc,27.935281,7.107538,Moderately Functional
+SS0903,SS090304,lokoloko phcc,27.975220,7.695510,Moderately Functional
+SS0903,SS090303,maju phcu,27.938303,7.170737,Highly Functional
+SS0903,SS090302,mboro phcu,27.707810,7.696898,Highly Functional
+SS0903,SS090304,muktah phcc,27.994380,7.706660,Moderately Functional
+SS0903,SS090305,new site phcc,28.005653,7.672340,Moderately Functional
+SS0903,SS090301,ngisa phcu,27.749961,7.589776,Highly Functional
+SS0903,SS090301,ngodakala phcc,27.822000,7.546800,Moderately Functional
+SS0903,SS090301,ngoku phcu,27.803369,7.619701,Moderately Functional
+SS0903,SS090303,taban phcu,27.967519,7.380307,Moderately Functional
+SS0903,SS090304,wau military hospital,27.990565,7.735303,Limitedly Functional
+SS0903,SS090305,wau police phcc,27.998514,7.694137,Limitedly Functional
+SS0903,SS090305,wau prison phcu,28.002726,7.700396,Moderately Functional
+SS0903,SS090304,wau sika hadid phcc,27.987732,7.714032,Moderately Functional
+SS0903,SS090305,wau teaching hospital,28.004460,7.697020,Moderately Functional
+SS0903,SS090305,wau wild life phcu,28.005128,7.702723,Limitedly Functional
+SS0406,SS040601,bahr gel phcu,29.155027,6.720772,Moderately Functional
+SS0406,SS040602,deteku phcu,29.478850,6.134640,Moderately Functional
+SS0406,SS040602,dokuru phcu,29.632594,6.366255,Moderately Functional
+SS0406,SS040604,guba phcu,29.549952,6.467142,Moderately Functional
+SS0406,SS040601,gulmar phcu,29.480003,6.569103,Moderately Functional
+SS0406,SS040603,laam phcu,29.914550,6.329761,Moderately Functional
+SS0406,SS040601,makila phcu,29.474783,6.881809,Moderately Functional
+SS0406,SS040601,makor phcu,29.309978,6.600477,Moderately Functional
+SS0406,SS040601,morkuec phcu,29.502230,6.688380,Moderately Functional
+SS0406,SS040602,nuktamanga phcu,29.618262,6.244411,Moderately Functional
+SS0406,SS040604,tonjo phcu,29.726893,6.332184,Moderately Functional
+SS0406,SS040602,wako phcu,29.767990,6.093820,Moderately Functional
+SS0406,SS040604,wulu gedim phcu,29.615647,6.438731,Moderately Functional
+SS0406,SS040604,wulu phcc,29.627327,6.508871,Moderately Functional
+SS1010,SS101005,baguga phcu,28.326606,4.580931,Limitedly Functional
+SS1010,SS101002,bakiwiri phcu,28.333385,4.537821,Moderately Functional
+SS1010,SS101001,bangasu phcc,28.776720,4.792230,Moderately Functional
+SS1010,SS101005,bazungua phcc,28.451684,4.591963,Moderately Functional
+SS1010,SS101005,bodo phcu,28.517040,4.633280,Highly Functional
+SS1010,SS101002,gangura phcc,28.487190,4.446940,Moderately Functional
+SS1010,SS101005,hikpiro phcu,28.397901,4.583524,Limitedly Functional
+SS1010,SS101005,ideas phcu,28.425527,4.564053,Moderately Functional
+SS1010,SS101001,kasia phcu,28.626320,4.672141,Limitedly Functional
+SS1010,SS101002,kidi phcu,28.445639,4.484735,Moderately Functional
+SS1010,SS101002,magida phcu,28.376517,4.527237,Moderately Functional
+SS1010,SS101001,makpandu phcc,28.701674,4.751152,Moderately Functional
+SS1010,SS101005,mangbondo phcu,28.399978,4.550414,Highly Functional
+SS1010,SS101005,naangbimo phcu,28.436766,4.532563,Highly Functional
+SS1010,SS101005,nabagu i phcu,28.359391,4.578556,Highly Functional
+SS1010,SS101002,nabia pai phcu,28.567624,4.386930,Moderately Functional
+SS1010,SS101005,nakiri phcu,28.432451,4.553784,Moderately Functional
+SS1010,SS101005,nakofo phcu,28.450884,4.568590,Moderately Functional
+SS1010,SS101005,nambiaii phcu,28.476314,4.536216,Limitedly Functional
+SS1010,SS101001,nangere phcu,28.633987,4.582549,Limitedly Functional
+SS1010,SS101002,nasue phcu,28.511625,4.488251,Limitedly Functional
+SS1010,SS101005,ndauuro phcu,28.416485,4.653792,Moderately Functional
+SS1010,SS101005,odo phcu,28.516907,4.633310,Moderately Functional
+SS1010,SS101001,rimeize phcu,28.592032,4.702559,Highly Functional
+SS1010,SS101005,saura one phcu,28.337910,4.623050,Highly Functional
+SS1010,SS101005,saura two phcu,28.365548,4.662117,Limitedly Functional
+SS1010,SS101005,tiindoka phcu,28.386582,4.603564,Highly Functional
+SS1010,SS101001,ukuo phcu,28.751012,4.601461,Moderately Functional
+SS1010,SS101005,yambio phcc,28.397335,4.566548,Moderately Functional
+SS1010,SS101005,yambio prison phcc,28.394731,4.568271,Moderately Functional
+SS1010,SS101005,yambio state hospital,28.407555,4.566149,Moderately Functional
+SS0106,SS010605,epc phcc,30.687047,4.095128,Limitedly Functional
+SS0106,SS010605,gimunu phcu,30.768240,4.123480,Highly Functional
+SS0106,SS010603,goja phcu,30.636310,4.006400,Moderately Functional
+SS0106,SS010605,hamia phcc,30.701873,4.100767,Moderately Functional
+SS0106,SS010605,jansuk phcu,30.646466,4.113395,Highly Functional
+SS0106,SS010603,kagelu phcu,30.611992,4.051666,Highly Functional
+SS0106,SS010601,lasu phcc,30.467137,3.949588,Moderately Functional
+SS0106,SS010603,logo phcu,30.546172,4.141643,Limitedly Functional
+SS0106,SS010605,logobero phcu,30.669570,4.124490,Highly Functional
+SS0106,SS010605,martha phcc,30.667819,4.097428,Moderately Functional
+SS0106,SS010605,minyori phcu,30.620050,4.125280,Highly Functional
+SS0106,SS010602,mugwo phcc,30.740110,3.889823,Moderately Functional
+SS0106,SS010603,ombasi phcc,30.607874,3.888946,Moderately Functional
+SS0106,SS010605,pakula phcu,30.871710,4.040560,Moderately Functional
+SS0106,SS010602,payawa phcu,30.739039,3.953584,Highly Functional
+SS0106,SS010601,pisak phcu,30.695618,4.100387,Highly Functional
+SS0106,SS010605,rwonyi phcu,30.714416,4.055615,Moderately Functional
+SS0106,SS010605,st bakhita phcc,30.632383,4.103195,Moderately Functional
+SS0106,SS010605,yei civil hospital,30.675600,4.091330,Moderately Functional
+SS0407,SS040702,acigor phcu,30.496470,6.711160,Moderately Functional
+SS0407,SS040701,adior phcc,30.721610,6.780630,Moderately Functional
+SS0407,SS040701,billing phcu,30.657810,6.741880,Moderately Functional
+SS0407,SS040704,kap phcu,30.446430,6.715860,Moderately Functional
+SS0407,SS040703,lang matol phcu,30.970800,6.641073,Moderately Functional
+SS0407,SS040702,lekakedu phcu,30.586440,6.677160,Moderately Functional
+SS0407,SS040703,malek phcc,30.796340,6.721100,Moderately Functional
+SS0407,SS040702,nyang phcc,30.605540,6.707940,Moderately Functional
+SS0407,SS040704,pagarau phcc,30.408290,6.740650,Moderately Functional
+SS0407,SS040701,shambe phcu,30.773840,7.105740,Moderately Functional
+SS0407,SS040704,thonabutkok phcu,30.415900,6.678890,Moderately Functional
+SS0408,SS040802,agany phcu,30.054860,6.436590,Moderately Functional
+SS0408,SS040802,aluak luak phcc,30.105100,6.468200,Moderately Functional
+SS0408,SS040803,anuol phcc,30.382680,6.258130,Moderately Functional
+SS0408,SS040801,aruau phcu,30.628610,6.655810,Moderately Functional
+SS0408,SS040801,betoi phcu,30.688490,6.637830,Moderately Functional
+SS0408,SS040803,mangang phcu,30.322440,6.321610,Moderately Functional
+SS0408,SS040806,mapuordit hospital,30.072358,6.337929,Limitedly Functional
+SS0408,SS040804,pabur phcu,30.598990,6.432610,Moderately Functional
+SS0408,SS040805,pandit phcu,30.150390,6.594160,Moderately Functional
+SS0408,SS040801,pankar phcu,30.478340,6.577650,Moderately Functional
+SS0408,SS040806,wouwou phcu,30.496300,6.549870,Moderately Functional
+SS0408,SS040801,yirol county hospital,30.501720,6.553310,Moderately Functional
+SS0001,SS000101,athony phcu,28.438130,9.419000,Limitedly Functional
+SS0001,SS000101,mading jok thiang phcu,28.575973,9.325047,Limitedly Functional
+SS0001,SS000101,miyom ngok phcu,28.641080,9.363500,Limitedly Functional
+SS0001,SS000101,wunchuei phcu,28.674119,9.397544,Limitedly Functional
+SS0001,SS000101,wunpeth phcu,28.552520,9.389950,Limitedly Functional
+SS0001,SS000101,wunrok phcu,28.433880,9.557110,Limitedly Functional
+SS0301,SS030103,dilule phcu,33.281600,7.860420,Limitedly Functional
+SS0301,SS030107,meer phcu,33.223020,7.732770,Limitedly Functional
+SS0502,SS050207,malual dit phcu,27.344700,9.242760,Limitedly Functional
+SS0503,SS050303,mabior anguei phcu,27.226240,9.292110,Limitedly Functional
+SS0503,SS050304,malek mir phcu,26.815283,9.627575,Limitedly Functional
+SS0505,SS050509,maduany phcu,27.363952,8.813387,Limitedly Functional
+SS0505,SS050504,majook adim phcu,26.847214,9.082311,Limitedly Functional
+SS0505,SS050506,new life ministry phcu,26.987780,9.134230,Limitedly Functional
+SS0701,SS070108,rom phcc,32.153680,9.882040,Limitedly Functional
+SS0303,SS030306,arek phcu,31.552740,6.233830,Limitedly Functional
+SS0303,SS030302,baidit phcc,31.562410,6.429700,Limitedly Functional
+SS0303,SS030303,bor prison phcc,31.596860,6.224240,Limitedly Functional
+SS0303,SS030305,cuei keer phcu,31.686950,5.953750,Limitedly Functional
+SS0303,SS030303,jarweng phcu,31.569160,6.175730,Limitedly Functional
+SS0303,SS030303,langbar phcu,31.571050,6.235110,Limitedly Functional
+SS0303,SS030306,makuach phcc,31.568010,6.226290,Limitedly Functional
+SS0303,SS030305,malual agor baar phcc,31.586540,6.115890,Limitedly Functional
+SS0303,SS030305,malual chaat phcu,31.575890,6.145120,Limitedly Functional
+SS0303,SS030302,pagok phcu,31.562560,6.306560,Limitedly Functional
+SS0303,SS030305,panpadiar phcu,31.626480,6.029260,Limitedly Functional
+SS0303,SS030306,werkok phcc,31.595730,6.199520,Limitedly Functional
+SS0303,SS030306,werkok private clinic phcc,31.660270,6.334170,Limitedly Functional
+SS0402,SS040205,st. josephine bhakita phcc,29.222070,6.851150,Limitedly Functional
+SS0305,SS030502,dongchak phcu,31.414300,7.681320,Limitedly Functional
+SS0305,SS030505,pagaak phcc,34.011145,8.497698,Limitedly Functional
+SS0305,SS030505,pagak phcu,31.496880,7.927640,Limitedly Functional
+SS0306,SS030603,chotbora phcu,30.926000,9.127080,Limitedly Functional
+SS0306,SS030601,dhorek phcu,30.705150,9.040160,Limitedly Functional
+SS0306,SS030604,thokchak phcu,30.742200,9.172050,Limitedly Functional
+SS0306,SS030601,tiep phcu,30.901739,9.401919,Limitedly Functional
+SS0306,SS030604,toch phcu,30.704770,8.967900,Limitedly Functional
+SS0306,SS030605,wicmuon phcu,31.113402,9.367522,Limitedly Functional
+SS0702,SS070201,abienyai phcu,32.260340,10.108010,Limitedly Functional
+SS0702,SS070202,aburoc phcc,32.082968,10.103725,Limitedly Functional
+SS0702,SS070204,achake phcu,31.982690,9.799880,Limitedly Functional
+SS0702,SS070202,adodo phcc,32.069470,10.008760,Limitedly Functional
+SS0801,SS080105,mangol phcu,28.542040,8.824800,Limitedly Functional
+SS0802,SS080201,nyieth phcu,27.824720,8.934790,Limitedly Functional
+SS0802,SS080207,prison phcc,27.956090,8.295472,Limitedly Functional
+SS0202,SS020205,ramula phcu,33.256390,4.105560,Limitedly Functional
+SS0101,SS010105,al amin hospital,31.573150,4.845640,Limitedly Functional
+SS0101,SS010112,aspen medical international hospital,31.606450,4.859400,Limitedly Functional
+SS0101,SS010111,belpham military phcc,31.577120,4.818900,Limitedly Functional
+SS0101,SS010110,bilinyang phcu,31.776820,4.855540,Limitedly Functional
+SS0101,SS010105,chinafriendship hospital,31.600570,4.861580,Limitedly Functional
+SS0101,SS010103,ganji phcc,31.209770,4.454250,Limitedly Functional
+SS0101,SS010115,gurulotogu phcu,31.199300,5.198380,Limitedly Functional
+SS0101,SS010112,imc un house clinic 3,31.558460,4.864700,Limitedly Functional
+SS0101,SS010105,international hospital,31.611170,4.842020,Limitedly Functional
+SS0101,SS010108,jalite gikokue phcu,31.857530,4.689390,Limitedly Functional
+SS0101,SS010105,juba medical complex hospital,31.609320,4.847730,Limitedly Functional
+SS0101,SS010103,kagwada phcu,31.209770,4.454230,Limitedly Functional
+SS0101,SS010109,karpeto phcu,31.702340,4.115858,Limitedly Functional
+SS0101,SS010116,katigiri phcc,30.831710,4.893490,Limitedly Functional
+SS0101,SS010102,kera phcc,30.833910,4.893030,Limitedly Functional
+SS0101,SS010111,kimu phcc,31.560010,4.873570,Limitedly Functional
+SS0101,SS010103,kuli papa phcu,31.116599,4.374879,Limitedly Functional
+SS0101,SS010109,langi phcu,31.327240,4.363410,Limitedly Functional
+SS0101,SS010115,ligi phcu,31.301610,5.092180,Limitedly Functional
+SS0101,SS010102,lotemba phcu,30.935360,4.738750,Limitedly Functional
+SS0101,SS010102,madikolok phcu,30.921000,4.779470,Limitedly Functional
+SS0101,SS010116,mangele phcu,30.940560,4.636710,Limitedly Functional
+SS0101,SS010116,mankaro phcu,30.960910,4.601940,Limitedly Functional
+SS0101,SS010112,mobil phcu,31.634360,4.958970,Limitedly Functional
+SS0101,SS010116,moje phcu,31.026750,4.460510,Limitedly Functional
+SS0101,SS010104,monoji phcu,31.637473,4.875013,Limitedly Functional
+SS0101,SS010109,morsack phcu,31.356090,4.232560,Limitedly Functional
+SS0101,SS010112,new site phcc,31.589350,4.897330,Limitedly Functional
+SS0101,SS010107,ngulere phcu,31.963340,4.692220,Limitedly Functional
+SS0101,SS010102,nyamini phcu,31.339600,4.931290,Limitedly Functional
+SS0101,SS010109,nyarjuw phcu,31.352860,4.266810,Limitedly Functional
+SS0101,SS010102,roja phcu,30.880080,4.815540,Limitedly Functional
+SS0101,SS010111,sda phcc,31.578390,4.856400,Limitedly Functional
+SS0101,SS010115,tijor centre phcc,31.237550,5.259260,Limitedly Functional
+SS0101,SS010102,tulyang phcu,30.921110,4.779470,Limitedly Functional
+SS0101,SS010105,victoria medical hospital,31.607940,4.839000,Limitedly Functional
+SS0101,SS010109,yapa phcu,31.599014,4.840276,Limitedly Functional
+SS0102,SS010202,ajira phcu,31.656140,3.852060,Limitedly Functional
+SS0102,SS010202,bamurye phcu,31.548160,3.668280,Limitedly Functional
+SS0102,SS010205,gaderu phcc,31.500590,3.938520,Limitedly Functional
+SS0102,SS010202,gendressa phcc,31.658160,3.848920,Limitedly Functional
+SS0102,SS010202,gurujo phcu,31.582570,3.726240,Limitedly Functional
+SS0102,SS010205,jondale phcu,31.535120,3.929030,Limitedly Functional
+SS0102,SS010204,kala phcu,31.258850,3.982400,Limitedly Functional
+SS0102,SS010202,kasurak phcu,31.538830,3.862670,Limitedly Functional
+SS0102,SS010201,kigwo phcu,31.739080,3.869790,Limitedly Functional
+SS0102,SS010203,kudaji phcu,31.670360,3.884190,Limitedly Functional
+SS0102,SS010202,logili phcu,31.637510,3.843600,Limitedly Functional
+SS0102,SS010204,lora phcu,31.331600,3.881190,Limitedly Functional
+SS0102,SS010205,lori phcu,31.506740,4.006090,Limitedly Functional
+SS0102,SS010204,loro phcu,31.166680,3.869890,Limitedly Functional
+SS0102,SS010204,mangalotore phcu,31.550970,3.802120,Limitedly Functional
+SS0102,SS010202,mereguga phcu,31.486900,3.769420,Limitedly Functional
+SS0102,SS010201,moijo phcu,31.793520,3.804690,Limitedly Functional
+SS0102,SS010205,mondi phcu,31.484380,3.893760,Limitedly Functional
+SS0102,SS010205,rodo phcu,31.524500,4.043060,Limitedly Functional
+SS0102,SS010204,rungetta phcu,31.369110,3.783210,Limitedly Functional
+SS0102,SS010202,wurta phcu,31.552150,3.695070,Limitedly Functional
+SS0205,SS020501,hope for south sudan phcu,33.578280,4.768230,Limitedly Functional
+SS0205,SS020501,kapoeta mission hospital,33.601800,4.745050,Limitedly Functional
+SS0205,SS020505,nachukut phcu,33.628980,4.829830,Limitedly Functional
+SS0603,SS060303,jaak phcu,30.005410,8.745580,Limitedly Functional
+SS0603,SS060305,patit phcc,30.020702,8.491718,Limitedly Functional
+SS0206,SS020601,longonawati phcu,32.690790,4.841370,Limitedly Functional
+SS0206,SS020603,mura lopit phcu,32.724880,4.794870,Limitedly Functional
+SS0206,SS020604,ugwil/malnyang phcu,32.391820,5.044670,Limitedly Functional
+SS0206,SS020608,ungebe phcu,32.469320,4.762760,Limitedly Functional
+SS0103,SS010304,dimo one phcu,30.674000,4.233930,Limitedly Functional
+SS0103,SS010304,komoi phcu,30.689830,4.144650,Limitedly Functional
+SS0103,SS010305,koyoki phcc,31.076650,3.840260,Limitedly Functional
+SS0103,SS010301,loka orphanage phcu,30.958250,4.223090,Limitedly Functional
+SS0103,SS010301,lora phcc,30.958290,4.223720,Limitedly Functional
+SS0103,SS010304,roronyo phcc,30.716053,4.241750,Limitedly Functional
+SS0103,SS010304,soka phcu,30.549940,4.209710,Limitedly Functional
+SS0704,SS070403,kiechkuon phcc,32.929360,8.924450,Limitedly Functional
+SS0705,SS070501,banashowa phcu,33.532750,9.663480,Limitedly Functional
+SS0705,SS070502,bunj hospital,33.711440,9.958410,Limitedly Functional
+SS0705,SS070501,liang phcu,33.630990,9.883560,Limitedly Functional
+SS0705,SS070505,sim missionary hospital,33.754980,9.976590,Limitedly Functional
+SS0207,SS020703,bilinya phcu,32.153500,3.626030,Limitedly Functional
+SS0707,SS070701,imc malakal poc clinic 1,31.678145,9.565245,Limitedly Functional
+SS0707,SS070704,malakal poc iom clinic,31.681168,9.566092,Limitedly Functional
+SS0707,SS070701,malakia phcc,31.646730,9.544730,Limitedly Functional
+SS0707,SS070702,msf clinic phcc,31.669798,9.519119,Limitedly Functional
+SS0707,SS070704,poc clininc idps phcc,31.678020,9.565270,Limitedly Functional
+SS0707,SS070704,poc hospital idps hospital,31.679970,9.568580,Limitedly Functional
+SS0708,SS070804,ayat phcu,32.620560,11.292540,Limitedly Functional
+SS0708,SS070801,delal ajak phcu,32.245080,10.389400,Limitedly Functional
+SS0708,SS070802,manam phcu,32.537720,10.953630,Limitedly Functional
+SS0708,SS070801,noon phcu,32.193120,10.411470,Limitedly Functional
+SS0708,SS070801,nyiliech phcu,32.256778,10.212333,Limitedly Functional
+SS0708,SS070804,omar phcu,32.775170,11.727640,Limitedly Functional
+SS1003,SS100305,embe phcu,29.528140,4.758540,Limitedly Functional
+SS1003,SS100304,maridi prison phcu,29.446330,4.897930,Limitedly Functional
+SS1003,SS100304,spla-jiu phcu,29.477660,4.899930,Limitedly Functional
+SS0606,SS060612,wangkei phcc,29.455290,9.088330,Limitedly Functional
+SS0709,SS070903,diingthama phcc,32.258760,10.423430,Limitedly Functional
+SS0104,SS010402,kimba phcu,30.850590,3.585100,Limitedly Functional
+SS0104,SS010403,lujulo phcu,30.664580,3.678690,Limitedly Functional
+SS0104,SS010405,wudabi phcu,30.618970,3.772970,Limitedly Functional
+SS0104,SS010404,yaribe phcu,30.980977,3.897370,Limitedly Functional
+SS0104,SS010402,yondu phcu,30.898250,3.662750,Limitedly Functional
+SS0104,SS010403,yugufe phcu,30.693310,3.715760,Limitedly Functional
+SS1004,SS100403,doro phcu,30.557750,5.200760,Limitedly Functional
+SS1007,SS100701,diayanga phcu,27.832150,6.481030,Limitedly Functional
+SS1007,SS100702,ngogala phcu,27.073540,6.000950,Limitedly Functional
+SS1007,SS100702,ngonzorono phcu,27.382180,5.873560,Limitedly Functional
+SS1007,SS100701,zomoi phcu,27.915710,6.639100,Limitedly Functional
+SS0307,SS030705,lankien phcc,32.062760,8.530060,Limitedly Functional
+SS0307,SS030702,limkuon phcu,31.936660,8.599440,Limitedly Functional
+SS1008,SS100802,nakapazi p phcu,28.183210,4.673010,Limitedly Functional
+SS0607,SS060701,dekom phcu,30.456560,7.358990,Limitedly Functional
+SS0607,SS060702,kanynhial phcu,30.117960,7.776670,Limitedly Functional
+SS0607,SS060709,makur phcu,30.345660,7.426390,Limitedly Functional
+SS0607,SS060705,pacienjok phcc,30.462700,7.313420,Limitedly Functional
+SS0710,SS071005,nakdiar phcu,31.318380,9.361600,Limitedly Functional
+SS0608,SS060803,ajoungthok phcu,30.272580,9.955260,Limitedly Functional
+SS0608,SS060802,akot phcu,30.184260,9.688880,Limitedly Functional
+SS0608,SS060803,hakima yacoub phcc,30.272810,9.970080,Limitedly Functional
+SS0608,SS060803,hope health center-pamir,30.350245,9.916277,Limitedly Functional
+SS0608,SS060802,ming phcu,30.117170,9.773990,Limitedly Functional
+SS0608,SS060803,pamiir phcc,30.349230,9.915700,Limitedly Functional
+SS0608,SS060804,toor/n yokrial phcu,29.788800,9.856540,Limitedly Functional
+SS0308,SS030807,gumuruk phcu,32.913520,6.653664,Limitedly Functional
+SS0308,SS030804,lekuangole phcu,33.978800,5.984060,Limitedly Functional
+SS0304,SS030402,atar phcu,31.407800,9.338460,Limitedly Functional
+SS0304,SS030405,khorwac phcu,31.597310,9.311090,Limitedly Functional
+SS0902,SS090202,mayonga a phcc,25.669410,8.493070,Limitedly Functional
+SS0711,SS071103,renk military hospital,32.815740,11.745940,Limitedly Functional
+SS0609,SS060902,budaang phcu,29.053060,9.295278,Limitedly Functional
+SS0609,SS060908,dingding phcu,29.714510,9.281609,Limitedly Functional
+SS0609,SS060908,yoanyang phcu,29.795330,9.292156,Limitedly Functional
+SS0609,SS060901,msf hospital (bentiu),29.788391,9.330914,Limitedly Functional
+SS0609,SS060902,reang phcc,29.490270,9.356650,Limitedly Functional
+SS0609,SS060908,rubkona military hospital,29.795337,9.286173,Limitedly Functional
+SS0609,SS060901,"bentiu poc, sector 1 clinic iom",29.784591,9.334555,Limitedly Functional
+SS0609,SS060901,"bentiu poc, sector 2 world relief phcc",29.791639,9.335649,Limitedly Functional
+SS0609,SS060901,sector3 iom phcc,29.795970,9.339450,Limitedly Functional
+SS0609,SS060901,"bentiu poc, sector 4 irc clinic",29.797782,9.333726,Limitedly Functional
+SS0609,SS060901,"bentiu poc, sector 5 clinic world relief",29.799604,9.328927,Limitedly Functional
+SS0405,SS040501,aloor phcu,29.653731,7.793978,Limitedly Functional
+SS0405,SS040504,maper 2 phcu,29.713020,7.691950,Limitedly Functional
+SS1009,SS100903,gbatanzere phcu,27.276200,5.452350,Limitedly Functional
+SS1009,SS100904,yda clinic phcu,27.471410,5.601210,Limitedly Functional
+SS0105,SS010504,bura phcu,31.378232,5.445629,Limitedly Functional
+SS0105,SS010506,comboni phcu,30.771940,5.893930,Limitedly Functional
+SS0105,SS010507,lokweni phcu,31.728530,5.480710,Limitedly Functional
+SS0105,SS010503,lwoki phcu,31.728150,5.254080,Limitedly Functional
+SS0105,SS010506,mina phcu,30.741720,5.802880,Limitedly Functional
+SS0105,SS010504,wujugani phcu,31.710950,5.510120,Limitedly Functional
+SS0803,SS080304,mapara phcu,29.403990,7.938260,Limitedly Functional
+SS0805,SS080502,manyang-ngok phcc,28.918420,7.332500,Limitedly Functional
+SS0208,SS020806,offiri phcu,32.300731,4.499154,Limitedly Functional
+SS0208,SS020801,ohiri phcu,32.509930,4.730300,Limitedly Functional
+SS0310,SS031004,baping phcu,31.400560,7.093620,Limitedly Functional
+SS0310,SS031003,dong phcu,31.335900,7.035480,Limitedly Functional
+SS0712,SS071203,barmach phcu,32.680609,8.666464,Limitedly Functional
+SS0712,SS071203,rirnyang phcu,32.717325,8.733896,Limitedly Functional
+SS0311,SS031108,motot phcc,32.049870,8.162990,Limitedly Functional
+SS0311,SS031105,pieri phcc,32.030990,8.039960,Limitedly Functional
+SS0903,SS090301,bagari jedid phcu,27.889430,7.574750,Limitedly Functional
+SS0903,SS090301,gedi phcu,27.545000,7.250000,Limitedly Functional
+SS0903,SS090305,nazareth d phcc,28.001030,7.677330,Limitedly Functional
+SS0903,SS090304,kalvario phcu,27.978170,7.703170,Limitedly Functional
+SS1010,SS101005,duduma phcu,28.380110,4.550750,Limitedly Functional
+SS1010,SS101004,li rangu phcc,28.359580,4.727690,Limitedly Functional
+SS1010,SS101001,mapakuka phcu,28.392890,4.571990,Limitedly Functional
+SS1010,SS101002,namama ii phcu,28.418580,4.500380,Limitedly Functional
+SS1010,SS101005,wild life phcu,28.400330,4.571490,Limitedly Functional
+SS0106,SS010601,agonyakiri phcu,30.514390,3.928470,Limitedly Functional
+SS0106,SS010604,angebi phcu,29.977560,4.608810,Limitedly Functional
+SS0106,SS010604,bandame phcu,30.286380,4.323030,Limitedly Functional
+SS0106,SS010604,goli phcu,30.449580,4.201580,Limitedly Functional
+SS0106,SS010602,jombu phcu,30.780490,3.811400,Limitedly Functional
+SS0106,SS010603,kajiko phcu,30.599030,3.851200,Limitedly Functional
+SS0106,SS010601,kirikwa phcu,30.425030,4.143120,Limitedly Functional
+SS0106,SS010604,kundru phcu,30.215880,4.398050,Limitedly Functional
+SS0106,SS010603,latta phcu,30.558570,3.879020,Limitedly Functional
+SS0106,SS010601,libogo phcu,30.572590,3.804430,Limitedly Functional
+SS0106,SS010604,mapako phcu,30.537540,4.225410,Limitedly Functional
+SS0106,SS010601,matika phcu,30.506430,3.958220,Limitedly Functional
+SS0106,SS010603,mongo phcu,30.611550,3.904360,Limitedly Functional
+SS0106,SS010603,senema phcu,30.689060,4.090310,Limitedly Functional
+SS0106,SS010604,tore phcc,30.162750,4.491330,Limitedly Functional
+SS0106,SS010602,undukori phcu,30.690100,3.940130,Limitedly Functional
+SS0106,SS010602,wadupe phcu,30.707500,3.886720,Limitedly Functional
+SS0408,SS040801,st. joseph tb phcc,30.494880,6.548280,Limitedly Functional

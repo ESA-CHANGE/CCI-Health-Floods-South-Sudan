@@ -27,4 +27,4 @@ if __name__ == "__main__":
     calib = calibrate_thresholds(df_obs)
     cfg = build_config_from_calibration(calib) if calib else None
 
-    run_all(parts_dir="../data/model_output/by_facility", cfg=cfg)
+    run_all(parts_dir="../../data/model_output/by_facility", cfg=cfg)

@@ -40,8 +40,8 @@ if __name__ == "__main__":
     print("=== BayFloodGEN v2 paralellized (orchestrator) ===")
     has_gpu = detect_jax_devices()
 
-    CSV_PATH = "../data/eo_pool/eo_pool_reclassified.csv"
-    OUTPUT_DIR = "../data/model_output/"
+    CSV_PATH = "../../data/eo_pool/eo_pool_reclassified.csv"
+    OUTPUT_DIR = "../../data/model_output/"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     PLOT_DIR = os.path.join(OUTPUT_DIR, "validation_plots")
     os.makedirs(PLOT_DIR, exist_ok=True)
