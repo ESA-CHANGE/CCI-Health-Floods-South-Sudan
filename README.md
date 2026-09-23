@@ -60,7 +60,7 @@ Note: GPU-enabled jaxlib installation depends on your CUDA version. Follow the o
 ### Executing program
 
 This project is divided in differnt modules. You will find guidence on how to execute it inside ```./src``` folder.
-Some data is available in ```./data``` folder in order to run the whole pipeline as a test. In ```./data/flood_maps/viirs_maps/``` you will find some VIIRS maps as examples so part of the pipeline can be run. The code can be tested until ```.src/eo_pool/check_facilities_categories.ipynb``` as this notebook code needs all years available. In order to test the pipeline after this point, ```./data/eo_pool/eo_pool_reclassified.csv``` is facilitated as the original output of the notebook, considering all years and maps used to develop this project. 
+Some data is available in ```./data``` folder in order to run the whole pipeline as a test. In ```./data/flood_maps/binary_maps/``` you will find some binary maps as examples so part of the pipeline can be run (those would be the output of ```binarize_maps.py``` script). The code can be tested until ```.src/eo_pool/check_facilities_categories.ipynb``` as this notebook code needs all years available. In order to test the pipeline after this point, ```./data/eo_pool/eo_pool_reclassified.csv``` is facilitated as the original output of the notebook, considering all years and maps used to develop this project. 
 
 ## Current branch updates vs `main` (model workflow)
 
