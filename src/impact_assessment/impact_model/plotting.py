@@ -75,6 +75,22 @@ def plot_exceedance_heatmap(df_exc, output_dir, top_n=40):
     top_n : int
         Number of top facilities to include in the heatmap. Defaults to 40.
     """
+    
+    # Define weights reflecting the relative severity of each threshold
+    threshold_weights = {
+        "p_exceed_10pct":  0.05,
+        "p_exceed_25pct":  0.10,
+        "p_exceed_50pct":  0.20,
+        "p_exceed_75pct":  0.30,
+        "p_exceed_100pct": 0.35,
+    }
+
+    df_exc["sort_score"] = sum(
+        df_exc[col] * w 
+        for col, w in threshold_weights.items() 
+        if col in df_exc.columns
+    )
+    df_exc = df_exc.sort_values("sort_score", ascending=False)
 
     os.makedirs(output_dir, exist_ok=True)
     thr_cols = [c for c in df_exc.columns if c.startswith("p_exceed_")]
